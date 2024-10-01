@@ -1,8 +1,18 @@
+import defaultTheme from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				sans: ['Inter', defaultTheme.fontFamily.sans]
+			},
+			colors: {
+				background: 'rgb(var(--color-background))',
+				primary: 'rgb(var(--color-primary))',
+			}
+		},
 	},
 	plugins: [],
 }

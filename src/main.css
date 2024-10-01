@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-background: 244 243 248;
+    --color-primary: 53 196 103;
+    /* --color-primary: */
+  }
+}
