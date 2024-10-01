@@ -1,9 +1,14 @@
 ---
+import "@fontsource-variable/inter";
+import "../main.css";
+
+
 interface Props {
 	title: string;
+	class: string
 }
 
-const { title } = Astro.props;
+const { class:className, title } = Astro.props;
 ---
 
 <!doctype html>
@@ -16,10 +21,8 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class={className}>
 		<slot />
 	</body>
 </html>
-<style>
-	
-</style>
+<style></style>
