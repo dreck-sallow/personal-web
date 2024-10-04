@@ -5,7 +5,13 @@
 @layer base {
   :root {
     --color-background: 244 243 248;
+    --color-on-background: 51 51 51;
     --color-primary: 53 196 103;
-    /* --color-primary: */
+  }
+
+  body.dark-theme {
+    --color-background: 24 28 20;
+    --color-on-background: 244 243 248;
+    --color-primary: 236 223 204;
   }
 }
