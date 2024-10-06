@@ -3,13 +3,37 @@ import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/nav-bar.astro";
 
 const skills = ["React", "Vue", "Svelte", "Nuxt", "Rust", "Solidty"];
+
+const works = [
+	{
+		time: "2018-2020",
+		title: "Web developer",
+		subtitle: "Arisale",
+		description:
+			"A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+	},
+	{
+		time: "2018-2020",
+		title: "Web developer",
+		subtitle: "Arisale",
+		description:
+			"A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+	},
+	{
+		time: "2018-2020",
+		title: "Web developer",
+		subtitle: "Arisale",
+		description:
+			"A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+	},
+];
 ---
 
-<Layout title="Dikson Portfolio Web" class="bg-background h-screen">
+<Layout title="Dikson Portfolio Web" class="bg-background">
 	<NavBar />
-	<main class="py-4 px-6">
+	<main class="text-on-background">
 		<section
-			class="flex flex-row justify-around gap-6 flex-1 w-full md:w-[90%] mx-auto my-6"
+			class="flex-row-base justify-around gap-6 flex-1 w-full md:w-[90%] mx-auto h-screen px-6"
 		>
 			<header class="flex-1">
 				<h1 class="text-5xl font-bold">
@@ -33,6 +57,30 @@ const skills = ["React", "Vue", "Svelte", "Nuxt", "Rust", "Solidty"];
 					alt="avatar-dikson"
 				/>
 			</div>
+		</section>
+		<section class="px-6 my-4">
+			<header class="text-center">
+				<h3 class="text-4xl text-semibold">Resume</h3>
+				<p class="text-neutral-600 mt-3">
+					Lets look about my experience in my work
+				</p>
+			</header>
+			<ul class="work-card-list mt-10 md:mx-5">
+				{
+					works.map((work) => (
+						<li class="rounded-lg bg-white p-6">
+							<span class="text-md text-primary font-semibold block">
+								{work.time}
+							</span>
+							<h4 class="text-2xl font-semibold">{work.title}</h4>
+							<span class="text-lg text-neutral-500 mb-2 block">
+								{work.subtitle}
+							</span>
+							<p class="text-md text-neutral-500">{work.description}</p>
+						</li>
+					))
+				}
+			</ul>
 		</section>
 	</main>
 </Layout>
@@ -60,5 +108,24 @@ const skills = ["React", "Vue", "Svelte", "Nuxt", "Rust", "Solidty"];
 		width: 30%;
 		z-index: -1;
 		filter: blur(80px);
+	}
+
+	.work-card-list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+		justify-items: center;
+		justify-content: center;
+	}
+
+	@media (min-width: 640px) {
+		.work-card-list {
+			grid-template-columns: 30rem 30rem;
+			gap: 3rem;
+		}
+
+		.work-card-list > li {
+			max-width: 30rem;
+		}
 	}
 </style>

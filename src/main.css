@@ -11,7 +11,14 @@
 
   body.dark-theme {
     --color-background: 24 28 20;
-    --color-on-background: 244 243 248;
+    --color-on-background: 237 252 241;
     --color-primary: 236 223 204;
+  }
+}
+
+
+@layer utilities {
+  .flex-row-base {
+    @apply flex flex-row items-center;
   }
 }
