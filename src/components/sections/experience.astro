@@ -1,0 +1,83 @@
+---
+import { Section } from "../containers";
+
+const works = [
+  {
+    time: "Jun 2024 - Nov 2024",
+    title: "FullStack Developer",
+    subtitle: "Arisale",
+    description: `
+			I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, with deployments on GCP (Google Cloud Platform).
+      I collaborate with the design team to improve the workflow and user experience
+		`,
+  },
+  {
+    time: "Nov 2023 - Mar 2023",
+    title: "Frontend Developer",
+    subtitle: "Liquid",
+    description: `
+			I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, with deployments on GCP (Google Cloud Platform).
+      I collaborate with the design team to improve the workflow and user experience
+		`,
+  },
+  {
+    time: "Jun 2022 - Aug 2022",
+    title: "Front Developer",
+    subtitle: "Kimche",
+    description: `
+			I added new features to the web applications, considering data visualization (tables, graphics, and progress bars).
+      I identified and resolved problems, improving functioanality and user experience.
+      I used technologies like React, React Context and Cubejs.	
+		`,
+  },
+  {
+    time: "Oct 2021 - March 2022",
+    title: "Full Stack developer",
+    subtitle: "SoyHenry",
+    description: `
+			 I graduated from Soy Henry's Bootcamp, where I learned about web development, under the javascript ecosystem(frontend and backend).
+       As a final project, we developed an online store for tech products.
+       Skills learned: React, Redux, NodeJs, PostgreSql, Html, CSS, Sequelize.
+		`,
+  },
+];
+---
+
+<Section title="Resume" description="Lets look about my experience in my work">
+  <ul class="work-card-list mt-10 md:mx-5">
+    {
+      works.map((work) => (
+        <li class="rounded-lg bg-white p-6">
+          <span class="text-md text-primary font-semibold block">
+            {work.time}
+          </span>
+          <h4 class="text-2xl font-semibold">{work.title}</h4>
+          <span class="text-lg text-neutral-500 mb-2 block">
+            {work.subtitle}
+          </span>
+          <p class="text-md text-neutral-500">{work.description}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
+
+<style>
+  .work-card-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+  }
+
+  @media (min-width: 640px) {
+    .work-card-list {
+      grid-template-columns: 30rem 30rem;
+    }
+
+    .work-card-list > li {
+      max-width: 30rem;
+    }
+  }
+</style>

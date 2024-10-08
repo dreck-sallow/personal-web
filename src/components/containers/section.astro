@@ -1,0 +1,31 @@
+---
+type ContentType = "list" | "content";
+
+interface Props {
+  title: string;
+  description: string;
+  contentType?: ContentType;
+  class?: string;
+}
+
+/*const contentTypeMap = {
+  list: "ul",
+  content: "div",
+};*/
+
+const { title, description, class: className } = Astro.props;
+
+//const ContentTag = contentTypeMap[contentType];
+---
+
+<section class="px-6 my-4" class={className ?? ""}>
+  <slot name="header">
+    <header class="text-center">
+      <h3 class="text-4xl text-semibold">{title}</h3>
+      <p class="text-neutral-600 mt-3">
+        {description}
+      </p>
+    </header>
+  </slot>
+  <slot />
+</section>

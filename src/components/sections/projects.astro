@@ -1,0 +1,76 @@
+---
+import { Section } from "../containers";
+
+const projects = [
+  {
+    title: "Quipp",
+    //img: "",
+    github: "https://github.com/DreckSallow/melody",
+    description:
+      "🎼 Website to interact with other people, like community. Used for QA's streams",
+  },
+  {
+    title: "Melody",
+    img: "https://drecksallow.github.io/DreckSallow/countries-app.png",
+    github: "https://github.com/DreckSallow/qa-web",
+    description:
+      "🎼 Music Player for the terminal (TUI). Listen music and navigate between sections using the keyboard.",
+  },
+  {
+    title: "Flix",
+    img: "https://flixdev.netlify.app/images/flix-markdown.png",
+    github: "https://github.com/DreckSallow/flix",
+    description:
+      "🖥️ A powerful, versatile and Open Source desktop aplication designed for use the Anki decks and make notes.",
+  },
+  {
+    title: "Flow",
+    img: "https://drecksallow.github.io/DreckSallow/wflow.png",
+    github: "https://github.com/DreckSallow/flow",
+    description:
+      "🖥️ CLI task manager focused on better controlling your tasks and projects. Improving your workflow.",
+  },
+];
+---
+
+<Section
+  title="My Projects"
+  description="Looks what I do and visit the repositories or websites."
+>
+  <ul class="projects-grid mx-auto mt-8">
+    {
+      projects.map((project) => (
+        <li class="">
+          <img
+            src={
+              project.img ??
+              "https://img.freepik.com/psd-premium/retrato-sonriente-hombre-dibujos-animados-3d-aislado-sobre-fondo-transparente-png-psd_888962-1570.jpg?semt=ais_hybrid"
+            }
+            alt="Github repository"
+            class="w-full h-[12rem] rounded-xl"
+          />
+          <h5 class="text-lg text-smibold mt-2">{project.title}</h5>
+          <p class="text-md text-light mt-1">{project.description}</p>
+          <div class="flex flex-row gap-4 mt-2">
+            <button class="rounded-full px-3 py-1 bg-primary text-xs text-white">
+              Github {"->"}
+            </button>
+            <button class="rounded-full px-3 py-1 bg-primary text-xs text-white">
+              Website {"->"}
+            </button>
+          </div>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
+
+<style>
+  .projects-grid {
+    display: grid;
+    grid-template-columns: 22rem 22rem 22rem;
+    gap: 2rem;
+    justify-items: center;
+    justify-content: center;
+  }
+</style>

@@ -1,0 +1,37 @@
+---
+import { Section } from "../containers";
+
+const links = [
+  {
+    Icon: "div",
+    title: "EMAIL ADRESS",
+    href: "mailto:diksonaranda.cabrera@gmail.com",
+  },
+  {
+    Icon: "div",
+    title: "LINKEDIN",
+    href: "linkedin.com/in/dikson-aranda/",
+  },
+  {
+    Icon: "div",
+    title: "GITHUB",
+    href: "github.com/DreckSallow",
+  },
+];
+---
+
+<Section title="Contact" description="Contact me via these options">
+  <ul class="flex-row-base justify-center gap-8 flex-wrap mx-auto mt-8">
+    {
+      links.map((link) => (
+        <li class="flex flex-col gap-4 items-center p-2 max-w-[20rem]">
+          <div class="rounded-full p-3 aspect-square bg-primary">Check</div>
+          <h4 class="text-lg font-semibold">{link.title}</h4>
+          <a class="text-md block" href={link.href}>
+            {link.href}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</Section>
