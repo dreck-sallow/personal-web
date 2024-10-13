@@ -1,0 +1,27 @@
+---
+interface Props {
+  title?: string;
+  tag?: string;
+  contentType: "desc" | "list";
+  class?: string;
+}
+
+const { class: className, title, tag, contentType } = Astro.props;
+
+const ContainerTag = tag ?? "div";
+---
+
+<ContainerTag class={className}>
+  <slot name="title">
+    <h5 class="text-lg font-semibold">{title}</h5>
+  </slot>
+  <slot name="content">
+    {
+      contentType === "desc" && (
+        <p class="text-sm">
+          <slot />
+        </p>
+      )
+    }
+  </slot>
+</ContainerTag>
