@@ -1,14 +1,55 @@
 ---
 import { Section } from "../containers";
 
+const jobs_v2 = [
+  {
+    time: "Jun 2024 - Nov 2024",
+    title: "FullStack Developer",
+    subtitle: "Arisale",
+    description: `
+      I used Vue with Nuxt.js to create web projects and employed SASS for styling.
+      I collaborated with the backend team to add features and resolve issues using Nest.js.
+    `,
+  },
+  {
+    time: "Nov 2023 - Mar 2023",
+    title: "Frontend Developer",
+    subtitle: "Liquid",
+    description: `
+      I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, and deployed them on Google Cloud Platform (GCP).
+      I worked closely with the design team to streamline workflows and enhance user experience.
+    `,
+  },
+  {
+    time: "Jun 2022 - Aug 2022",
+    title: "Frontend Developer",
+    subtitle: "Kimche",
+    description: `
+      I implemented new features in web applications, focusing on data visualization through tables, charts, and progress bars.
+      I identified and fixed issues, improving functionality and user experience.
+      Technologies used: React, React Context, and Cube.js.
+    `,
+  },
+  {
+    time: "Oct 2021 - Mar 2022",
+    title: "Full Stack Developer",
+    subtitle: "SoyHenry",
+    description: `
+      I completed Soy Henry's Bootcamp, where I gained skills in full-stack web development within the JavaScript ecosystem (frontend and backend).
+      For the final project, we developed an online tech store.
+      Skills acquired: React, Redux, Node.js, PostgreSQL, HTML, CSS, Sequelize.
+    `,
+  },
+];
+
 const works = [
   {
     time: "Jun 2024 - Nov 2024",
     title: "FullStack Developer",
     subtitle: "Arisale",
     description: `
-			I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, with deployments on GCP (Google Cloud Platform).
-      I collaborate with the design team to improve the workflow and user experience
+      I use vue for create web projects with nuxtjs together, and sass for css styling.
+			I developed to the backend team to add features and resolve some problems using nestjs.
 		`,
   },
   {
@@ -46,7 +87,7 @@ const works = [
 <Section title="Resume" description="Lets look about my experience in my work">
   <ul class="work-card-list mt-10 md:mx-5">
     {
-      works.map((work) => (
+      jobs_v2.map((work) => (
         <li class="rounded-lg bg-white p-6">
           <span class="text-md text-primary font-semibold block">
             {work.time}

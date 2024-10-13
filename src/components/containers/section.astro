@@ -3,7 +3,7 @@ type ContentType = "list" | "content";
 
 interface Props {
   title: string;
-  description: string;
+  description?: string;
   contentType?: ContentType;
   class?: string;
 }
@@ -22,9 +22,7 @@ const { title, description, class: className } = Astro.props;
   <slot name="header">
     <header class="text-center">
       <h3 class="text-4xl text-semibold">{title}</h3>
-      <p class="text-neutral-600 mt-3">
-        {description}
-      </p>
+      {description && <p class="text-neutral-600 mt-3">{description}</p>}
     </header>
   </slot>
   <slot />

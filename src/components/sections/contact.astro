@@ -5,41 +5,44 @@ import { SendMailIcon, GithubIcon, LinkedinIcon } from "../icons";
 const links = [
   {
     Icon: SendMailIcon,
-    title: "EMAIL ADRESS",
     href: "mailto:diksonaranda.cabrera@gmail.com",
   },
   {
     Icon: LinkedinIcon,
-    title: "LINKEDIN",
     href: "linkedin.com/in/dikson-aranda/",
   },
   {
     Icon: GithubIcon,
-    title: "GITHUB",
     href: "github.com/DreckSallow",
   },
 ];
 ---
 
-<Section
-  title="Contact"
-  description="Do you have a good and interesting idea and want to make it come true?"
-  class="mt-20"
->
-  <ul class="flex-row-base justify-center gap-8 flex-wrap mx-auto mt-12">
-    {
-      links.map(({ title, href, Icon }) => (
-        <li class="flex flex-col gap-4 items-center p-2 max-w-[20rem]">
-          <div class="rounded-full p-3 aspect-square bg-primary">
-            <Icon class="fill-white stroke-white h-8 w-8" />
-          </div>
-          <!-- <h4 class="text-lg font-semibold">{title}</h4> -->
-          <a class="text-lg font-semibold underline underline-offset-1" href={href}>{title}</a>
-          <!-- <a class="text-md block" href={href}> -->
-            <!-- {href} -->
-          <!-- </a> -->
-        </li>
-      ))
-    }
-  </ul>
+<Section title="Contact" class="mt-20">
+  <div class="mt-8 w-[60%] mx-auto">
+    <p class="text-start text-sm">
+      Feel free to reach out if you have any questions, opportunities, or would
+      like to collaborate on exciting projects. I specialize in JavaScript and
+      Rust development, with a focus on building efficient, scalable
+      applications. I’m always open to discussing interesting challenges in
+      programming, software architecture, or anything tech-related.
+    </p>
+    <a
+      href="mailto:diksonaranda.cabrera@gmail.com"
+      class="underline underline-offset-2 mt-4 block text-primary"
+    >
+      {"->"} diksonaranda.cabrera@gmail.com
+    </a>
+    <ul class="mt-4 flex-row-base gap-5">
+      {
+        links.map(({ href, Icon }) => (
+          <li>
+            <a href={href} class="rounded-full p-2 bg-neutral-200 block">
+              <Icon class="h-5 w-5" />
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </Section>
