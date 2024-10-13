@@ -3,10 +3,11 @@ interface Props {
   title?: string;
   tag?: string;
   contentType: "desc" | "list";
+  contentClass?: string;
   class?: string;
 }
 
-const { class: className, title, tag, contentType } = Astro.props;
+const { class: className, title, tag, contentType, contentClass } = Astro.props;
 
 const ContainerTag = tag ?? "div";
 ---
@@ -21,6 +22,14 @@ const ContainerTag = tag ?? "div";
         <p class="text-sm">
           <slot />
         </p>
+      )
+    }
+
+    {
+      contentType === "list" && (
+        <ul class={`text-sm ${contentClass ?? ""}`}>
+          <slot />
+        </ul>
       )
     }
   </slot>
