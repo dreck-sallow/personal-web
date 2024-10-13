@@ -1,35 +1,43 @@
 ---
 import { Section } from "../containers";
+import { SendMailIcon, GithubIcon, LinkedinIcon } from "../icons";
 
 const links = [
   {
-    Icon: "div",
+    Icon: SendMailIcon,
     title: "EMAIL ADRESS",
     href: "mailto:diksonaranda.cabrera@gmail.com",
   },
   {
-    Icon: "div",
+    Icon: LinkedinIcon,
     title: "LINKEDIN",
     href: "linkedin.com/in/dikson-aranda/",
   },
   {
-    Icon: "div",
+    Icon: GithubIcon,
     title: "GITHUB",
     href: "github.com/DreckSallow",
   },
 ];
 ---
 
-<Section title="Contact" description="Contact me via these options">
-  <ul class="flex-row-base justify-center gap-8 flex-wrap mx-auto mt-8">
+<Section
+  title="Contact"
+  description="Do you have a good and interesting idea and want to make it come true?"
+  class="mt-20"
+>
+  <ul class="flex-row-base justify-center gap-8 flex-wrap mx-auto mt-12">
     {
-      links.map((link) => (
+      links.map(({ title, href, Icon }) => (
         <li class="flex flex-col gap-4 items-center p-2 max-w-[20rem]">
-          <div class="rounded-full p-3 aspect-square bg-primary">Check</div>
-          <h4 class="text-lg font-semibold">{link.title}</h4>
-          <a class="text-md block" href={link.href}>
-            {link.href}
-          </a>
+          <div class="rounded-full p-3 aspect-square bg-primary">
+            <Icon class="fill-white stroke-white h-8 w-8" />
+          </div>
+          <!-- <h4 class="text-lg font-semibold">{title}</h4> -->
+          <a class="text-lg font-semibold underline underline-offset-1" href={href}>{title}</a>
+          <!-- <a class="text-md block" href={href}> -->
+            <!-- {href} -->
+          <!-- </a> -->
         </li>
       ))
     }

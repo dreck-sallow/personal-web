@@ -18,7 +18,7 @@ const { title, description, class: className } = Astro.props;
 //const ContentTag = contentTypeMap[contentType];
 ---
 
-<section class="px-6 my-4" class={className ?? ""}>
+<section class={`px-6 my-4 ${className ?? ""}`}>
   <slot name="header">
     <header class="text-center">
       <h3 class="text-4xl text-semibold">{title}</h3>
