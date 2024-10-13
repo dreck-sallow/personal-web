@@ -1,34 +1,43 @@
 ---
+import quippImage from "../../assets/quipp-image.png";
+import melodyImage from "../../assets/prj-melody.png";
+import flowImage from "../../assets/flow-img.gif";
+import flixImage from "../../assets/flix-markdown.webp";
 import { Section } from "../containers";
+import { Image } from "astro:assets";
 
-const projects = [
+const projects_v2 = [
   {
     title: "Quipp",
-    //img: "",
     github: "https://github.com/DreckSallow/melody",
+    img: quippImage,
+    alt: "Quipp project image",
     description:
-      "🎼 Website to interact with other people, like community. Used for QA's streams",
+      "🌐 A community-driven platform for interactive discussions, ideal for live streams and Q&A sessions.",
   },
   {
     title: "Melody",
-    img: "https://drecksallow.github.io/DreckSallow/countries-app.png",
+    img: melodyImage,
     github: "https://github.com/DreckSallow/qa-web",
+    alt: "Melody project image",
     description:
-      "🎼 Music Player for the terminal (TUI). Listen music and navigate between sections using the keyboard.",
+      "🎧 A terminal-based music player (TUI) with keyboard navigation, designed for efficiency and minimalism.",
   },
   {
     title: "Flix",
-    img: "https://flixdev.netlify.app/images/flix-markdown.png",
+    img: flixImage,
     github: "https://github.com/DreckSallow/flix",
+    alt: "Flix project image",
     description:
-      "🖥️ A powerful, versatile and Open Source desktop aplication designed for use the Anki decks and make notes.",
+      "🖥️ An open-source desktop app that integrates Anki decks with note-taking for enhanced study sessions.",
   },
   {
     title: "Flow",
-    img: "https://drecksallow.github.io/DreckSallow/wflow.png",
+    img: flowImage,
     github: "https://github.com/DreckSallow/flow",
+    alt: "Flow project image",
     description:
-      "🖥️ CLI task manager focused on better controlling your tasks and projects. Improving your workflow.",
+      "✅ A CLI task manager for streamlined project organization and workflow optimization.",
   },
 ];
 ---
@@ -40,18 +49,17 @@ const projects = [
 >
   <ul class="projects-grid mx-auto mt-8">
     {
-      projects.map((project) => (
-        <li class="">
-          <img
-            src={
-              project.img ??
-              "https://img.freepik.com/psd-premium/retrato-sonriente-hombre-dibujos-animados-3d-aislado-sobre-fondo-transparente-png-psd_888962-1570.jpg?semt=ais_hybrid"
-            }
-            alt="Github repository"
-            class="w-full h-[12rem] rounded-xl"
-          />
-          <h5 class="text-lg text-smibold mt-2">{project.title}</h5>
-          <p class="text-md text-light mt-1">{project.description}</p>
+      projects_v2.map((project) => (
+        <li class=" h-[22rem] flex flex-col justify-between">
+          <div>
+            <Image
+              src={project.img}
+              alt={project.alt}
+              class="w-full h-[12rem] rounded-xl"
+            />
+            <h5 class="text-lg text-semibold mt-2">{project.title}</h5>
+            <p class="text-md text-light mt-1">{project.description}</p>
+          </div>
           <div class="flex flex-row gap-4 mt-2">
             <button class="rounded-full px-3 py-1 bg-primary text-xs text-white">
               Github {"->"}
