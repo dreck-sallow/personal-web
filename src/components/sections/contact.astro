@@ -24,8 +24,10 @@ const links = [
       Feel free to reach out if you have any questions, opportunities, or would
       like to collaborate on exciting projects. I specialize in JavaScript and
       Rust development, with a focus on building efficient, scalable
-      applications. I’m always open to discussing interesting challenges in
-      programming, software architecture, or anything tech-related.
+      applications.
+      <br />
+      I’m always open to discussing interesting challenges in programming, software
+      architecture, or anything tech-related.
     </p>
     <a
       href="mailto:diksonaranda.cabrera@gmail.com"
@@ -37,7 +39,10 @@ const links = [
       {
         links.map(({ href, Icon }) => (
           <li>
-            <a href={href} class="rounded-full p-2 bg-neutral-200 block">
+            <a
+              href={href}
+              class="rounded-full p-2 bg-background-soft/80  block fill-txt"
+            >
               <Icon class="h-5 w-5" />
             </a>
           </li>

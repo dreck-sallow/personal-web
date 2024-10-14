@@ -11,7 +11,10 @@ export default {
 			colors: {
 				background: 'rgb(var(--color-background))',
 				"on-background": 'rgb(var(--color-on-background))',
+				"txt": 'rgb(var(--color-txt))',
+				"txt-soft": 'rgb(var(--color-txt-soft))',
 				primary: 'rgb(var(--color-primary))',
+				"background-soft": 'rgb(var(--color-background-soft))',
 			}
 		},
 	},
