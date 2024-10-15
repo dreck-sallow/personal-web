@@ -9,16 +9,16 @@ const links = [
   },
   {
     Icon: LinkedinIcon,
-    href: "linkedin.com/in/dikson-aranda/",
+    href: "https://www.linkedin.com/in/dikson-aranda/",
   },
   {
     Icon: GithubIcon,
-    href: "github.com/DreckSallow",
+    href: "https://github.com/DreckSallow",
   },
 ];
 ---
 
-<Section title="Contact" class="mt-20">
+<Section title="Contact" class="mt-20" id="contact">
   <div class="mt-8 w-[60%] mx-auto">
     <p class="text-start text-sm">
       Feel free to reach out if you have any questions, opportunities, or would
@@ -42,6 +42,7 @@ const links = [
             <a
               href={href}
               class="rounded-full p-2 bg-background-soft/80  block fill-txt"
+              target="_blank"
             >
               <Icon class="h-5 w-5" />
             </a>
