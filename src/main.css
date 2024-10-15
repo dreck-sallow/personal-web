@@ -11,14 +11,21 @@
     --color-background-soft: 252 252 252;
   }
 
-  body.dark-theme {
-    --color-background: 24 28 20;
-    /* --color-txt: 247 246 245; */
-    --color-txt: 236 237 235;
-    --color-txt-soft: 157 161 153;
-    --color-primary: 236 223 204;
-    --color-background-soft: 35 41 30;
+  html {
+    scroll-behavior: smooth;
   }
+
+  @media (prefers-color-scheme: dark) {
+    html.dark-theme {
+      --color-background: 24 28 20;
+      --color-txt: 236 237 235;
+      --color-txt-soft: 157 161 153;
+      --color-primary: 236 223 204;
+      --color-background-soft: 35 41 30;
+    }
+  }
+
+
 }
 
 
