@@ -6,9 +6,12 @@ import ThemePicker from "./pickers/theme-picker.astro";
   class="w-full flex-row-base gap-4 justify-between py-4 px-6 bg-background h-[60px] fixed top-0 z-10 overflow-hidden"
 >
   <h4 class="text-xl text-primary font-semibold">Dikson {"</>"}</h4>
-  <ul class="flex-row gap-8 items-center hidden md:flex text-on-background">
+  <ul
+    id="navbar-links"
+    class="flex-row gap-8 items-center hidden md:flex text-on-background"
+  >
     <li>
-      <a href="/" class="link"> Overview </a>
+      <a href="#" class="link"> Overview </a>
     </li>
     <li>
       <a href="#experience" class="link"> Experience </a>
@@ -22,3 +25,27 @@ import ThemePicker from "./pickers/theme-picker.astro";
   </ul>
   <ThemePicker />
 </nav>
+
+<style>
+  a {
+    transition:
+      text-decoration 100ms ease-in,
+      color 100ms ease-in;
+  }
+</style>
+<script>
+  const linksList = document.querySelector("#navbar-links");
+
+  linksList?.addEventListener("click", (ev) => {
+    const target = ev.target as HTMLElement;
+
+    if (target.tagName === "A") {
+      linksList.querySelectorAll("a").forEach((link) => {
+        link.classList.remove("text-primary");
+        link.classList.remove("border-primary");
+      });
+      target.classList.add("text-primary");
+      target.classList.add("border-primary");
+    }
+  });
+</script>

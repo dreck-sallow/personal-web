@@ -24,10 +24,7 @@
       --color-background-soft: 35 41 30;
     }
   }
-
-
 }
-
 
 @layer utilities {
   .flex-row-base {

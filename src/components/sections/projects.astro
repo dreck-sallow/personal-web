@@ -92,9 +92,18 @@ const projects_v2 = [
 <style>
   .projects-grid {
     display: grid;
-    grid-template-columns: 22rem 22rem 22rem;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    column-gap: 2rem;
+    row-gap: 4rem;
     justify-items: center;
     justify-content: center;
+
+    @media (min-width: 640px) {
+      grid-template-columns: 22rem 22rem;
+    }
+
+    @media (min-width: 1080px) {
+      grid-template-columns: 22rem 22rem 22rem;
+    }
   }
 </style>
