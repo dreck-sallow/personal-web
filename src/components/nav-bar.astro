@@ -3,12 +3,11 @@ import ThemePicker from "./pickers/theme-picker.astro";
 ---
 
 <nav
-  class="w-full flex-row-base gap-4 justify-between py-4 px-6 bg-background h-[60px] fixed top-0 z-10 overflow-hidden"
+  class="w-full flex-row-base gap-4 justify-between py-4 px-6 bg-background h-[60px] fixed top-0 z-10"
 >
   <h4 class="text-xl text-primary font-semibold">Dikson {"</>"}</h4>
   <ul
-    id="navbar-links"
-    class="flex-row gap-8 items-center hidden md:flex text-on-background"
+    class="navbar-links flex-row gap-8 items-center hidden md:flex text-on-background"
   >
     <li>
       <a href="#" class="link"> Overview </a>
@@ -23,7 +22,40 @@ import ThemePicker from "./pickers/theme-picker.astro";
       <a href="#contact" class="link"> Contact </a>
     </li>
   </ul>
-  <ThemePicker />
+  <ThemePicker class="hidden md:block" />
+  <div class="relative">
+    <button>
+      <svg
+        id="menu-icon"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        class="fill-on-background h-8 w-8 md:hidden"
+      >
+        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+      </svg>
+    </button>
+    <div
+      class="overlay-menu z-10 bg-background-soft rounded-md p-4 hidden absolute bottom-0 right-0 translate-y-full"
+    >
+      <ul class="navbar-links flex flex-col gap-4 w-full">
+        <li class="rounded-md hover:bg-background/60">
+          <a href="#"> Overview </a>
+        </li>
+        <li class="hover:bg-red-100">
+          <a href="#experience"> Experience </a>
+        </li>
+        <li class="hover:bg-red-100">
+          <a href="#projects"> Projects </a>
+        </li>
+        <li class="hover:bg-red-100">
+          <a href="#contact"> Contact </a>
+        </li>
+        <li>
+          <ThemePicker />
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 <style>
@@ -32,20 +64,38 @@ import ThemePicker from "./pickers/theme-picker.astro";
       text-decoration 100ms ease-in,
       color 100ms ease-in;
   }
+
+  .overlay-menu li {
+    padding: 0.2em 0.5em;
+  }
 </style>
 <script>
-  const linksList = document.querySelector("#navbar-links");
+  const linksList = document.querySelectorAll("navbar-links");
+  linksList.forEach((li) => {
+    li?.addEventListener("click", (ev) => {
+      const target = ev.target as HTMLElement;
 
-  linksList?.addEventListener("click", (ev) => {
-    const target = ev.target as HTMLElement;
+      if (target.tagName === "A") {
+        li.querySelectorAll("a").forEach((link) => {
+          link.classList.remove("text-primary");
+          link.classList.remove("border-primary");
+        });
+        target.classList.add("text-primary");
+        target.classList.add("border-primary");
+      }
+    });
+  });
 
-    if (target.tagName === "A") {
-      linksList.querySelectorAll("a").forEach((link) => {
-        link.classList.remove("text-primary");
-        link.classList.remove("border-primary");
-      });
-      target.classList.add("text-primary");
-      target.classList.add("border-primary");
-    }
+  const menuIcon = document.querySelector("#menu-icon");
+  const overlayMenu = document.querySelector(".overlay-menu");
+
+  menuIcon?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    overlayMenu?.classList.toggle("hidden");
+    overlayMenu?.classList.toggle("block");
+  });
+
+  document.addEventListener("click", () => {
+    overlayMenu?.classList.add("hidden");
   });
 </script>

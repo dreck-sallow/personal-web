@@ -1,8 +1,10 @@
 ---
-
+interface Props {
+  class?: string;
+}
 ---
 
-<button id="theme-picker">
+<button id="theme-picker" class={Astro.props.class}>
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -35,7 +37,7 @@
 </style>
 <script is:inline>
   const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+    if (localStorage.getItem("theme")) {
       return localStorage.getItem("theme");
     }
     if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
