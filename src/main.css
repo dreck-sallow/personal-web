@@ -1,6 +1,11 @@
+@import "./styles/button.css";
+@import "./styles/typography.css";
+@import "./styles/containers.css";
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 
 @layer base {
   :root {
@@ -52,5 +57,9 @@
 
   .btn-xs {
     @apply text-xs px-3 py-1;
+  }
+
+  .app-card {
+    @apply rounded-lg p-6 bg-background-soft/80
   }
 }

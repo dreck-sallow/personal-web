@@ -1,0 +1,14 @@
+@layer components {
+  .app-row {
+    @apply flex flex-row;
+  }
+
+  .app-col {
+    @apply flex flex-col;
+  }
+
+  .app-row--center {
+    @apply app-row items-center;
+  }
+
+}

@@ -1,4 +1,5 @@
 ---
+import Link from "./link.astro";
 import ThemePicker from "./pickers/theme-picker.astro";
 ---
 
@@ -10,16 +11,16 @@ import ThemePicker from "./pickers/theme-picker.astro";
     class="navbar-links flex-row gap-8 items-center hidden md:flex text-on-background"
   >
     <li>
-      <a href="#" class="link"> Overview </a>
+      <Link href="#" label="Overview" />
     </li>
     <li>
-      <a href="#experience" class="link"> Experience </a>
+      <Link href="#experience" label="Experience" />
     </li>
     <li>
-      <a href="#projects" class="link"> Projects </a>
+      <Link href="#projects" label="Projects" />
     </li>
     <li>
-      <a href="#contact" class="link"> Contact </a>
+      <Link href="#contact" label="Contact" />
     </li>
   </ul>
   <ThemePicker class="hidden md:block" />
@@ -39,16 +40,16 @@ import ThemePicker from "./pickers/theme-picker.astro";
     >
       <ul class="navbar-links flex flex-col gap-4 w-full">
         <li class="rounded-md hover:bg-background/60">
-          <a href="#"> Overview </a>
+          <Link href="#" label="Overview" />
         </li>
         <li class="hover:bg-red-100">
-          <a href="#experience"> Experience </a>
+          <Link href="#experience" label="Experience" />
         </li>
         <li class="hover:bg-red-100">
-          <a href="#projects"> Projects </a>
+          <Link href="#projects" label="Projects" />
         </li>
         <li class="hover:bg-red-100">
-          <a href="#contact"> Contact </a>
+          <Link href="#contact" label="Contact" />
         </li>
         <li>
           <ThemePicker />

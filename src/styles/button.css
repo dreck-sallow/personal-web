@@ -1,0 +1,13 @@
+@layer components {
+  .app-button {
+    @apply rounded-full;
+  }
+
+  .app-button--primary {
+    @apply app-button bg-primary text-background;
+  }
+
+  .app-button--sm {
+    @apply text-sm px-5 py-2;
+  }
+}

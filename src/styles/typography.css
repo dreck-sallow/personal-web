@@ -1,0 +1,5 @@
+@layer components {
+  .app-text-soft {
+    @apply text-txt-soft block;
+  }
+}
