@@ -1,0 +1,72 @@
+---
+import Link from "../link.astro";
+import ThemePicker from "../pickers/theme-picker.astro";
+import { MenuIcon } from "../icons";
+import { navLinks } from "../../data/nav-links";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div class={`relative ${className}`}>
+  <button id="menu-btn-mobile">
+    <MenuIcon class="h-8 w-8" />
+  </button>
+  <div
+    id="menu-btn-overlay"
+    class="overlay-menu z-10 bg-background-soft rounded-lg p-2 hidden absolute bottom-0 right-0 translate-y-full"
+  >
+    <ul id="menu-overlay-links" class="flex flex-col gap-4 w-full text-sm">
+      {
+        navLinks.map((link) => {
+          return (
+            <li>
+              <Link href={link.href} label={link.label} type="option" />
+            </li>
+          );
+        })
+      }
+
+      <li class="link--option px-3 py-1">
+        <ThemePicker id="theme-picker-mobile" />
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  a {
+    width: 100%;
+  }
+</style>
+
+<script>
+  const menuBtn = document.querySelector("#menu-btn-mobile");
+  const overlayMenu = document.querySelector("#menu-btn-overlay");
+
+  menuBtn?.addEventListener("click", (e) => {
+    e.stopPropagation();
+    overlayMenu?.classList.toggle("hidden");
+    overlayMenu?.classList.toggle("block");
+  });
+
+  document.addEventListener("click", () => {
+    overlayMenu?.classList.add("hidden");
+  });
+
+  const menuLinks = document.querySelector("#menu-overlay-links");
+
+  menuLinks?.addEventListener("click", (ev) => {
+    const target = ev.target as HTMLElement;
+
+    if (target.tagName === "A") {
+      menuLinks.querySelectorAll("a").forEach((link) => {
+        link.classList.remove("link--selected");
+      });
+      target.classList.add("link--selected");
+    }
+  });
+</script>

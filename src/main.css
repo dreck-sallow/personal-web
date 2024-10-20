@@ -39,12 +39,23 @@
 
 
 @layer components {
-  .link {
+  .link--underlined {
     @apply underline underline-offset-2
   }
 
-  .link:hover {
-    @apply no-underline
+  .link--underlined:hover,
+  .link--selected:is(.link--underlined) {
+    @apply text-primary;
+  }
+
+  .link--option {
+    transition: background-color 150ms ease;
+    @apply rounded-md w-full block px-3 py-1 cursor-pointer;
+  }
+
+  .link--option:hover,
+  .link--selected:is(.link--option) {
+    @apply bg-background;
   }
 
   .btn-primary {

@@ -4,9 +4,10 @@ interface Props {
   label?: string;
   class?: string;
   external?: boolean;
+  type?: "underlined" | "option";
 }
 
-const { href, label } = Astro.props;
+const { href, label, type } = Astro.props;
 
 const external = (() => {
   if (typeof href === "string") {
@@ -14,9 +15,20 @@ const external = (() => {
   }
   return Astro.props.external === true;
 })();
+
+const linkClassName = (() => {
+  if (type === "option") {
+    return "link--option";
+  }
+  return "link--underlined";
+})();
 ---
 
-<a href={href} class="link" target={external === false ? "_self" : "_blank"}>
+<a
+  href={href}
+  class={linkClassName}
+  target={external === false ? "_self" : "_blank"}
+>
   <slot>
     {label}
   </slot>

@@ -1,6 +1,6 @@
 @layer components {
   .app-button {
-    @apply rounded-full;
+    @apply rounded-full relative overflow-hidden;
   }
 
   .app-button--primary {

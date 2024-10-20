@@ -26,9 +26,9 @@ import {
 					developer with 2 year of work experience creating software to gring a
 					better experience for the users
 				</p>
-				<button class="app-button--primary app-button--sm">
+				<a class="app-button--primary app-button--sm" href="#contact">
 					Let's discuss {"->"}
-				</button>
+				</a>
 			</header>
 			<div
 				class="principal-image bg-orange-200 hidden md:block flex-[0.7] relative"
@@ -117,3 +117,20 @@ import {
 		filter: blur(80px);
 	}
 </style>
+<script is:inline>
+	const theme = (() => {
+		if (localStorage.getItem("theme")) {
+			return localStorage.getItem("theme");
+		}
+		if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+			return "dark";
+		}
+		return "light";
+	})();
+
+	if (theme === "light") {
+		document.documentElement.classList.remove("dark");
+	} else {
+		document.documentElement.classList.add("dark-theme");
+	}
+</script>
