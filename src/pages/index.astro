@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+import AvatarImg from "../assets/avatar.png";
 import Layout from "../layouts/Layout.astro";
 import NavBar from "../components/nav-bar.astro";
 import Link from "../components/link.astro";
@@ -30,13 +32,8 @@ import {
 					Let's discuss {"->"}
 				</a>
 			</header>
-			<div
-				class="principal-image bg-orange-200 hidden md:block flex-[0.7] relative"
-			>
-				<img
-					src="https://img.freepik.com/psd-premium/retrato-sonriente-hombre-dibujos-animados-3d-aislado-sobre-fondo-transparente-png-psd_888962-1570.jpg?semt=ais_hybrid"
-					alt="avatar-dikson"
-				/>
+			<div class="principal-image hidden md:block flex-[0.7] relative">
+				<Image src={AvatarImg} alt="avatar image" />
 			</div>
 		</section>
 		<ExperienceSection />
