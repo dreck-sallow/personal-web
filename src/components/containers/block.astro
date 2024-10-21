@@ -1,7 +1,9 @@
 ---
+import type { HTMLTag } from "astro/types";
+
 interface Props {
   title?: string;
-  tag?: string;
+  tag?: HTMLTag;
   contentType: "desc" | "list";
   contentClass?: string;
   class?: string;
