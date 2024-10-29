@@ -2,6 +2,7 @@
 import Link from "./link.astro";
 import ThemePicker from "./pickers/theme-picker.astro";
 import { NavBarMobile } from "./navbars/index";
+import { navLinks } from "../data/nav-links";
 ---
 
 <nav
@@ -12,18 +13,7 @@ import { NavBarMobile } from "./navbars/index";
     id="navbar-links"
     class="flex-row gap-8 items-center hidden md:flex text-on-background"
   >
-    <li>
-      <Link href="#" label="Overview" />
-    </li>
-    <li>
-      <Link href="#experience" label="Experience" />
-    </li>
-    <li>
-      <Link href="#projects" label="Projects" />
-    </li>
-    <li>
-      <Link href="#contact" label="Contact" />
-    </li>
+    {navLinks.map((link) => <Link href={link.href} label={link.label} />)}
   </ul>
   <ThemePicker class="hidden md:block" id="theme-picker" />
   <NavBarMobile class="md:hidden" />
