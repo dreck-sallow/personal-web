@@ -3,7 +3,22 @@
     @apply rounded-full relative overflow-hidden;
   }
 
+  .app-button::before {
+    content: "";
+    transition: width 300ms ease;
+    z-index: 1;
+    background-color: red;
+
+    @apply absolute left-0 w-0 top-0 bottom-0;
+  }
+
+  .app-button:hover::before {
+    width: 100%;
+  }
+
   .app-button--primary {
+    z-index: 2;
+    position: relative;
     @apply app-button bg-primary text-background;
   }
 
