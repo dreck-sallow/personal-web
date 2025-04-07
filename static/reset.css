@@ -1,0 +1,100 @@
+/* Box-sizing border-box for all elements */
+*,
+*::before,
+*::after,
+::backdrop {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0 solid;
+}
+
+/* Remove default list styles */
+ul,
+ol {
+  list-style: none;
+}
+
+/* Remove default text decoration */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Reset button styles */
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  border: none;
+  background: none;
+  outline: none;
+}
+
+/* Reset form elements */
+input,
+textarea {
+  appearance: none;
+}
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Make sure elements don't overflow their containers */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
+  background-color: #fff;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Remove default table border spacing */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  text-indent: 0;
+  border-color: inherith;
+}
+
+/* Ensure headings don't have extra margins */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Hide elements with the hidden attribute */
+[hidden] {
+  display: none !important;
+}
+
+::placeholder {
+  opacity: 1;
+}
+
+:-moz-focusring {
+  outline: auto;
+}

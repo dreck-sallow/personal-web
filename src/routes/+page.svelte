@@ -1,6 +1,18 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<script>
+	import '../styles/main.css';
+	import NavBar from '../components/nav-bar.svelte';
+	import SectionHero from '../components/sections/section-hero.svelte';
+</script>
 
-<p>
-Hellow world and Dikson
-</p>
+<main class="home-page">
+	<NavBar />
+
+	<SectionHero />
+</main>
+
+<style>
+	.home-page :global(.home-page__section) {
+		padding-inline: 3rem;
+	}
+
+</style>
