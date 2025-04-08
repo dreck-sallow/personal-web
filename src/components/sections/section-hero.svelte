@@ -1,7 +1,7 @@
 <section id="hero" class="home-page__section hero-section">
 	<div class="hero-section__text-content">
 		<span class="hero-section__over-title"> 👋 Hey there, </span>
-		<h1 class="hero-section__title">I'm Dikson Aranda</h1>
+		<h1 class="hero-section__title text-inter-800">I'm Dikson Aranda</h1>
 		<p class="hero-section__description">
 			Welcome to my personal website. I'm Dikson Aranda (Dreck Sallow), a passionate web developer
 			with 2 year of work experience creating software to gring a better experience for the users.
@@ -36,7 +36,7 @@
 
 	.hero-section__title {
 		font-size: 3rem;
-		font-weight: 600;
+		/*font-weight: 600;*/
 		line-height: 3.25rem;
 		margin-bottom: 1.250rem;
 	}
