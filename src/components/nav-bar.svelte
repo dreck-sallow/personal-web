@@ -24,15 +24,16 @@
 	let selectedLink = undefined as string | undefined;
 
 	const onClickSelect = (link: string) => {
-		selectedLink = link;
+		selectedLink = link.length == 0 ? '#' : link;
 	};
 
 	onMount(() => {
 		// TODO: add focus for paths like: /blog
 		// console.log('window.location.hash: ', window.location.hash);
-		window.addEventListener("hashchange", ()=> {
-			onClickSelect(window.location.hash)
-		})
+		onClickSelect("");
+		window.addEventListener('hashchange', () => {
+			onClickSelect(window.location.hash);
+		});
 	});
 </script>
 

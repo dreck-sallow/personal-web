@@ -8,6 +8,7 @@
 		// Set the theme when
 		document.firstElementChild?.setAttribute('data-theme', theme);
 		document.querySelector('#theme-toggle')?.setAttribute('data-label', theme);
+		localStorage.setItem("theme", theme);
 	};
 
 	const onClickToggle = () => {
@@ -16,6 +17,8 @@
 	};
 
 	onMount(() => {
+		applyTheme(localStorage.getItem("theme") as ThemeType);
+
 		window
 			.matchMedia('(prefers-color-schema: dark)')
 			.addEventListener('change', ({ matches: isDark }) => {
@@ -75,6 +78,7 @@
 		block-size: var(--btn-toggle-size);
 		cursor: pointer;
 		touch-action: manipulation;
+		color: var(--text);
 	}
 
 	/*[aria-label='dark'] #theme-toggle__expand__cutout path {

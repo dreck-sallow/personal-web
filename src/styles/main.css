@@ -1,11 +1,17 @@
 :root {
   --bg: #f3f0ed;
-  /* --bg-secondary: #faf9f8; */
   --text: #2e2e2e;
   --text-muted: #5e5e5e;
   --accent: #a78674;
   --border: #ddd7d3;
-  /* --code-bg: #eae7e3; */
+
+  --theme-bg: #f3f0ed;
+  --theme-text: #2e2e2e;
+  --theme-text-muted: #5e5e5e;
+  --theme-accent: #a78674;
+  --theme-border-color: #ddd7d3;
+
+  --theme-hover: red;
 }
 
 body {
@@ -19,3 +25,23 @@ body {
   font-weight: 800;
   font-style: normal;
 }
+
+
+[data-theme="dark"] {
+  --bg: #1E201E;
+  /* --bg-secondary: #faf9f8; */
+  --text: #ECDFCC;
+  --text-muted: #697565;
+  --accent: #a78674;
+  --border: #3C3D37;
+}
+
+
+.icon {
+  --icon-size: 24px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: currentColor;
+}
+
+.icon--sm {}
