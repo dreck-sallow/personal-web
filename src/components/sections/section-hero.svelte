@@ -50,7 +50,7 @@
 	}
 
 	.hero-section__over-title {
-		font-family: "Inter", sans-serif;
+		font-family: 'Inter', sans-serif;
 		display: block;
 		margin-bottom: 4px;
 	}
@@ -78,5 +78,16 @@
 		flex-direction: row;
 		align-items: center;
 		gap: 1em;
+	}
+
+	@media (max-width: 48rem) {
+		.hero-section {
+			grid-template-columns: 1fr;
+			row-gap: 4rem;
+		}
+
+		.hero-section__image {
+			display: none;
+		}
 	}
 </style>

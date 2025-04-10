@@ -30,7 +30,7 @@
 	onMount(() => {
 		// TODO: add focus for paths like: /blog
 		// console.log('window.location.hash: ', window.location.hash);
-		onClickSelect("");
+		onClickSelect('');
 		window.addEventListener('hashchange', () => {
 			onClickSelect(window.location.hash);
 		});
@@ -68,6 +68,7 @@
 	}
 
 	.nav-bar__links {
+		background: var(--bg);
 		border: 1px solid var(--border);
 		border-radius: 1000px;
 		padding-inline: 0.5em;
@@ -77,6 +78,7 @@
 		align-items: center;
 		gap: 0.5rem;
 		box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
+		z-index: 10;
 		/*box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);*/
 	}
 
