@@ -8,11 +8,11 @@
 	<div class="hero-section__text-content">
 		<span class="hero-section__over-title"> 👋 Hey there, </span>
 		<h1 class="hero-section__title text-inter-800">I'm Dikson Aranda</h1>
-		<p class="hero-section__description">
+		<Text type="text-sm" className="hero-section__description">
 			Welcome to my personal website. I'm Dikson Aranda (Dreck Sallow), a passionate web developer
 			with 2 year of work experience creating software to gring a better experience for the users.
 			Currently focused in Rust programming language and learning sometimes Haskell :)
-		</p>
+		</Text>
 
 		<div class="hero-section__info">
 			<div class="hero-section__actions">
@@ -50,19 +50,19 @@
 	}
 
 	.hero-section__over-title {
+		font-family: "Inter", sans-serif;
 		display: block;
 		margin-bottom: 4px;
 	}
 
 	.hero-section__title {
 		font-size: 3rem;
-		/*font-weight: 600;*/
 		line-height: 3.25rem;
-		margin-bottom: 1.25rem;
+		margin-bottom: 0.75rem;
 	}
 
-	.hero-section__description {
-		max-width: calc(var(--text-size) - 3rem);
+	:global(.hero-section__description) {
+		max-width: 450px;
 	}
 
 	.hero-section__image {
@@ -70,7 +70,7 @@
 	}
 
 	.hero-section__info {
-		margin-top: 1.25rem;
+		margin-top: 1.5rem;
 	}
 
 	.hero-section__actions {

@@ -10,6 +10,7 @@
 		| 'text-xs';
 
 	export let type: Text = 'text';
+	export let { className } = { className: undefined as string | undefined };
 
 	$: tag = (() => {
 		const tags: Record<Text, string> = {
@@ -19,7 +20,7 @@
 			'subtitle-1': 'h4',
 			'subtitle-2': 'h5',
 			text: 'p',
-			'text-sm': 'span',
+			'text-sm': 'p',
 			'text-xs': 'span'
 		};
 
@@ -27,7 +28,7 @@
 	})();
 </script>
 
-<svelte:element this={tag} class={['typography', type]}> <slot/> </svelte:element>
+<svelte:element this={tag} class={['typography', type, className]}> <slot /> </svelte:element>
 
 <style>
 	.typography {
