@@ -15,7 +15,7 @@
 <style>
 	.job-box {
 		position: relative;
-		padding-block-end: 1rem;
+		padding-block-end: 1.5rem;
 		padding-block-start: 0;
 		padding-inline-end: 1rem;
 		padding-inline-start: 2rem;

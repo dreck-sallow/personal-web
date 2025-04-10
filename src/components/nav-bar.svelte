@@ -65,6 +65,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		z-index: 100;
 	}
 
 	.nav-bar__links {
@@ -78,7 +79,6 @@
 		align-items: center;
 		gap: 0.5rem;
 		box-shadow: 0 3px 10px rgb(0, 0, 0, 0.2);
-		z-index: 10;
 		/*box-shadow: 0px 2px 3px -1px rgba(0,0,0,0.1), 0px 1px 0px 0px rgba(25,28,33,0.02), 0px 0px 0px 1px rgba(25,28,33,0.08);*/
 	}
 
