@@ -3,6 +3,7 @@
 	import NavBar from '../components/nav-bar.svelte';
 	import SectionHero from '../components/sections/section-hero.svelte';
 	import Experience from '../components/sections/experience.svelte';
+	import Projects from '../components/sections/projects.svelte';
 </script>
 
 <main class="home-page">
@@ -10,6 +11,7 @@
 
 	<SectionHero />
 	<Experience />
+	<Projects />
 </main>
 
 <style>

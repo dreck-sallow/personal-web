@@ -1,11 +1,13 @@
 :root {
   --bg: #f3f0ed;
+  --bg-accent: #dedacf;
   --text: #2e2e2e;
   --text-muted: #5e5e5e;
   --accent: #a78674;
   --border: #ddd7d3;
 
   --theme-bg: #f3f0ed;
+  --theme-bg-accent: #dedacf;
   --theme-text: #2e2e2e;
   --theme-text-muted: #5e5e5e;
   --theme-accent: #a78674;
@@ -50,3 +52,10 @@ body {
 }
 
 .icon--sm {}
+
+
+@media (prefers-reduced-motion: no-preference) {
+  :root {
+    scroll-behavior: smooth;
+  }
+}
