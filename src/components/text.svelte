@@ -86,5 +86,6 @@
 		--text-size: 0.75rem;
 		--text-height: calc(1 / 0.75);
 		--text-weight: light;
+		display: block;
 	}
 </style>
