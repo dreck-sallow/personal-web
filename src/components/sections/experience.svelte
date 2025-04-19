@@ -11,7 +11,7 @@
 
 <section id="experience" class="home-page__section experience-section">
 	<div class="experience-section__block">
-		<Text type="title-3" className="block-title">Experience</Text>
+		<Text type="title-2" className="block-title">Experience</Text>
 
 		<div class="experience-section__timeline" role="list">
 			<JobBox title="Full Stack Developer" date="Arisale (Jun 2024 - Dic 2024)">
@@ -59,7 +59,7 @@
 
 	<div class="experience-section__skills">
 		<div class="experience-section__block">
-			<Text type="title-3" className="block-title">Skills</Text>
+			<Text type="title-2" className="block-title">Skills</Text>
 			<div class="experience-section__skill">
 				{#each skills as skill}
 					<Tag label={skill} />
@@ -68,7 +68,7 @@
 		</div>
 
 		<div class="experience-section__block experience-section__languages">
-			<Text type="title-3" className="block-title">Languages</Text>
+			<Text type="title-2" className="block-title">Languages</Text>
 			<div class="experience-section__skill">
 				<Tag label="English - B2" />
 				<Tag label="Spanish - Native" />
@@ -76,7 +76,7 @@
 		</div>
 
 		<div class="experience-section__block experience-section__education">
-			<Text type="title-3" className="block-title">Education</Text>
+			<Text type="title-2" className="block-title">Education</Text>
 			<Text type="text-xs">
 				I completed Soy Henry's Bootcamp, where I gained skills in full-stack web development within
 				the JavaScript ecosystem (frontend and backend).
@@ -86,6 +86,7 @@
 				<br />
 				<a
 					class="experience-section__education-link"
+					style="margin-top: 4px; display: block;"
 					href="https://certificates.soyhenry.com/cert?id=251d5f3a-678e-4dc1-85d4-b23df68894e6"
 					target="_blank"
 				>
@@ -105,16 +106,15 @@
 	}
 
 	.experience-section__block :global(.block-title) {
-		font-weight: 700;
+		font-weight: 800;
 		margin-bottom: 2rem;
-		text-decoration: underline;
 	}
 
 	.experience-section__education :global(.block-title),
 	.experience-section__education :global(.block-title) {
-		font-weight: 700;
+		font-weight: 800;
 		margin-bottom: 1rem;
-		text-decoration: underline;
+		/*text-decoration: underline;*/
 	}
 
 	.experience-section__education-link {

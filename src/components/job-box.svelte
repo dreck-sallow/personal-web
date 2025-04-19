@@ -19,21 +19,38 @@
 		padding-block-start: 0;
 		padding-inline-end: 1rem;
 		padding-inline-start: 2rem;
+	}
 
-		border-left: 1px solid var(--border);
+	.job-box {
+		--decorator-width: 0.5rem;
+		--decorator-top: 0.70rem;
 	}
 
 	.job-box::before {
-		--decorator-width: 0.5rem;
 		content: '';
-		background-color: var(--border);
-		width: var(--decorator-width);
+		display: block;
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		width: 1px;
+		transform: translateX(-1px);
+		height: calc(100% - var(--decorator-top));
+
+		background-color: var(--bg-accent);
+	}
+
+	.job-box::after {
+		content: '';
+		margin-top: var(--decorator-top);
 		aspect-ratio: 1;
 		border-radius: 1000px;
 		position: absolute;
-		transform: translateX(calc(-1 * var(--decorator-width) / 2));
 		top: 0;
 		left: 0;
+
+		background-color: var(--bg-accent);
+		width: var(--decorator-width);
+		transform: translateX(calc(-1 * var(--decorator-width) / 2));
 	}
 
 	.job-box :global(.job-box__title) {

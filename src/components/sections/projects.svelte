@@ -5,7 +5,44 @@
 	import Text from '../text.svelte';
 	import { onMount } from 'svelte';
 
-	const totalCards = 3;
+	const projects = [
+		{
+			title: 'Quipp',
+			github: 'https://github.com/DreckSallow/qa-web',
+			website: 'https://qa-web.vercel.app/',
+			img: 'https://github.com/dreck-sallow/personal-web/blob/main/src/assets/quipp-image.png?raw=true',
+			alt: 'Quipp project image',
+			description:
+				'🌐 A community-driven platform for interactive discussions, ideal for live streams and Q&A sessions.'
+		},
+		{
+			title: 'Melody',
+			img: 'https://github.com/DreckSallow/melody/raw/main/melody-image.png',
+			github: 'https://github.com/DreckSallow/melody',
+			alt: 'Melody project image',
+			description:
+				'🎧 A terminal-based music player (TUI) with keyboard navigation, designed for efficiency and minimalism.'
+		},
+		{
+			title: 'Flix',
+			img: 'https://github.com/dreck-sallow/personal-web/raw/refs/heads/main/src/assets/flix-markdown.webp',
+			github: 'https://github.com/DreckSallow/flix',
+			website: 'https://flixdev.netlify.app/',
+			alt: 'Flix project image',
+			description:
+				'🖥️ An open-source desktop app that integrates Anki decks with note-taking for enhanced study sessions.'
+		},
+		{
+			title: 'Flow',
+			img: 'https://github.com/dreck-sallow/personal-web/raw/refs/heads/main/src/assets/flix-markdown.webp',
+			github: 'https://github.com/DreckSallow/flow',
+			alt: 'Flow project image',
+			description:
+				'✅ A CLI task manager for streamlined project organization and workflow optimization.'
+		}
+	];
+
+	const totalCards = projects.length;
 	let offset = 3;
 
 	let projectList: HTMLDivElement | null = null;
@@ -71,37 +108,19 @@
 		</header>
 		<div class="projects-section__list-content" bind:this={projectListContent}>
 			<div class="projects-section__list" role="list" bind:this={projectList}>
-				<ProjectCard
-					imgUrl="https://github.com/dreck-sallow/personal-web/blob/main/src/assets/quipp-image.png?raw=true"
-					imgAlt="Quipp web page"
-					title="Quipp"
-				>
-					<Text type="text-xs" className="project-card__description-content">
-						🌐 A community-driven platform for interactive discussions, ideal for live streams and
-						Q&A sessions.
-					</Text>
-				</ProjectCard>
-				<ProjectCard
-					imgUrl="https://github.com/DreckSallow/melody/raw/main/melody-image.png"
-					imgAlt="Melody project"
-					title="Melody tui"
-				>
-					<Text type="text-xs" className="project-card__description-content">
-						🎧 A terminal-based music player (TUI) with keyboard navigation, designed for efficiency
-						and minimalism.
-					</Text>
-				</ProjectCard>
-
-				<ProjectCard
-					imgUrl="https://github.com/dreck-sallow/personal-web/raw/refs/heads/main/src/assets/flix-markdown.webp"
-					imgAlt="Flix desktop"
-					title="Flix"
-				>
-					<Text type="text-xs" className="project-card__description-content">
-						🖥️ An open-source desktop app that integrates Anki decks with note-taking for enhanced
-						study sessions.
-					</Text>
-				</ProjectCard>
+				{#each projects as project}
+					<ProjectCard
+						imgUrl={project.img}
+						imgAlt={project.alt}
+						title={project.title}
+						repoLink={project.github}
+						webLink={project.website}
+					>
+						<Text type="text-xs" className="project-card__description-content">
+							{@html project.description}
+						</Text>
+					</ProjectCard>
+				{/each}
 			</div>
 		</div>
 	</div>
@@ -147,7 +166,8 @@
 	}
 
 	.projects-section__list-content {
-		max-width: calc(300px * 3 + (3 -1 * 1rem));
+		/*max-width: calc(300px * 3 + (3 -1 * 1rem)); */
+		max-width: 950px;
 		overflow: hidden;
 	}
 

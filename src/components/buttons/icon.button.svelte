@@ -19,7 +19,7 @@
 
 <style>
 	.icon-btn {
-		--btn-bg: var(--bg);
+		--btn-bg: transparent;
 		--btn-text: var(--text);
 		--btn-padding: 0;
 		--btn-padding: 0;
@@ -32,6 +32,8 @@
 		align-items: center;
 		justify-content: center;
 		flex-direction: row;
+
+		width: min-content;
 
 		background-color: var(--btn-bg);
 		color: var(--btn-text);

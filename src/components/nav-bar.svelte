@@ -30,7 +30,7 @@
 	onMount(() => {
 		// TODO: add focus for paths like: /blog
 		// console.log('window.location.hash: ', window.location.hash);
-		onClickSelect('');
+		onClickSelect(window.location.hash);
 		window.addEventListener('hashchange', () => {
 			onClickSelect(window.location.hash);
 		});
@@ -96,7 +96,7 @@
 
 	.nav-bar__link--selected,
 	.nav-bar__link:hover {
-		background-color: var(--border);
+		background-color: var(--bg-accent);
 	}
 
 	.nav-bar__theme {
