@@ -1,1 +1,0 @@
-# Person website using astro :)
