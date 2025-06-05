@@ -1,14 +1,20 @@
 <script lang="ts">
-	import { INTERNAL_LINKS } from '$lib';
+	import { type InternalLink, INTERNAL_LINKS } from '$lib';
 	import ThemeButton from './theme-button.svelte';
+
+	let selected = INTERNAL_LINKS[0].key;
+
+	const onSelect = (link: InternalLink) => {
+		selected = link.key;
+	};
 </script>
 
 <nav class="nav-bar flex-row">
 	<span class="nav-bar__logo app-text-regular">Dreck</span>
 	<ul class="nav-bar__links flex-row">
 		{#each INTERNAL_LINKS as link}
-			<li class="nav-bar__link-wrapper">
-				<a class="nav-bar__link" href={link.href}>{link.label}</a>
+			<li class="nav-bar__link-wrapper" class:selected={link.key == selected}>
+				<a on:click={() => onSelect(link)} class="nav-bar__link" href={link.href}>{link.label}</a>
 			</li>
 		{/each}
 	</ul>
@@ -38,19 +44,34 @@
 		border-radius: 1000px;
 
 		padding-inline: 0.5rem;
-		padding-block: 0.9rem;
+		padding-block: 0.4rem;
 
 		font-size: 1rem;
 		background-color: hsla(var(--th-color-on-bg), 1);
+	}
+
+	.nav-bar__link-wrapper {
+		border-radius: 1000px;
+	}
+
+	.nav-bar__link-wrapper.selected {
+		background-color: hsla(var(--th-color-bg), 1);
+	}
+
+	.nav-bar__link-wrapper:hover:not(.selected) {
+		background-color: hsla(var(--th-color-bg), 0.7);
 	}
 
 	.nav-bar__link {
 		border-radius: 100px;
 		padding: 0.5rem 1rem;
 		text-decoration: none;
+		display: block;
 	}
 
-	.nav-bar__link:hover {
-		background-color: hsla(var(--th-color-bg), 1);
+	@media (prefers-reduced-motion: no-preference) {
+		.nav-bar__link-wrapper {
+			transition: background-color 200ms ease;
+		}
 	}
 </style>
