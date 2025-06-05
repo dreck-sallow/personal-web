@@ -1,0 +1,52 @@
+.typography {
+  --font-family: initial;
+  --font-weight: initial;
+  --font-style: initial;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight);
+  font-style: var(--font-style);
+}
+
+/* Normal text */
+/* .app-text { */
+/* font-family: var(--th-text-font); */
+/* font-weight: var(--font-weight); */
+/* font-style: var(--font-style); */
+/* } */
+
+.app-text-regular {
+  font-family: var(--th-text-font);
+  font-weight: 400;
+  font-style: normal;
+}
+
+.app-text-light {
+  font-family: var(--th-text-font);
+  font-weight: 300;
+  font-style: normal;
+}
+
+.app-text-thin {
+  font-family: var(--th-text-font);
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Headings */
+/* .app-heading-text { */
+/* font-family: var(--th-heading-font); */
+/* font-weight: var(--font-weight); */
+/* font-style: var(--font-style); */
+/* } */
+
+.app-heading-text-bold {
+  font-family: var(--th-heading-font);
+  font-weight: 700;
+  font-style: normal;
+}
+
+.app-heading-text-black {
+  font-family: var(--th-heading-font);
+  font-weight: 900;
+  font-style: normal;
+}
