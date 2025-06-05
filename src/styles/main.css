@@ -6,13 +6,13 @@
   --th-color-bg: 110, 21%, 95%;
   --th-color-on-bg: 0, 0%, 100%;
   --th-color-title: 80, 21%, 8%;
+  --th-color-text: 90, 10%, 25%;
   --th-color-accent-text: 93, 44%, 36%;
 
   --th-spacing-xs: 0.5rem;
   --th-spacing-sm: 0.75rem;
   --th-spacing-normal: 1rem;
   --th-spacing-large: 1.250rem;
-
 
   --th-heading-font: "Raleway", sans-serif;
   --th-text-font: "Lato", sans-serif;
