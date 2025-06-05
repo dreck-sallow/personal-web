@@ -24,4 +24,17 @@ body {
   font-family: var(--th-text-font);
   font-weight: 400;
   font-style: normal;
+
+}
+
+html {
+  scroll-behavior: smooth;
+
+}
+
+.icon {
+  --icon-size: 1rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: currentColor;
 }

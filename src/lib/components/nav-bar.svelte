@@ -16,7 +16,7 @@
 </script>
 
 <nav class="nav-bar flex-row">
-	<span class="nav-bar__logo app-text-regular">Dreck</span>
+	<span class="nav-bar__logo app-text-regular">{"< Dreck />"}</span>
 	<ul class="nav-bar__links flex-row">
 		{#each INTERNAL_LINKS as link}
 			<li class="nav-bar__link-wrapper" class:selected={link.href == selected}>
