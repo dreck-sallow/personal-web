@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { getThemeFromStorage, type Theme } from '$lib/logic/theme';
 	import { onMount } from 'svelte';
+	import { fade } from 'svelte/transition';
 
-	let theme: Theme = getThemeFromDocument();
+	let theme: Theme = 'light';
 
 	function getThemeFromDocument(): Theme {
 		const _theme = (document.firstElementChild as HTMLElement).dataset['theme'] as
@@ -38,6 +39,7 @@
 >
 	{#if theme == 'light'}
 		<svg
+			transition:fade
 			xmlns="http://www.w3.org/2000/svg"
 			fill="currentColor"
 			viewBox="0 0 24 24"

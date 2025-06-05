@@ -1,19 +1,25 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { type InternalLink, INTERNAL_LINKS } from '$lib';
 	import ThemeButton from './theme-button.svelte';
 
-	let selected = INTERNAL_LINKS[0].key;
+	let selected = INTERNAL_LINKS[0].href;
 
 	const onSelect = (link: InternalLink) => {
-		selected = link.key;
+		selected = link.href;
 	};
+
+	onMount(() => {
+		const path = window.location.hash;
+		selected = path;
+	});
 </script>
 
 <nav class="nav-bar flex-row">
 	<span class="nav-bar__logo app-text-regular">Dreck</span>
 	<ul class="nav-bar__links flex-row">
 		{#each INTERNAL_LINKS as link}
-			<li class="nav-bar__link-wrapper" class:selected={link.key == selected}>
+			<li class="nav-bar__link-wrapper" class:selected={link.href == selected}>
 				<a on:click={() => onSelect(link)} class="nav-bar__link" href={link.href}>{link.label}</a>
 			</li>
 		{/each}

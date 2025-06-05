@@ -7,7 +7,7 @@ export interface InternalLink {
 export const INTERNAL_LINKS: InternalLink[] = [
   {
     key: "about",
-    href: "#",
+    href: "",
     label: "About me"
   },
   {
