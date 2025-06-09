@@ -1,7 +1,7 @@
 <script>
 	import '../styles/main.css';
 	import NavBar from '$lib/components/nav-bar.svelte';
-	import { SectionExperience } from '$lib/components/sections';
+	import { SectionExperience, SectionProjects } from '$lib/components/sections';
 </script>
 
 <NavBar />
@@ -25,8 +25,8 @@
 			alt="Dikson profile avatar"
 		/>
 	</section>
-	<!--JOBS/EXPERIENCE SECTION : Accordeon -->
 	<SectionExperience />
+	<SectionProjects />
 </main>
 
 <style>
