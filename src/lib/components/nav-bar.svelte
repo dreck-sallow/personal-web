@@ -16,7 +16,7 @@
 </script>
 
 <nav class="nav-bar flex-row">
-	<span class="nav-bar__logo app-text-regular">{"< Dreck />"}</span>
+	<span class="nav-bar__logo app-text-regular">{'< Dreck />'}</span>
 	<ul class="nav-bar__links flex-row">
 		{#each INTERNAL_LINKS as link}
 			<li class="nav-bar__link-wrapper" class:selected={link.href == selected}>
@@ -32,6 +32,8 @@
 		width: 100%;
 		height: 70px;
 		position: sticky;
+		top: 0;
+		z-index: 100;
 
 		justify-content: space-between;
 		align-items: center;
@@ -54,6 +56,7 @@
 
 		font-size: 1rem;
 		background-color: hsla(var(--th-color-on-bg), 1);
+		border: 1px solid hsla(var(--th-color-accent-text), 0.3);
 	}
 
 	.nav-bar__link-wrapper {

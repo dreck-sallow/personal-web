@@ -8,7 +8,7 @@ export const INTERNAL_LINKS: InternalLink[] = [
   {
     key: "about",
     href: "",
-    label: "About me"
+    label: "About"
   },
   {
     key: "experience",
