@@ -39,7 +39,7 @@
 <style>
 	.section-experience {
 		width: inherit;
-		/* height: calc(100vh - 70px - (var(--th-spacing-xs) * 2)); */
+		padding-top: 70px;
 		justify-content: center;
 		gap: 2rem;
 		align-items: center;
@@ -47,6 +47,7 @@
 
 	.section-experience__header {
 		text-align: center;
+		margin-bottom: 1rem;
 	}
 
 	.section-experience__title {

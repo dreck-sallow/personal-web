@@ -36,7 +36,7 @@
 	.experience-card {
 		gap: 0.5rem;
 		position: relative;
-		max-width: 38rem;
+		max-width: 45rem;
 		border: 1px solid hsla(var(--th-color-accent-text), 0.5);
 		border-radius: 1.5rem;
 		padding-inline: 2rem;
