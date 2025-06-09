@@ -51,7 +51,7 @@
 	}
 
 	.section-experience__title {
-		font-size: 2.5rem;
+		font-size: 3rem;
 		color: hsla(var(--th-color-title), 1);
 	}
 

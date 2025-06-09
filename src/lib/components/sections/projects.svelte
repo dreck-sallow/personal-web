@@ -14,7 +14,7 @@
 
 <style>
 	.section-projects {
-		margin-top: 10rem;
+		margin-top: 5rem;
 		padding-top: 70px;
 		width: inherit;
 		justify-content: center;
@@ -28,7 +28,7 @@
 	}
 
 	.section-projects__title {
-		font-size: 2.5rem;
+		font-size: 3rem;
 		color: hsla(var(--th-color-title), 1);
 	}
 

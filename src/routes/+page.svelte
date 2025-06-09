@@ -1,7 +1,7 @@
 <script>
 	import '../styles/main.css';
 	import NavBar from '$lib/components/nav-bar.svelte';
-	import { SectionExperience, SectionProjects } from '$lib/components/sections';
+	import { SectionExperience, SectionProjects, SectionSkills } from '$lib/components/sections';
 </script>
 
 <NavBar />
@@ -27,6 +27,7 @@
 	</section>
 	<SectionExperience />
 	<SectionProjects />
+	<SectionSkills />
 </main>
 
 <style>
