@@ -21,6 +21,11 @@ export const INTERNAL_LINKS: InternalLink[] = [
     label: "Projects"
   },
   {
+    key: "skills",
+    href: "#skills",
+    label: "Skills"
+  },
+  {
     key: "blog",
     href: "/blog",
     label: "Blog"
