@@ -1,6 +1,6 @@
 <script>
 	import { INTERNAL_LINKS } from '$lib';
-	import { SocialIcon } from './icons';
+	import { MailIcon, SocialIcon } from './icons';
 </script>
 
 <footer class="footer flex-col">
@@ -51,12 +51,19 @@
 						Linkedin
 					</a>
 				</li>
+
+				<li>
+					<MailIcon />
+					<a href="mailto:arandadikson@gmail.com" class="footer__social-link app-text-regular">
+						Email
+					</a>
+				</li>
 			</ul>
 		</div>
 	</section>
 
 	<div class="footer__extras flex-center">
-		<span class="footer__copyright">
+		<span class="footer__copyright app-text-regular">
 			&copy; {new Date().getFullYear()} Dikson Aranda. All rights reserved.
 		</span>
 	</div>
@@ -86,7 +93,7 @@
 
 	.footer__summary-header .footer__description {
 		color: var(--text-color);
-		font-size: 1.05rem;
+		font-size: 1rem;
 
 		max-width: 25rem;
 		margin-top: 0.5rem;
@@ -104,9 +111,11 @@
 	}
 
 	.footer__links {
-		display: grid;
-		grid-template-columns: 12rem 12rem;
-		gap: 0.5rem;
+		display: flex;
+		flex-direction: row;
+		gap: 1.5rem;
+
+		flex-wrap: wrap;
 	}
 
 	.footer__links .footer__link {
@@ -116,11 +125,15 @@
 	.footer__social li {
 		display: flex;
 		align-items: center;
-		gap: 0.25rem;
+		gap: 0.35rem;
 	}
 
 	.footer__extras {
 		margin-top: 0.5rem;
 		margin-bottom: 1.5rem;
+	}
+
+	.footer__copyright {
+		color: var(--text-color);
 	}
 </style>
