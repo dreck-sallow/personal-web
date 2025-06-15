@@ -95,7 +95,7 @@
 
 	.section-skills__groups {
 		display: grid;
-		grid-template-columns: repeat(3, 21rem);
+		grid-template-columns: repeat(3, minmax(18rem, 22rem));
 		gap: 2rem;
 	}
 
@@ -126,5 +126,17 @@
 		background-color: hsla(var(--th-color-accent-text), 0.3);
 		padding-inline: 0.6rem;
 		padding-block: 0.2rem;
+	}
+
+	@media (width <= 40rem) {
+		.section-skills__groups {
+			grid-template-columns: minmax(18rem, 24rem);
+		}
+	}
+
+	@media (width <= 64rem) and (width > 40rem) {
+		.section-skills__groups {
+			grid-template-columns: repeat(2, minmax(12rem, 22rem));
+		}
 	}
 </style>

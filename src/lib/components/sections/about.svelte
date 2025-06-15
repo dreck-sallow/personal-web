@@ -2,7 +2,7 @@
 	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
 </script>
 
-<section class={['section-about app-section flex-center', OBSERVED_SELECTOR]} data-location="/">
+<section class={['section-about', OBSERVED_SELECTOR]} data-location="/">
 	<header class="section-about__header">
 		<h2 class="section-about__title app-heading-text-bold">
 			👋 Hey there, <br />
@@ -24,20 +24,25 @@
 <style>
 	.section-about {
 		width: inherit;
-		height: calc(100vh - 70px - (var(--th-spacing-xs) * 2));
+		min-height: calc(100vh - 70px - (var(--th-spacing-xs) * 2));
 		gap: 2rem;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.section-about__header {
 		max-width: 35rem;
 	}
 
-	.section-about__title {
+	.section-about__header .section-about__title {
 		font-size: 3rem;
 		color: hsla(var(--th-color-title), 1);
 	}
 
-	.section-about__title-highlight {
+	.section-about__header .section-about__title-highlight {
 		display: inline-block;
 		padding: 0.2rem 1.5rem;
 		border-radius: 1000px;
@@ -50,10 +55,33 @@
 		border-radius: 50px;
 	}
 
-	.section-about__description {
+	.section-about__header .section-about__description {
 		margin-block-start: 2rem;
 		font-size: 1.2rem;
-		/* FIXME: change to color-text */
 		color: hsla(var(--th-color-title), 1);
+	}
+
+	@media (width <= 40rem) {
+		.section-about__header .section-about__title {
+			font-size: 2.5rem;
+		}
+
+		.section-about__header .section-about__description {
+			font-size: 1rem;
+		}
+	}
+
+	@media (width <= 48rem) {
+		.section-about {
+			flex-direction: column;
+		}
+
+		.section-about__header .section-about__title {
+			text-align: center;
+		}
+
+		.section-about__avatar {
+			width: 90%;
+		}
 	}
 </style>
