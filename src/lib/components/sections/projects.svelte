@@ -21,7 +21,9 @@
 	.section-projects {
 		margin-top: 5rem;
 		padding-top: 70px;
+
 		width: inherit;
+
 		justify-content: center;
 		gap: 2rem;
 		align-items: center;
@@ -33,12 +35,12 @@
 	}
 
 	.section-projects__title {
-		font-size: 3rem;
 		color: hsla(var(--th-color-title), 1);
+		font-size: 3rem;
 	}
 
 	.section-projects__summary {
-		font-size: 1rem;
 		color: hsla(var(--th-color-text), 0.85);
+		font-size: 1rem;
 	}
 </style>

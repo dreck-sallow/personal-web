@@ -54,8 +54,8 @@
 <style>
 	.projects-grid {
 		display: grid;
-		grid-template-columns: repeat(5, 12rem);
-		grid-auto-rows: repeat(4, 12rem);
+		/* grid-template-columns: repeat(5, 12rem);
+		grid-auto-rows: repeat(4, 12rem); */
 		gap: 1.5rem;
 	}
 
@@ -88,35 +88,55 @@
 		max-width: var(--max-description-width);
 	}
 
-	/* Apply grid styles for each item */
-	.project-card:nth-of-type(1) {
-		grid-row: 1 / 2;
-		grid-column: 1 / 4;
+	@media (width <= 40rem) {
+		.projects-grid {
+			grid-template-columns: 1fr;
+			grid-auto-rows: 1fr;
+		}
 	}
 
-	.project-card:nth-of-type(2) {
-		grid-row: 1 / 2;
-		grid-column: 4 / 6;
+	@media (width <= 64rem) {
+		.projects-grid {
+			grid-template-columns: repeat(2, minmax(12rem, 28rem));
+		}
 	}
 
-	.project-card:nth-of-type(3) {
-		grid-row: 2 / 3;
-		grid-column: 1 / 3;
-	}
+	@media (width > 64rem) {
+		.projects-grid {
+			grid-template-columns: repeat(5, minmax(12rem, 14rem));
+			grid-auto-rows: repeat(4, 12rem);
+		}
 
-	.project-card:nth-of-type(4) {
-		grid-row: 2 / 3;
-		grid-column: 3 / 6;
-	}
+		/* Apply grid styles for each item */
+		.project-card:nth-of-type(1) {
+			grid-row: 1 / 2;
+			grid-column: 1 / 4;
+		}
 
-	.project-card:is(:nth-of-type(1), :nth-of-type(4)) {
-		--max-description-width: 23rem;
-		--image-width: 100%;
-		--image-aspect-ratio: 16 / 9;
-	}
+		.project-card:nth-of-type(2) {
+			grid-row: 1 / 2;
+			grid-column: 4 / 6;
+		}
 
-	.project-card:is(:nth-of-type(2), :nth-of-type(3)) {
-		--image-width: 100%;
-		--image-height: 20rem;
+		.project-card:nth-of-type(3) {
+			grid-row: 2 / 3;
+			grid-column: 1 / 3;
+		}
+
+		.project-card:nth-of-type(4) {
+			grid-row: 2 / 3;
+			grid-column: 3 / 6;
+		}
+
+		.project-card:is(:nth-of-type(1), :nth-of-type(4)) {
+			--max-description-width: 23rem;
+			--image-width: 100%;
+			--image-aspect-ratio: 16 / 9;
+		}
+
+		.project-card:is(:nth-of-type(2), :nth-of-type(3)) {
+			--image-width: 100%;
+			--image-height: 20rem;
+		}
 	}
 </style>

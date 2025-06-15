@@ -40,4 +40,10 @@
 	:global(body) {
 		padding-inline: var(--th-spacing-large);
 	}
+
+	@media (width <= 40rem) {
+		:global(body) {
+			padding-inline: var(--th-spacing-sm);
+		}
+	}
 </style>
