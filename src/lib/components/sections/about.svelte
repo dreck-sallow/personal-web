@@ -1,4 +1,8 @@
-<section class="section-about app-section flex-center">
+<script lang="ts">
+	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
+</script>
+
+<section class={['section-about app-section flex-center', OBSERVED_SELECTOR]} data-location="/">
 	<header class="section-about__header">
 		<h2 class="section-about__title app-heading-text-bold">
 			👋 Hey there, <br />

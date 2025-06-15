@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
+
 	interface SkillGroup {
 		title: string;
 		tools: string[];
@@ -33,7 +35,7 @@
 	];
 </script>
 
-<section id="skills" class="section-skills flex-col">
+<section id="skills" class={['section-skills flex-col', OBSERVED_SELECTOR]} data-location="#skills">
 	<header class="section-skills__header">
 		<h2 class="section-skills__title app-heading-text-bold">Skills & Technologies</h2>
 		<p class="section-skills__summary app-text-regular">

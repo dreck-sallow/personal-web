@@ -1,8 +1,13 @@
 <script>
+	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
 	import ProjectsGrid from '../projects-grid.svelte';
 </script>
 
-<section id="projects" class="section-projects flex-col">
+<section
+	id="projects"
+	class={['section-projects flex-col', OBSERVED_SELECTOR]}
+	data-location="#projects"
+>
 	<header class="section-projects__header">
 		<h2 class="section-projects__title app-heading-text-bold">My projects</h2>
 		<p class="section-projects__summary app-text-regular">
