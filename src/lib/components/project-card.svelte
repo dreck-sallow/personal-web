@@ -43,7 +43,6 @@
 				>
 					<WorldIcon />
 					Web
-
 					<ArrowIcon />
 				</a>
 			{/if}
@@ -61,6 +60,10 @@
 		background-color: hsla(var(--th-color-on-bg), 1);
 		border-radius: 1rem;
 		padding: 2rem;
+
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
 	}
 
 	.project-card__image {
@@ -83,10 +86,10 @@
 	}
 
 	.project-card__links {
-		margin-top: 1rem;
+		margin-top: auto;
 		display: flex;
 		flex-direction: row;
-		gap: 1rem;
+		gap: 2rem;
 	}
 
 	.project-card__links :is(.project-card__github-link, .project-card__web-link) {

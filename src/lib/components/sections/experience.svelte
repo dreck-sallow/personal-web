@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
-	import ExperienceCard from '../experience-card.svelte';
+	// import ExperienceCard from '../experience-card.svelte';
+	import TimelineCard from '../timeline-card.svelte';
 </script>
 
 <section
@@ -15,49 +16,45 @@
 		</p>
 	</header>
 
-	<ul class="section-experience__list flex-col">
-		<ExperienceCard
-			tag="li"
-			position="FullStack developer"
-			company="Arisale"
-			date="Jun 2024 - Dic 2024"
-		>
-			I used Vue with Nuxt.js to create web projects and employed SASS for styling. I collaborated
-			with the backend team to add features and resolve issues using Nest.js.
-		</ExperienceCard>
+	<ul class="section-experience__timeline">
+		<TimelineCard tag="li" position="left" time="start">
+			<span slot="header">FullStack developer - Arisale</span>
+			<span slot="label">Nov 2023 - Mar 2023</span>
+			<p>
+				I used Vue with Nuxt.js to create web projects and employed SASS for styling. I collaborated
+				with the backend team to add features and resolve issues using Nest.js.
+			</p>
+		</TimelineCard>
 
-		<ExperienceCard
-			tag="li"
-			position="Frontend developer"
-			company="Liquid"
-			date="Nov 2023 - Mar 2023"
-		>
-			I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, and deployed them on
-			Google Cloud Platform (GCP). I worked closely with the design team to streamline workflows and
-			enhance user experience.
-		</ExperienceCard>
+		<TimelineCard tag="li" time="inside" position="right">
+			<span slot="header">Frontend developer - Liquid</span>
+			<span slot="label">Nov 2023 - Mar 2023</span>
+			<p>
+				I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, and deployed them on
+				Google Cloud Platform (GCP). I worked closely with the design team to streamline workflows
+				and enhance user experience.
+			</p>
+		</TimelineCard>
 
-		<ExperienceCard
-			tag="li"
-			position="Frontend Developer"
-			company="Kimche"
-			date="Jun 2022 - Aug 2022"
-		>
-			I implemented new features in web applications, focusing on data visualization through tables,
-			charts, and progress bars. I identified and fixed issues, improving functionality and user
-			experience. Technologies used: React, React Context, and Cube.js.
-		</ExperienceCard>
+		<TimelineCard tag="li" time="inside" position="left">
+			<span slot="header">Frontend Developer - Kimche</span>
+			<span slot="label">Jun 2022 - Aug 2022</span>
+			<p>
+				I implemented new features in web applications, focusing on data visualization through
+				tables, charts, and progress bars. I identified and fixed issues, improving functionality
+				and user experience. Technologies used: React, React Context, and Cube.js.
+			</p>
+		</TimelineCard>
 
-		<ExperienceCard
-			tag="li"
-			position="FullStack Developer (Education)"
-			company="SoyHenry"
-			date="Oct 2021 - Mar 2022"
-		>
-			I completed Soy Henry's Bootcamp, where I gained skills in full-stack web development within
-			the JavaScript ecosystem (frontend and backend). For the final project, we developed an online
-			tech store. Skills acquired: React, Redux, Node.js, PostgreSQL, HTML, CSS, Sequelize.
-		</ExperienceCard>
+		<TimelineCard tag="li" time="end" position="right">
+			<span slot="header">FullStack Developer (Education) - SoyHenry</span>
+			<span slot="label">Oct 2021 - Mar 2022</span>
+			<p>
+				I completed Soy Henry's Bootcamp, where I gained skills in full-stack web development within
+				the JavaScript ecosystem (frontend and backend). For the final project, we developed an
+				online tech store. Skills acquired: React, Redux, Node.js, PostgreSQL, HTML, CSS, Sequelize.
+			</p>
+		</TimelineCard>
 	</ul>
 </section>
 
@@ -85,7 +82,11 @@
 		color: hsla(var(--th-color-text), 0.85);
 	}
 
-	.section-experience__list {
-		gap: 1.5rem;
+	.section-experience__timeline {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+
+		width: 80%;
 	}
 </style>
