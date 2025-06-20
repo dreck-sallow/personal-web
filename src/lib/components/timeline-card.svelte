@@ -1,12 +1,12 @@
 <script lang="ts">
 	export let tag: 'li' | 'div' = 'li';
-	export let position: 'left' | 'right' = 'right';
-	export let time: 'start' | 'end' | 'inside' = 'inside';
+	export let direction: 'left' | 'right' = 'right';
+	export let position: 'start' | 'end' | 'center' = 'center';
 </script>
 
 <svelte:element
 	this={tag}
-	class={['timeline-item', `timeline-item--${position}`, `timeline-item--${time}`]}
+	class={['timeline-item', `timeline-item--${direction}`, `timeline-item--${position}`]}
 >
 	<div class="timeline-item__indicator">
 		<div class="timeline-item__label">
@@ -122,7 +122,7 @@
 
 	.timeline-item--start::before {
 		top: 50%;
-		height: calc(50%  + var(--between-space));
+		height: calc(50% + var(--between-space));
 	}
 
 	.timeline-item--end::before {
@@ -130,17 +130,19 @@
 		height: calc(50%);
 	}
 
-	.timeline-item--inside::before {
+	.timeline-item--center::before {
 		top: 0;
 		height: calc(100% + var(--between-space));
 	}
 
 	.timeline-item--left .timeline-card {
 		margin-right: 1.5rem;
+		margin-left: auto;
 	}
 
 	.timeline-item--right .timeline-card {
 		margin-left: 1.5rem;
+		margin-right: auto;
 	}
 
 	.timeline-item--left .timeline-item__indicator {
