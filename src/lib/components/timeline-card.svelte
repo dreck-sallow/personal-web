@@ -102,22 +102,72 @@
 	/*  Add timeline styles for right */
 
 	/* DEFULT */
-	.timeline-item--right::before {
-		transform: translateX(-50%);
-		left: 0;
-	}
 
-	.timeline-item--left::before {
-		transform: translateX(50%);
-		right: 0;
-	}
+	.timeline-item {
+		--line-x-translate: 0;
 
-	.timeline-item--right {
-		margin-left: 50%;
+		--line-right: initial;
+		--line-left: initial;
+
+		--margin-right: initial;
+		--margin-left: initial;
+
+		--card-margin-right: auto;
+		--card-margin-left: auto;
+
+		--indicator-direction: row;
+		--indicator-x-translate: 0;
 	}
 
 	.timeline-item--left {
-		margin-right: 50%;
+		--line-x-translate: 50%;
+
+		--line-right: 0;
+
+		--margin-right: 50%;
+
+		--card-margin-right: 1.5rem;
+		--card-margin-left: auto;
+
+		--indicator-direction: row-reverse;
+		--indicator-x-translate: calc(100% - (1.25rem / 2));
+	}
+
+	.timeline-item--right {
+		--line-x-translate: -50%;
+
+		--line-left: 0;
+
+		--margin-left: 50%;
+
+		--card-margin-right: auto;
+		--card-margin-left: 1.5rem;
+
+		--indicator-direction: row;
+		--indicator-x-translate: calc(-100% + (1.25rem / 2));
+	}
+
+	.timeline-item::before {
+		transform: translateX(var(--line-x-translate));
+		left: var(--line-left);
+		right: var(--line-right);
+	}
+
+	.timeline-item .timeline-item__indicator {
+		--direction: var(--indicator-direction);
+		right: var(--line-right);
+		left: var(--line-left);
+		transform: translateX(var(--indicator-x-translate)) translateY(-50%);
+	}
+
+	.timeline-item .timeline-card {
+		margin-right: var(--card-margin-right);
+		margin-left: var(--card-margin-left);
+	}
+
+	.timeline-item {
+		margin-left: var(--margin-left);
+		margin-right: var(--margin-right);
 	}
 
 	.timeline-item--start::before {
@@ -135,24 +185,21 @@
 		height: calc(100% + var(--between-space));
 	}
 
-	.timeline-item--left .timeline-card {
-		margin-right: 1.5rem;
-		margin-left: auto;
-	}
+	@media (width <= 48rem) {
+		.timeline-item--left,
+		.timeline-item--right {
+			--line-x-translate: -50%;
 
-	.timeline-item--right .timeline-card {
-		margin-left: 1.5rem;
-		margin-right: auto;
-	}
+			--line-left: 0;
 
-	.timeline-item--left .timeline-item__indicator {
-		--direction: row-reverse;
-		right: 0;
-		transform: translateX(calc(100% - (1.25rem / 2))) translateY(-50%);
-	}
+			--margin-left: none;
+			--margin-right: none;
 
-	.timeline-item--right .timeline-item__indicator {
-		left: 0;
-		transform: translateX(calc(-100% + (1.25rem / 2))) translateY(-50%);
+			--card-margin-right: 0;
+			--card-margin-left: 1.5rem;
+
+			--indicator-direction: row;
+			--indicator-x-translate: calc(-100% + (1.25rem / 2));
+		}
 	}
 </style>
