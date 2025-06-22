@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { scale } from 'svelte/transition';
 	import type { InternalLink } from '$lib/links';
 	import { INTERNAL_LINKS } from '$lib/links';
 	import { getNavigationContext } from '$lib/pages/principal';
@@ -28,7 +29,11 @@
 
 	{#if open}
 		<!-- svelte-ignore a11y_no_noninteractive_element_interactions -->
-		<ul class="navigation-menu__links flex-col" onkeydown={() => {}}>
+		<ul
+			transition:scale={{ duration: 240 }}
+			class="navigation-menu__links flex-col"
+			onkeydown={() => {}}
+		>
 			{#each INTERNAL_LINKS as link}
 				<li>
 					<a
@@ -78,7 +83,7 @@
 
 		position: absolute;
 		bottom: -0.2rem;
-		left: 0;
+		right: 0;
 
 		transform: translateY(100%);
 
@@ -87,8 +92,8 @@
 
 	.navigation-menu__links .navigation-menu__link {
 		border-radius: 1000px;
-		padding-inline: 1rem;
-		padding-block: 0.5rem;
+		padding-inline: 1.25rem;
+		padding-block: 0.4rem;
 	}
 
 	.navigation-menu__links .navigation-menu__link:is(.selected) {

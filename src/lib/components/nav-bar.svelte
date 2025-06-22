@@ -113,5 +113,9 @@
 		.navbar__links {
 			display: none;
 		}
+
+		.navbar__btn-actions {
+			flex-direction: row-reverse;
+		}
 	}
 </style>
