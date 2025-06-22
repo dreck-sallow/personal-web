@@ -192,7 +192,7 @@
 
 			--line-left: 0;
 
-			--margin-left: none;
+			--margin-left: 10px;
 			--margin-right: none;
 
 			--card-margin-right: 0;
@@ -200,6 +200,11 @@
 
 			--indicator-direction: row;
 			--indicator-x-translate: calc(-100% + (1.25rem / 2));
+		}
+
+		.timeline-item__label {
+			width: max-content;
+			transform: rotate(-90deg) translateY(210%);
 		}
 	}
 </style>
