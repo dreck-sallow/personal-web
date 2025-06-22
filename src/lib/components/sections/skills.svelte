@@ -8,7 +8,7 @@
 
 	const SKILL_GROUPS: SkillGroup[] = [
 		{
-			title: 'Frontend development',
+			title: 'Frontend Development',
 			tools: [
 				'React',
 				'Next',
@@ -25,12 +25,31 @@
 		},
 		{
 			title: 'Backend Development',
-			tools: ['Node.js', 'Express.js', 'PostgreSQL', 'MongoDB', 'GraphQL', 'REST APIs', 'Docker']
+			tools: [
+				'Node.js',
+				'Express.js',
+				'PostgreSQL',
+				'MongoDB',
+				'GraphQL',
+				'REST APIs',
+				'Docker',
+				'Rust',
+				'Axum'
+			]
 		},
 
 		{
-			title: 'Backend Development',
-			tools: ['Bash/Fish', 'Git', 'Linux', 'Docker', 'CI/CD', 'GitHub Actions', 'zellij']
+			title: 'Terminal & Tools',
+			tools: [
+				'Bash/Fish',
+				'Git',
+				'Linux',
+				'Docker',
+				'CI/CD',
+				'GitHub Actions',
+				'zellij',
+				'Helix editor'
+			]
 		}
 	];
 </script>
@@ -100,18 +119,21 @@
 	}
 
 	.skill-group {
-		border: 1px solid hsla(var(--th-color-accent-text), 0.4);
-		padding: 1.5rem;
-		border-radius: 0.5rem;
+		border-radius: 1.5rem;
+		padding-inline: 2.5rem;
+		padding-block: 2rem;
+		background-color: hsla(var(--th-color-on-bg), 1);
 	}
 
 	.skill-group__header {
 		color: hsla(var(--th-color-title), 1);
-		margin-block-end: 1rem;
+		margin-block-end: 1.5rem;
 	}
 
 	.skill-group__title {
-		font-size: 1.25rem;
+		font-size: 1.35rem;
+		text-align: center;
+		color: hsla(var(--th-color-accent-text), 1);
 	}
 
 	.skill-group__tools {
@@ -121,9 +143,11 @@
 	}
 
 	.skill-group__tool {
-		font-size: 0.75rem;
+		font-size: 0.8rem;
+		font-weight: semibold;
 		border-radius: 1000px;
-		background-color: hsla(var(--th-color-accent-text), 0.3);
+		color: hsla(var(--th-color-on-bg), 1);
+		background-color: hsla(var(--th-color-accent-text), 1);
 		padding-inline: 0.6rem;
 		padding-block: 0.2rem;
 	}
