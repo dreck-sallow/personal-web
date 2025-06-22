@@ -62,15 +62,15 @@
 		</p>
 	</header>
 
-	<div class="section-skills__groups">
+	<ul class="section-skills__groups">
 		{#each SKILL_GROUPS as group}
 			{@render SkillGroup(group)}
 		{/each}
-	</div>
+	</ul>
 </section>
 
 {#snippet SkillGroup(skillGroup: SkillGroup)}
-	<div class="skill-group">
+	<li class="skill-group">
 		<div class="skill-group__header">
 			<h4 class="skill-group__title app-heading-text-bold">
 				{skillGroup.title}
@@ -84,7 +84,7 @@
 				</li>
 			{/each}
 		</ul>
-	</div>
+	</li>
 {/snippet}
 
 <style>
@@ -114,7 +114,7 @@
 
 	.section-skills__groups {
 		display: grid;
-		grid-template-columns: repeat(3, minmax(18rem, 22rem));
+		grid-template-columns: repeat(3, minmax(18rem, 26rem));
 		gap: 2rem;
 	}
 
@@ -149,12 +149,13 @@
 		color: hsla(var(--th-color-on-bg), 1);
 		background-color: hsla(var(--th-color-accent-text), 1);
 		padding-inline: 0.6rem;
-		padding-block: 0.2rem;
+		padding-block: 0.4rem;
 	}
 
 	@media (width <= 40rem) {
 		.section-skills__groups {
-			grid-template-columns: minmax(18rem, 24rem);
+			grid-template-columns: minmax(18rem, 90%);
+			justify-content: center;
 		}
 	}
 
