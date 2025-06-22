@@ -7,7 +7,7 @@
 	import NavBar from '$lib/components/nav-bar.svelte';
 	import Footer from '$lib/components/footer.svelte';
 	import {
-		// ContactSection,
+		ContactSection,
 		AboutSection,
 		SectionExperience,
 		SectionProjects,
@@ -32,7 +32,7 @@
 	<SectionExperience />
 	<SectionProjects />
 	<SectionSkills />
-	<!-- <ContactSection /> -->
+	<ContactSection />
 	<Footer />
 </main>
 
