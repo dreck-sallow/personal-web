@@ -93,6 +93,10 @@
 		gap: 1rem;
 	}
 
+	.navbar__btn-actions :global(.theme-button) {
+		display: none;
+	}
+
 	@media (prefers-reduced-motion: no-preference) {
 		.navbar__link-wrapper {
 			transition: background-color 200ms ease;
@@ -100,6 +104,10 @@
 	}
 
 	@media (width <= 48rem) {
+		.navbar {
+			backdrop-filter: blur(2px);
+		}
+
 		.navbar__links {
 			gap: 0.5rem;
 		}

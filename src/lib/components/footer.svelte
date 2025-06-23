@@ -1,139 +1,178 @@
 <script>
 	import { INTERNAL_LINKS } from '$lib';
-	import { MailIcon, SocialIcon } from './icons';
+	import { SocialIcon } from './icons';
 </script>
 
-<footer class="footer flex-col">
-	<section class="footer__summary flex-row">
-		<div class="footer__summary-header">
-			<h2 class="footer__title app-heading-text-bold">Dreck Sallow</h2>
-			<p class="footer__description app-text-regular">
+<footer class="hero-footer flex-row">
+	<div class="hero-footer__left flex-row">
+		<div class="hero-footer__brand">
+			<h2 class="hero-footer__title app-heading-text-bold">Dreck Sallow</h2>
+			<p class="hero-footer__summary">
 				Full-stack developer passionate about clean code and meaningful products.
 			</p>
 		</div>
 
-		<div class="footer__social footer__section">
-			<h4 class="footer__section-title app-heading-text-bold">Navigation</h4>
-
-			<ul class="footer__links">
+		<div class="hero-footer__text">
+			<ul class="hero-footer__links flex-row">
 				{#each INTERNAL_LINKS as link}
 					<li>
-						<a href={link.href} class="footer__link app-text-regular">
+						<a href={link.href} class="hero-footer__link app-text-regular">
 							{link.label}
 						</a>
 					</li>
 				{/each}
 			</ul>
+
+			<span class="hero-footer__copy">
+				&copy; {new Date().getFullYear()} Dikson Aranda. All right reserved.
+			</span>
 		</div>
+	</div>
 
-		<div class="footer__navigation footer__section">
-			<h4 class="footer__section-title app-heading-text-bold">Connect</h4>
-
-			<ul class="footer__social">
-				<li>
+	<div class="hero-footer__right flex-col">
+		<ul class="hero-footer__socials flex-row">
+			<li>
+				<a
+					target="_blank"
+					href="https://github.com/DreckSallow"
+					class="hero-footer_social-link app-text-regular"
+				>
 					<SocialIcon name="github" />
-					<a
-						target="_blank"
-						href="https://github.com/DreckSallow"
-						class="footer__social-link app-text-regular"
-					>
-						Gtihub
-					</a>
-				</li>
+				</a>
+			</li>
 
-				<li>
+			<li>
+				<a
+					target="_blank"
+					href="https://www.linkedin.com/in/dikson-aranda/"
+					class="hero-footer_social-link app-text-regular"
+				>
 					<SocialIcon name="linkedin" />
-					<a
-						target="_blank"
-						href="https://www.linkedin.com/in/dikson-aranda/"
-						class="footer__social-link app-text-regular"
-					>
-						Linkedin
-					</a>
-				</li>
+				</a>
+			</li>
+		</ul>
 
-				<li>
-					<MailIcon />
-					<a href="mailto:arandadikson@gmail.com" class="footer__social-link app-text-regular">
-						Email
-					</a>
-				</li>
-			</ul>
-		</div>
-	</section>
-
-	<div class="footer__extras flex-center">
-		<span class="footer__copyright app-text-regular">
-			&copy; {new Date().getFullYear()} Dikson Aranda. All rights reserved.
+		<span class="hero-footer__mail">Mail: arandadikson@gmail.com </span>
+		<span class="hero-footer__copy">
+			&copy; {new Date().getFullYear()} Dikson Aranda. All right reserved.
 		</span>
 	</div>
 </footer>
 
 <style>
-	.footer {
-		--text-color: hsla(var(--th-color-text), 1);
-
+	.hero-footer {
+		border-top: 1px solid hsla(var(--th-color-text), 0.4);
+		justify-content: space-between;
+		padding-inline: 2rem;
+		padding-block: 4rem;
 		gap: 1rem;
-		margin-top: 4rem;
 	}
 
-	.footer__summary {
-		--border-color: hsla(var(--th-color-text), 0.3);
-		border-top: 1px solid var(--border-color);
-		border-bottom: 1px solid var(--border-color);
-		padding-block: 2rem;
-
-		justify-content: space-around;
-	}
-
-	.footer__summary-header .footer__title {
-		font-size: 1.75rem;
-		color: var(--text-color);
-	}
-
-	.footer__summary-header .footer__description {
-		color: var(--text-color);
-		font-size: 1rem;
-
-		max-width: 25rem;
-		margin-top: 0.5rem;
-	}
-
-	.footer__section {
-		display: flex;
-		flex-direction: column;
-		gap: 0.75rem;
-	}
-
-	.footer__section .footer__section-title {
-		font-size: 1.1rem;
-		color: hsla(var(--th-color-heading-text), 0.8);
-	}
-
-	.footer__links {
-		display: flex;
-		flex-direction: row;
-		gap: 1.5rem;
-
-		flex-wrap: wrap;
-	}
-
-	.footer__links .footer__link {
-		color: var(--text-color);
-	}
-
-	.footer__social li {
-		display: flex;
+	.hero-footer__left {
+		gap: 1rem;
 		align-items: center;
-		gap: 0.35rem;
 	}
 
-	.footer__extras {
-		margin-top: 0.5rem;
-		margin-bottom: 1.5rem;
+	.hero-footer__brand {
+		border-right: 1px solid hsla(var(--th-color-text), 0.5);
 	}
 
-	.footer__copyright {
-		color: var(--text-color);
+	.hero-footer__text {
+		padding-left: 0.75rem;
+	}
+
+	.hero-footer__brand .hero-footer__title {
+		color: hsla(var(--th-color-text), 0.8);
+		font-size: 1.5rem;
+	}
+
+	.hero-footer__brand .hero-footer__summary {
+		font-size: 0.75rem;
+		color: hsla(var(--th-color-text), 0.75);
+		max-width: 20rem;
+		margin-top: 0.25rem;
+	}
+
+	.hero-footer__links {
+		gap: 1.25rem;
+		text-transform: uppercase;
+	}
+
+	.hero-footer__links .hero-footer__link {
+		font-size: 0.85rem;
+		color: hsla(var(--th-color-text), 0.75);
+		font-weight: 600;
+	}
+
+	.hero-footer__copy {
+		color: hsla(var(--th-color-text), 0.75);
+		display: block;
+		margin-top: 0.25rem;
+		font-size: 0.85rem;
+	}
+
+	/*  RIGHT SIDE  */
+	.hero-footer__right {
+		gap: 0.5rem;
+	}
+
+	.hero-footer__right .hero-footer__socials {
+		gap: 1rem;
+	}
+
+	.hero-footer__right .hero-footer__mail {
+		color: hsla(var(--th-color-text), 0.75);
+		font-size: 0.85rem;
+	}
+
+	.hero-footer_social-link :global(.icon) {
+		--icon-size: 1.5rem;
+		color: hsla(var(--th-color-text), 0.75);
+	}
+
+	@media (width <= 48rem) {
+		.hero-footer {
+			flex-direction: column;
+			gap: 2rem;
+		}
+
+		.hero-footer__left {
+			flex-direction: column;
+			gap: 2rem;
+			align-items: start;
+		}
+
+		.hero-footer__left .hero-footer__brand {
+			border: 0;
+		}
+
+		.hero-footer__left .hero-footer__text {
+			padding-left: 0;
+		}
+
+		.hero-footer__left .hero-footer__copy {
+			display: none;
+		}
+
+		.hero-footer__right .hero-footer__copy {
+			display: block;
+			margin-top: 2rem;
+		}
+	}
+
+	@media (width > 48rem) {
+		.hero-footer {
+			justify-content: space-between;
+			padding-inline: 8rem;
+			padding-block: 6rem;
+		}
+
+		.hero-footer__left .hero-footer__copy {
+			display: block;
+		}
+
+		.hero-footer__right .hero-footer__copy {
+			display: none;
+		}
 	}
 </style>

@@ -37,7 +37,7 @@
 </main>
 
 <style>
-	:global(body) {
+	:global(.navbar, body > .section) {
 		padding-inline: var(--th-spacing-large);
 	}
 
