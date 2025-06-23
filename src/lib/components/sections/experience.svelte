@@ -20,8 +20,8 @@
 		<ExperienceCard
 			tag="li"
 			place="left-start"
-			title="FullStack developer - Arisale"
-			date="Nov 2023 - Mar 2023"
+			title="FullStack developer | Arisale"
+			date="Jun 2024 - Dic 2024"
 		>
 			I used Vue with Nuxt.js to create web projects and employed SASS for styling. I collaborated
 			with the backend team to add features and resolve issues using Nest.js.
@@ -30,7 +30,7 @@
 		<ExperienceCard
 			tag="li"
 			place="right-center"
-			title="Frontend developer - Liquid"
+			title="Frontend developer | Liquid"
 			date="Nov 2023 - Mar 2023"
 		>
 			I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, and deployed them on
@@ -41,7 +41,7 @@
 		<ExperienceCard
 			tag="li"
 			place="left-center"
-			title="Frontend Developer - Kimche"
+			title="Frontend Developer | Kimche"
 			date="Jun 2022 - Aug 2022"
 		>
 			I implemented new features in web applications, focusing on data visualization through tables,
@@ -52,7 +52,7 @@
 		<ExperienceCard
 			tag="li"
 			place="right-end"
-			title="FullStack Developer (Education) - SoyHenry"
+			title="FullStack Developer (Education) | SoyHenry"
 			date="Oct 2021 - Mar 2022"
 		>
 			I completed Soy Henry's Bootcamp, where I gained skills in full-stack web development within
