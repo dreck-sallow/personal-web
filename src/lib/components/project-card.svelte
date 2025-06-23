@@ -1,7 +1,9 @@
 <script lang="ts">
+	import type { EnhancedImgAttributes } from '@sveltejs/enhanced-img';
 	import { ArrowIcon, SocialIcon, WorldIcon } from './icons';
 
-	export let imgUrl: string;
+	export let src: EnhancedImgAttributes['src'];
+	export let isGif: boolean = false;
 	export let imgAlt: string;
 	export let name: string;
 
@@ -10,8 +12,11 @@
 </script>
 
 <div class="project-card">
-	<img class="project-card__image" src={imgUrl} alt={imgAlt} />
-
+	{#if isGif}
+		<img class="project-card__image" src={src as string} alt={imgAlt} />
+	{:else}
+		<enhanced:img class="project-card__image" {src} alt={imgAlt} />
+	{/if}
 	<div class="project-card__content">
 		<h4 class="project-card__title app-heading-text-bold">{name}</h4>
 		<p class="project-card__desc app-text-regular">

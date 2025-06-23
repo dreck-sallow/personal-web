@@ -1,10 +1,14 @@
 <script>
 	import ProjectCard from './project-card.svelte';
+	import QaImage from '../../assets/images/qa-screenshot.webp?enhanced';
+	import FlixImage from '../../assets/images/flix-app.png?enhanced';
+	import MelodyImage from '../../assets/images/melody-cli.webp?enhanced';
+	import FlowImage from '../../assets/images/flow-cli.webp';
 </script>
 
 <div class="projects-grid">
 	<ProjectCard
-		imgUrl="https://diksoncode.com/_astro/quipp-image.D24gA1-j_Z24EWD9.webp"
+		src={QaImage}
 		imgAlt="Quipp app"
 		name="Quipp"
 		githubLink="https://github.com/DreckSallow/qa-web"
@@ -15,7 +19,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		imgUrl="https://diksoncode.com/_astro/flix-markdown.CEWhFR_V_gGm5X.webp"
+		src={FlixImage}
 		imgAlt="Flix desktop"
 		name="Flix"
 		githubLink="https://github.com/DreckSallow/flix"
@@ -26,7 +30,7 @@
 	</ProjectCard>
 
 	<ProjectCard
-		imgUrl="https://diksoncode.com/_astro/prj-melody.B6fr3rcL_oqHa4.webp"
+		src={MelodyImage}
 		imgAlt="Melody program"
 		name="Melody"
 		githubLink="https://github.com/DreckSallow/melody"
@@ -36,10 +40,11 @@
 	</ProjectCard>
 
 	<ProjectCard
-		imgUrl="https://diksoncode.com/_astro/flow-img.Cnk6rY7c_ZhgoMW.webp"
+		src={FlowImage}
 		imgAlt="Flow cli"
 		name="Flow"
 		githubLink="https://github.com/DreckSallow/flow"
+		isGif
 	>
 		✅ A CLI task manager for streamlined project organization and workflow optimization.
 	</ProjectCard>
@@ -55,6 +60,11 @@
 		.projects-grid {
 			grid-template-columns: 1fr;
 			grid-auto-rows: 1fr;
+		}
+
+		.projects-grid :global(.project-card) {
+			--image-width: 100%;
+			--image-aspect-ratio: 16 / 9;
 		}
 	}
 
