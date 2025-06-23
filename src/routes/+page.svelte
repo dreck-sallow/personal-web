@@ -25,6 +25,22 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Dreck Sallow | Web Developer</title>
+	<meta
+		name="description"
+		content="Portfolio of Dreck (Dikson Aranda), full-stack developer specializing in frontent with vue & react."
+	/>
+
+	<meta property="og:title" content="Dreck (Dikson) — Full-Stack Developer" />
+	<meta
+		property="og:description"
+		content="Projects, blog posts, and contact info for Dreck, software developer."
+	/>
+	<!-- <meta property="og:image" content="image preview url" /> -->
+	<meta property="og:type" content="website" />
+</svelte:head>
+
 <NavBar />
 
 <main class="web-page">
