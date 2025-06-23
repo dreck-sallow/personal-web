@@ -58,7 +58,7 @@
 	.section-about__header .section-about__description {
 		margin-block-start: 2rem;
 		font-size: 1.2rem;
-		color: hsla(var(--th-color-title), 1);
+		color: hsla(var(--th-color-title), 0.9);
 	}
 
 	@media (width <= 40rem) {

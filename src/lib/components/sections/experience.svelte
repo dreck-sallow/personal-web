@@ -93,4 +93,11 @@
 
 		width: 80%;
 	}
+
+	@media (width <=48rem) {
+		.section-experience__timeline {
+			/*  DEFINE OTHER SIZE FOR LABEL WIDTH  */
+			transform: translateX(20px);
+		}
+	}
 </style>
