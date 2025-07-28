@@ -5,13 +5,16 @@ export interface PageContextParams {
   /**
    * set the default navigation location
    */
-  navigationLocation: NavigationLocation
+  navigationLocation: NavigationLocation,
+  lang: "en" | "es"
 }
 
 export function setPageContext(params: PageContextParams) {
   setNavigationContext(createNavigationStore(params.navigationLocation));
+  setContext(LANG_CONTEXT_KEY, params.lang);
 };
 
+export const LANG_CONTEXT_KEY = "LANG";
 export const NAVIGATION_CONTEXT_KEY = "NAVIGATION";
 
 export function setNavigationContext(store: NavigationStore) {
@@ -22,3 +25,7 @@ export function setNavigationContext(store: NavigationStore) {
 export function getNavigationContext() {
   return getContext<NavigationStore>(NAVIGATION_CONTEXT_KEY);
 };
+
+export function getLangContext() {
+  return getContext<"en" | "es">(LANG_CONTEXT_KEY);
+}

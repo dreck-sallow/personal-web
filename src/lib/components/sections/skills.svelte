@@ -1,5 +1,10 @@
 <script lang="ts">
 	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const lang = getLangContext();
+	const t = for_lang(lang);
 
 	interface SkillGroup {
 		title: string;
@@ -8,7 +13,7 @@
 
 	const SKILL_GROUPS: SkillGroup[] = [
 		{
-			title: 'Frontend Development',
+			title: t.skills['frontend.title'],
 			tools: [
 				'React',
 				'Next',
@@ -24,13 +29,11 @@
 			]
 		},
 		{
-			title: 'Backend Development',
+			title: t.skills['backend.title'],
 			tools: [
 				'Node.js',
-				'Express.js',
 				'PostgreSQL',
 				'MongoDB',
-				'GraphQL',
 				'REST APIs',
 				'Docker',
 				'Rust',
@@ -39,13 +42,11 @@
 		},
 
 		{
-			title: 'Terminal & Tools',
+			title: t.skills['terminal.title'],
 			tools: [
 				'Bash/Fish',
 				'Git',
 				'Linux',
-				'Docker',
-				'CI/CD',
 				'GitHub Actions',
 				'zellij',
 				'Helix editor'
@@ -56,9 +57,9 @@
 
 <section id="skills" class={['section-skills flex-col', OBSERVED_SELECTOR]} data-location="#skills">
 	<header class="section-skills__header">
-		<h2 class="section-skills__title app-heading-text-bold">Skills & Technologies</h2>
+		<h2 class="section-skills__title app-heading-text-bold">{t.skills.title}</h2>
 		<p class="section-skills__summary app-text-regular">
-			A comprehensive overview of my technical expertise across different domains
+			{t.skills.summary}
 		</p>
 	</header>
 

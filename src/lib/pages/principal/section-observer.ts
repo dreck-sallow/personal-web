@@ -11,6 +11,7 @@ export function startSectionsObserver() {
       const location = (entry.target as HTMLElement).dataset["location"];
 
       if (entry.isIntersecting && location) {
+        console.log("set location: ", location);
         setLocation(navigationStore, { location });
       }
     });

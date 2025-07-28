@@ -1,7 +1,11 @@
 <script lang="ts">
 	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
 	import ExperienceCard from '../experience-card.svelte';
-	// import TimelineCard from '../timeline-card.svelte';
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const lang = getLangContext();
+	const t = for_lang(lang);
 </script>
 
 <section
@@ -10,9 +14,9 @@
 	data-location="#experience"
 >
 	<header class="section-experience__header">
-		<h2 class="section-experience__title app-heading-text-bold">Experience</h2>
+		<h2 class="section-experience__title app-heading-text-bold">{t.experience.title}</h2>
 		<p class="section-experience__summary app-text-regular">
-			Show my experience so far, in some companies and my education
+			{t.experience.summary}
 		</p>
 	</header>
 
@@ -20,44 +24,37 @@
 		<ExperienceCard
 			tag="li"
 			place="left-start"
-			title="FullStack developer | Arisale"
-			date="Jun 2024 - Dic 2024"
+			title={t.experience.arisale.role}
+			date={t.experience.arisale.date}
 		>
-			I used Vue with Nuxt.js to create web projects and employed SASS for styling. I collaborated
-			with the backend team to add features and resolve issues using Nest.js.
+			{t.experience.arisale.desc_html}
 		</ExperienceCard>
 
 		<ExperienceCard
 			tag="li"
 			place="right-center"
-			title="Frontend developer | Liquid"
-			date="Nov 2023 - Mar 2023"
+			title={t.experience.liquid.role}
+			date={t.experience.liquid.date}
 		>
-			I developed web applications using Vue, Nuxt, Pinia, and Tailwind CSS, and deployed them on
-			Google Cloud Platform (GCP). I worked closely with the design team to streamline workflows and
-			enhance user experience.
+			{t.experience.liquid.desc_html}
 		</ExperienceCard>
 
 		<ExperienceCard
 			tag="li"
 			place="left-center"
-			title="Frontend Developer | Kimche"
-			date="Jun 2022 - Aug 2022"
+			title={t.experience.kimche.role}
+			date={t.experience.kimche.date}
 		>
-			I implemented new features in web applications, focusing on data visualization through tables,
-			charts, and progress bars. I identified and fixed issues, improving functionality and user
-			experience. Technologies used: React, React Context, and Cube.js.
+			{t.experience.kimche.desc_html}
 		</ExperienceCard>
 
 		<ExperienceCard
 			tag="li"
 			place="right-end"
-			title="FullStack Developer (Education) | SoyHenry"
-			date="Oct 2021 - Mar 2022"
+			title={t.experience.henry.role}
+			date={t.experience.henry.date}
 		>
-			I completed Soy Henry's Bootcamp, where I gained skills in full-stack web development within
-			the JavaScript ecosystem (frontend and backend). For the final project, we developed an online
-			tech store. Skills acquired: React, Redux, Node.js, PostgreSQL, HTML, CSS, Sequelize.
+			{t.experience.henry.desc_html}
 		</ExperienceCard>
 	</ul>
 </section>

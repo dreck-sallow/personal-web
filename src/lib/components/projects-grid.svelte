@@ -4,6 +4,12 @@
 	import FlixImage from '../../assets/images/flix-app.png?enhanced';
 	import MelodyImage from '../../assets/images/melody-cli.webp?enhanced';
 	import FlowImage from '../../assets/images/flow-cli.webp';
+
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const lang = getLangContext();
+	const t = for_lang(lang);
 </script>
 
 <div class="projects-grid">
@@ -14,8 +20,7 @@
 		githubLink="https://github.com/DreckSallow/qa-web"
 		websiteLink="https://qa-web.vercel.app/"
 	>
-		🌐 A community-driven platform for interactive discussions, ideal for live streams and Q&A
-		sessions.
+		{t.projects.quipp.description}
 	</ProjectCard>
 
 	<ProjectCard
@@ -25,8 +30,7 @@
 		githubLink="https://github.com/DreckSallow/flix"
 		websiteLink="https://flixdev.netlify.app/"
 	>
-		🖥️ An open-source desktop app that integrates Anki decks with note-taking for enhanced study
-		sessions.
+		{t.projects.flix.description}
 	</ProjectCard>
 
 	<ProjectCard
@@ -35,8 +39,7 @@
 		name="Melody"
 		githubLink="https://github.com/DreckSallow/melody"
 	>
-		🎧 A terminal-based music player (TUI) with keyboard navigation, designed for efficiency and
-		minimalism.
+		{t.projects.melody.description}
 	</ProjectCard>
 
 	<ProjectCard
@@ -46,7 +49,7 @@
 		githubLink="https://github.com/DreckSallow/flow"
 		isGif
 	>
-		✅ A CLI task manager for streamlined project organization and workflow optimization.
+		{t.projects.flow.description}
 	</ProjectCard>
 </div>
 

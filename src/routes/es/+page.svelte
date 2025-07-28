@@ -1,5 +1,5 @@
 <script>
-	import '../styles/main.css';
+	import '../../styles/main.css';
 	import { onMount } from 'svelte';
 	import { get_page_links } from '$lib';
 	import { setPageContext } from '$lib/pages/principal';
@@ -16,9 +16,9 @@
 
 	setPageContext({
 		navigationLocation: {
-			location: get_page_links("en")[0].href
+			location: get_page_links("es")[0].href
 		},
-		lang: 'en'
+		lang: 'es'
 	});
 
 	onMount(() => {
@@ -27,7 +27,7 @@
 </script>
 
 <svelte:head>
-	<title>Dreck Sallow | Web Developer</title>
+	<title>Dreck Sallow | Desarrollador web</title>
 	<meta
 		name="description"
 		content="Portfolio of Dreck (Dikson Aranda), full-stack developer specializing in frontent with vue & react."
@@ -41,7 +41,7 @@
 	<meta property="og:type" content="website" />
 </svelte:head>
 
-<NavBar />
+<NavBar /> 
 
 <main class="web-page">
 	<AboutSection />

@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { scale } from 'svelte/transition';
 	import type { InternalLink } from '$lib/links';
-	import { INTERNAL_LINKS } from '$lib/links';
-	import { getNavigationContext } from '$lib/pages/principal';
+	import { get_page_links } from '$lib/links';
+	import { getLangContext, getNavigationContext } from '$lib/pages/principal';
 	import { isCurrent, setLocation } from '$lib/pages/principal/navigation.store';
 	import { MenuIcon } from './icons';
 
@@ -14,6 +14,8 @@
 		setLocation(navigationStore, { location: link.href });
 		open = false;
 	};
+
+	const INTERNAL_LINKS = get_page_links(getLangContext());
 </script>
 
 <div class="navigation-menu">

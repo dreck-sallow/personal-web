@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-	import { type InternalLink, INTERNAL_LINKS } from '$lib';
+	import { type InternalLink, get_page_links } from '$lib';
+	import { getLangContext } from '$lib/pages/principal';
 	import ThemeButton from './theme-button.svelte';
 	import { getNavigationContext } from '$lib/pages/principal';
 	import { isCurrent, setLocation } from '$lib/pages/principal/navigation.store';
@@ -16,6 +17,9 @@
 		setLocation(navigationStore, { location: window.location.hash });
 		return 5;
 	});
+
+	const INTERNAL_LINKS = get_page_links(getLangContext());
+	
 </script>
 
 <nav class="navbar flex-row">

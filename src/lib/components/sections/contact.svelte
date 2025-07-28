@@ -1,17 +1,25 @@
+<script lang="ts">
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const lang = getLangContext();
+	const t = for_lang(lang);
+</script>
+
 <section id="contact" class="contact-section">
 	<div class="contact-section__wrapper flex-col">
 		<h3 class="contact-section__title app-heading-text-bold">
-			Have a question, a project in mind, or just want to say hi?
+			{t['contact.title']}
 		</h3>
 		<a
 			class="contact-section__send app-text-regular"
 			href="mailto:arandadikson@gmail.com"
 			aria-label="Open mail for send a message"
 		>
-			Open mail
+			{t['contact.cta']}
 		</a>
 		<span class="contact-section__copy">
-			Or copy <span> arandadikson@gmail.com </span>
+			{t['contact.for_copy_email']} <span> arandadikson@gmail.com </span>
 		</span>
 	</div>
 </section>
@@ -24,7 +32,7 @@
 	}
 
 	.contact-section__wrapper {
-		background: linear-gradient(hsla(var(--th-color-text), 0.90), hsla(var(--th-color-text), 1));
+		background: linear-gradient(hsla(var(--th-color-text), 0.9), hsla(var(--th-color-text), 1));
 		color: white;
 
 		padding-inline: 2rem;
@@ -39,7 +47,7 @@
 	.contact-section__title {
 		font-size: 1.75rem;
 		margin-bottom: 2rem;
-		max-width: 100%;
+		max-width: 800px;
 		text-align: center;
 	}
 

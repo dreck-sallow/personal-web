@@ -1,6 +1,12 @@
 <script>
 	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
 	import ProjectsGrid from '../projects-grid.svelte';
+
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const lang = getLangContext();
+	const t = for_lang(lang);
 </script>
 
 <section
@@ -9,9 +15,9 @@
 	data-location="#projects"
 >
 	<header class="section-projects__header">
-		<h2 class="section-projects__title app-heading-text-bold">My projects</h2>
+		<h2 class="section-projects__title app-heading-text-bold">{t.projects.title}</h2>
 		<p class="section-projects__summary app-text-regular">
-			Show my experience so far, in some companies and my education
+			{t.projects.summary}
 		</p>
 	</header>
 	<ProjectsGrid />

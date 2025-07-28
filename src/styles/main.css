@@ -38,3 +38,12 @@ html {
   height: var(--icon-size);
   fill: currentColor;
 }
+
+[data-theme="dark"] {
+  --th-color-bg: 216, 18%, 16%;
+  --th-color-on-bg: 37, 38%, 80%;
+
+  --th-color-title: 38, 50%, 98%;
+  --th-color-text: 6, 11%, 53%;
+  --th-color-accent-text: 36, 11%, 53%;
+}

@@ -1,17 +1,21 @@
 <script lang="ts">
 	import { OBSERVED_SELECTOR } from '$lib/pages/principal/section-observer';
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const t = for_lang(getLangContext());
 </script>
 
-<section class={['section-about', OBSERVED_SELECTOR]} data-location="/">
+<section id="about" class={['section-about', OBSERVED_SELECTOR]} data-location="#about">
 	<header class="section-about__header">
 		<h2 class="section-about__title app-heading-text-bold">
-			👋 Hey there, <br />
-			<span class="section-about__title-highlight">I'm Dikson Aranda</span>
+			👋 {t['about.greeting']} <br />
+			<span class="section-about__title-highlight">{t['about.presentation']}</span>
 		</h2>
 		<p class="section-about__description app-text-regular">
-			Welcome to my personal website. I'm Dikson Aranda (Dreck Sallow), a passionate web developer
-			with 2 year of work experience creating software to gring a better experience for the users.
-			Currently focused in Rust programming language and learning sometimes Haskell :)
+			{t['about.primary_description']}
+			<br />
+			{t['about.secondary_description']}
 		</p>
 	</header>
 	<img
@@ -25,7 +29,7 @@
 	.section-about {
 		width: inherit;
 		min-height: calc(100vh - 70px - (var(--th-spacing-xs) * 2));
-		gap: 2rem;
+		gap: 4rem;
 
 		display: flex;
 		flex-direction: row;

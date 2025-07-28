@@ -1,14 +1,20 @@
 <script>
-	import { INTERNAL_LINKS } from '$lib';
+	// import { INTERNAL_LINKS } from '$lib';
+	import {  get_page_links } from '$lib';
 	import { SocialIcon } from './icons';
+	import { for_lang } from '$lib/langs';
+	import { getLangContext } from '$lib/pages/principal';
+
+	const t = for_lang(getLangContext());
+	const INTERNAL_LINKS = get_page_links(getLangContext());
 </script>
 
 <footer class="hero-footer flex-row">
 	<div class="hero-footer__left flex-row">
 		<div class="hero-footer__brand">
-			<h2 class="hero-footer__title app-heading-text-bold">Dreck Sallow</h2>
+			<h2 class="hero-footer__title app-heading-text-bold">{t['footer.brand']}</h2>
 			<p class="hero-footer__summary">
-				Full-stack developer passionate about clean code and meaningful products.
+				{t['footer.summary']}
 			</p>
 		</div>
 
@@ -24,7 +30,7 @@
 			</ul>
 
 			<span class="hero-footer__copy">
-				&copy; {new Date().getFullYear()} Dikson Aranda. All right reserved.
+				&copy; {new Date().getFullYear()} Dikson Aranda. {t['footer.copyright']}
 			</span>
 		</div>
 	</div>
@@ -52,9 +58,9 @@
 			</li>
 		</ul>
 
-		<span class="hero-footer__mail">Mail: arandadikson@gmail.com </span>
+		<span class="hero-footer__mail">{t['footer.mail_label']}: arandadikson@gmail.com </span>
 		<span class="hero-footer__copy">
-			&copy; {new Date().getFullYear()} Dikson Aranda. All right reserved.
+			&copy; {new Date().getFullYear()} Dikson Aranda. {t['footer.copyright']}
 		</span>
 	</div>
 </footer>
@@ -91,6 +97,7 @@
 		color: hsla(var(--th-color-text), 0.75);
 		max-width: 20rem;
 		margin-top: 0.25rem;
+		margin-right: 1rem;
 	}
 
 	.hero-footer__links {
