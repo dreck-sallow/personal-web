@@ -3,6 +3,7 @@
 	import { type InternalLink, get_page_links } from '$lib';
 	import { getLangContext } from '$lib/pages/principal';
 	import ThemeButton from './theme-button.svelte';
+	import LanguagePicker from './pickers/language.svelte';
 	import { getNavigationContext } from '$lib/pages/principal';
 	import { isCurrent, setLocation } from '$lib/pages/principal/navigation.store';
 	import NavigationMenu from './navigation-menu.svelte';
@@ -19,7 +20,6 @@
 	});
 
 	const INTERNAL_LINKS = get_page_links(getLangContext());
-	
 </script>
 
 <nav class="navbar flex-row">
@@ -35,6 +35,7 @@
 
 	<div class="navbar__btn-actions flex-row">
 		<NavigationMenu />
+		<LanguagePicker />
 		<ThemeButton />
 	</div>
 </nav>
@@ -98,7 +99,7 @@
 	}
 
 	.navbar__btn-actions :global(.theme-button) {
-		display: none;
+		/* display: none; */
 	}
 
 	@media (prefers-reduced-motion: no-preference) {

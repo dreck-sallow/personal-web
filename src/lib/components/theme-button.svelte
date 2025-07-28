@@ -1,7 +1,6 @@
 <script lang="ts">
 	import { getThemeFromStorage, type Theme } from '$lib/logic/theme';
 	import { onMount } from 'svelte';
-	import { fade } from 'svelte/transition';
 
 	let theme: Theme = 'light';
 
