@@ -34,9 +34,9 @@
 	</ul>
 
 	<div class="navbar__btn-actions flex-row">
-		<NavigationMenu />
 		<LanguagePicker />
 		<ThemeButton />
+		<NavigationMenu />
 	</div>
 </nav>
 
@@ -66,12 +66,15 @@
 		padding-block: 0.4rem;
 
 		background-color: hsla(var(--th-color-on-bg), 1);
-		border: 1px solid hsla(var(--th-color-accent-text), 0.3);
+		/*border: 1px solid hsla(var(--th-color-accent-text), 0.3); */
 		border-radius: 1000px;
 
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;
+		box-shadow:
+			0 1px 3px 0 rgb(0 0 0 / 0.1),
+			0 1px 2px -1px rgb(0 0 0 / 0.1);
 	}
 
 	.navbar__links .navbar__link-wrapper {
@@ -127,8 +130,8 @@
 			display: none;
 		}
 
-		.navbar__btn-actions {
+		/*.navbar__btn-actions {
 			flex-direction: row-reverse;
-		}
+		}*/
 	}
 </style>
