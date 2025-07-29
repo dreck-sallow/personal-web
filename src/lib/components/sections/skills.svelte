@@ -105,12 +105,12 @@
 
 	.section-skills__title {
 		font-size: 3rem;
-		color: hsla(var(--th-color-title), 1);
+		color: hsla(var(--theme-color-on-bg), 1);
 	}
 
 	.section-skills__summary {
 		font-size: 1rem;
-		color: hsla(var(--th-color-text), 0.85);
+		color: hsla(var(--theme-color-on-bg-soft), 0.9);
 	}
 
 	.section-skills__groups {
@@ -134,7 +134,7 @@
 	.skill-group__title {
 		font-size: 1.35rem;
 		text-align: center;
-		color: hsla(var(--th-color-accent-text), 1);
+		color: hsla(var(--theme-color-primary), 1);
 	}
 
 	.skill-group__tools {
@@ -147,9 +147,9 @@
 		font-size: 0.8rem;
 		font-weight: semibold;
 		border-radius: 1000px;
-		color: hsla(var(--th-color-on-bg), 1);
-		background-color: hsla(var(--th-color-accent-text), 1);
-		padding-inline: 0.6rem;
+		color: hsla(var(--theme-color-surface), 1);
+		background-color: hsla(var(--theme-color-primary), 0.95);
+		padding-inline: 1rem;
 		padding-block: 0.4rem;
 	}
 

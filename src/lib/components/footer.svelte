@@ -67,7 +67,7 @@
 
 <style>
 	.hero-footer {
-		border-top: 1px solid hsla(var(--th-color-text), 0.4);
+		border-top: 1px solid hsla(var(--theme-color-on-bg-soft), 0.4);
 		justify-content: space-between;
 		padding-inline: 2rem;
 		padding-block: 4rem;
@@ -80,7 +80,7 @@
 	}
 
 	.hero-footer__brand {
-		border-right: 1px solid hsla(var(--th-color-text), 0.5);
+		border-right: 1px solid hsla(var(--theme-color-on-bg-soft), 0.5);
 	}
 
 	.hero-footer__text {
@@ -88,13 +88,13 @@
 	}
 
 	.hero-footer__brand .hero-footer__title {
-		color: hsla(var(--th-color-text), 0.8);
+		color: hsla(var(--theme-color-on-bg), 0.85);
 		font-size: 1.5rem;
 	}
 
 	.hero-footer__brand .hero-footer__summary {
 		font-size: 0.75rem;
-		color: hsla(var(--th-color-text), 0.75);
+		color: hsla(var(--theme-color-on-bg), 0.75);
 		max-width: 20rem;
 		margin-top: 0.25rem;
 		margin-right: 1rem;
@@ -107,12 +107,12 @@
 
 	.hero-footer__links .hero-footer__link {
 		font-size: 0.85rem;
-		color: hsla(var(--th-color-text), 0.75);
+		color: hsla(var(--theme-color-on-bg), 0.75);
 		font-weight: 600;
 	}
 
 	.hero-footer__copy {
-		color: hsla(var(--th-color-text), 0.75);
+		color: hsla(var(--theme-color-on-bg), 0.75);
 		display: block;
 		margin-top: 0.25rem;
 		font-size: 0.85rem;
@@ -128,13 +128,13 @@
 	}
 
 	.hero-footer__right .hero-footer__mail {
-		color: hsla(var(--th-color-text), 0.75);
+		color: hsla(var(--theme-color-on-bg), 0.75);
 		font-size: 0.85rem;
 	}
 
 	.hero-footer_social-link :global(.icon) {
 		--icon-size: 1.5rem;
-		color: hsla(var(--th-color-text), 0.75);
+		color: hsla(var(--theme-color-on-bg), 0.75);
 	}
 
 	@media (width <= 48rem) {

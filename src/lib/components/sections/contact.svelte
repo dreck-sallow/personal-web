@@ -32,7 +32,7 @@
 	}
 
 	.contact-section__wrapper {
-		background: linear-gradient(hsla(var(--th-color-text), 0.9), hsla(var(--th-color-text), 1));
+		background: linear-gradient(hsla(var(--theme-color-on-bg), 0.9), hsla(var(--theme-color-on-bg-soft), 1));
 		color: white;
 
 		padding-inline: 2rem;

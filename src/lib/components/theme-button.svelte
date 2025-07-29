@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { getThemeFromStorage, type Theme } from '$lib/logic/theme';
+	import { getThemeFromStorage, saveThemeToStorage, type Theme } from '$lib/logic/theme';
 	import { onMount } from 'svelte';
 
 	let theme: Theme = 'light';
@@ -14,7 +14,7 @@
 	function applyTheme(_theme: Theme) {
 		document.firstElementChild?.setAttribute('data-theme', _theme);
 		document.querySelector('#theme-toggle')?.setAttribute('data-label', _theme);
-		localStorage.setItem('theme', _theme);
+		saveThemeToStorage(_theme);
 		theme = _theme;
 	}
 
@@ -67,7 +67,9 @@
 		inline-size: var(--size);
 		block-size: var(--size);
 		cursor: pointer;
-		box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+		box-shadow:
+			0 1px 3px 0 rgb(0 0 0 / 0.1),
+			0 1px 2px -1px rgb(0 0 0 / 0.1);
 	}
 
 	.theme-button {
@@ -75,12 +77,13 @@
 		aspect-ratio: 1;
 		border-radius: 1000px;
 
-		background-color: hsla(var(--th-color-on-bg), 1);
+		background-color: hsla(var(--theme-color-surface), 1);
 	}
 
 	.theme-button__icon-light,
 	.theme-button__icon-dark {
 		width: 1.5rem;
 		aspect-ratio: 1;
+		fill: hsla(var(--theme-color-on-surface), 1);
 	}
 </style>

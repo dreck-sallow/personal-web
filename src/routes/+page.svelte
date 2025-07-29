@@ -16,7 +16,7 @@
 
 	setPageContext({
 		navigationLocation: {
-			location: get_page_links("en")[0].href
+			location: get_page_links('en')[0].href
 		},
 		lang: 'en'
 	});
@@ -39,6 +39,14 @@
 		content="Projects, blog posts, and contact info for Dreck, software developer."
 	/>
 	<meta property="og:type" content="website" />
+
+	<script>
+		const theme = localStorage.getItem('user_theme');
+		if (theme == 'dark') {
+			document.firstElementChild?.setAttribute('data-theme', theme);
+			document.querySelector('#theme-toggle')?.setAttribute('data-label', theme);
+		}
+	</script>
 </svelte:head>
 
 <NavBar />

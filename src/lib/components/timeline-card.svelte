@@ -29,8 +29,9 @@
 
 <style>
 	.timeline-item {
-		--raw-color: var(--th-color-accent-text);
-		--color: hsla(var(--raw-color), 1);
+		--primary-color: var(--theme-color-primary);
+		--header-text-color: var(--theme-color-bg);
+		--content-text-color: var(--theme-color-on-bg-soft);
 
 		position: relative;
 	}
@@ -39,7 +40,7 @@
 		--between-space: 1rem;
 		content: '';
 		width: 2px;
-		background-color: hsla(var(--raw-color), 0.5);
+		background-color: hsla(var(--primary-color), 0.5);
 		position: absolute;
 	}
 
@@ -63,7 +64,7 @@
 		padding-inline: 1rem;
 		padding-block: 0.35rem;
 
-		background-color: hsla(var(--raw-color), 0.25);
+		background-color: hsla(var(--primary-color), 0.25);
 	}
 
 	.timeline-item__indicator .timeline-item__point {
@@ -72,15 +73,15 @@
 
 		border-radius: 1000px;
 
-		border: calc(1.25rem / 4) solid var(--color);
-		background-color: hsla(var(--th-color-bg), 1);
+		border: calc(1.25rem / 4) solid hsla(var(--primary-color), 1);
+		background-color: hsla(var(--theme-color-bg), 1);
 	}
 
 	.timeline-card {
 		border-radius: 0.5rem;
 		overflow: hidden;
 
-		border: 1px solid var(--color);
+		border: 1px solid hsla(var(--primary-color), 1);
 
 		max-width: 35rem;
 	}
@@ -91,9 +92,13 @@
 		padding-block: 0.75rem;
 	}
 
+	.timeline-card .timeline-card__content {
+		color: hsla(var(--content-text-color), 1);
+	}
+
 	.timeline-card .timeline-card__header {
-		background-color: var(--color);
-		color: hsla(var(--th-color-bg), 1);
+		background-color: hsla(var(--primary-color), 1);
+		color: hsla(var(--header-text-color), 1);
 
 		font-size: 1.1rem;
 		font-weight: 500;

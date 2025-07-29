@@ -62,7 +62,7 @@
 		--image-height: initial;
 		--image-aspect-ratio: initial;
 
-		background-color: hsla(var(--th-color-on-bg), 1);
+		background-color: hsla(var(--theme-color-surface), 1);
 		border-radius: 1rem;
 		padding: 2rem;
 
@@ -86,7 +86,7 @@
 	}
 
 	.project-card__content .project-card__desc {
-		color: hsla(var(--th-color-text), 0.9);
+		color: hsla(var(--theme-color-on-surface), 1);
 		max-width: var(--max-description-width);
 	}
 

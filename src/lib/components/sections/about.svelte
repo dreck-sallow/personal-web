@@ -43,15 +43,16 @@
 
 	.section-about__header .section-about__title {
 		font-size: 3rem;
-		color: hsla(var(--th-color-title), 1);
+		color: hsla(var(--theme-color-on-bg), 1);
 	}
 
 	.section-about__header .section-about__title-highlight {
 		display: inline-block;
 		padding: 0.2rem 1.5rem;
 		border-radius: 1000px;
-		color: hsla(var(--th-color-bg), 1);
-		background-color: hsla(var(--th-color-accent-text), 1);
+		color: hsla(var(--theme-color-surface), 1);
+		background-color: hsla(var(--theme-color-primary), 1);
+		font-style: italic;
 	}
 
 	.section-about__avatar {
@@ -62,7 +63,7 @@
 	.section-about__header .section-about__description {
 		margin-block-start: 2rem;
 		font-size: 1.2rem;
-		color: hsla(var(--th-color-title), 0.9);
+		color: hsla(var(--theme-color-on-bg-soft), 0.9);
 	}
 
 	@media (width <= 40rem) {

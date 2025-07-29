@@ -75,12 +75,12 @@
 
 	.section-experience__title {
 		font-size: 3rem;
-		color: hsla(var(--th-color-title), 1);
+		color: hsla(var(--theme-color-on-bg), 1);
 	}
 
 	.section-experience__summary {
 		font-size: 1rem;
-		color: hsla(var(--th-color-text), 0.85);
+		color: hsla(var(--theme-color-on-bg-soft), 0.7);
 	}
 
 	.section-experience__timeline {

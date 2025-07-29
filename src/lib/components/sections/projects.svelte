@@ -41,12 +41,12 @@
 	}
 
 	.section-projects__title {
-		color: hsla(var(--th-color-title), 1);
+		color: hsla(var(--theme-color-on-bg), 1);
 		font-size: 3rem;
 	}
 
 	.section-projects__summary {
-		color: hsla(var(--th-color-text), 0.85);
+		color: hsla(var(--theme-color-on-bg-soft), 0.9);
 		font-size: 1rem;
 	}
 </style>
