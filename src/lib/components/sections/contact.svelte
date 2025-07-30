@@ -32,7 +32,10 @@
 	}
 
 	.contact-section__wrapper {
-		background: linear-gradient(hsla(var(--theme-color-on-bg), 0.9), hsla(var(--theme-color-on-bg-soft), 1));
+		background: linear-gradient(
+			hsla(var(--theme-color-on-bg), 0.9),
+			hsla(var(--theme-color-on-bg-soft), 1)
+		);
 		color: white;
 
 		padding-inline: 2rem;
@@ -49,6 +52,7 @@
 		margin-bottom: 2rem;
 		max-width: 800px;
 		text-align: center;
+		color: hsl(var(--theme-color-surface));
 	}
 
 	.contact-section__send {
@@ -59,13 +63,17 @@
 
 		margin-inline: auto;
 
-		color: hsla(var(--th-color-text), 1);
-		background-color: hsla(var(--th-color-bg), 1);
+		color: hsla(var(--theme-color-on-surface), 1);
+		background-color: hsla(var(--theme-color-surface), 1);
 
 		font-size: 1.2rem;
 		font-weight: 600;
 
 		margin-bottom: 1rem;
+	}
+
+	.contact-section__copy {
+		color: hsl(var(--theme-color-surface));
 	}
 
 	.contact-section__copy > span {

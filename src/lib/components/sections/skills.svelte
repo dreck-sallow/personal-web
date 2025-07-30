@@ -123,18 +123,17 @@
 		border-radius: 1.5rem;
 		padding-inline: 2.5rem;
 		padding-block: 2rem;
-		background-color: hsla(var(--th-color-on-bg), 1);
+		background-color: hsla(var(--theme-color-surface), 1);
 	}
 
 	.skill-group__header {
-		color: hsla(var(--th-color-title), 1);
 		margin-block-end: 1.5rem;
 	}
 
 	.skill-group__title {
 		font-size: 1.35rem;
 		text-align: center;
-		color: hsla(var(--theme-color-primary), 1);
+		color: hsla(var(--theme-color-on-surface), 1);
 	}
 
 	.skill-group__tools {
@@ -147,7 +146,7 @@
 		font-size: 0.8rem;
 		font-weight: semibold;
 		border-radius: 1000px;
-		color: hsla(var(--theme-color-surface), 1);
+		color: hsla(var(--theme-color-on-primary), 1);
 		background-color: hsla(var(--theme-color-primary), 0.95);
 		padding-inline: 1rem;
 		padding-block: 0.4rem;

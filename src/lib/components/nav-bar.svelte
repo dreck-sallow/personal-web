@@ -82,7 +82,7 @@
 	}
 
 	.navbar__links .navbar__link-wrapper.selected {
-		background-color: hsla(var(--theme-color-primary), 0.2);
+		background-color: hsl(var(--theme-color-soft));
 	}
 
 	.navbar__links .navbar__link-wrapper:hover:not(.selected) {
@@ -95,7 +95,7 @@
 
 		display: block;
 		text-decoration: none;
-		color: hsla(var(--theme-color-on-bg), 1);
+		color: hsla(var(--theme-color-on-surface), 1);
 	}
 
 	.navbar__btn-actions {

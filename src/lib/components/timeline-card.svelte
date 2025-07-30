@@ -30,7 +30,7 @@
 <style>
 	.timeline-item {
 		--primary-color: var(--theme-color-primary);
-		--header-text-color: var(--theme-color-bg);
+		--header-text-color: var(--theme-color-on-primary);
 		--content-text-color: var(--theme-color-on-bg-soft);
 
 		position: relative;
@@ -64,7 +64,8 @@
 		padding-inline: 1rem;
 		padding-block: 0.35rem;
 
-		background-color: hsla(var(--primary-color), 0.25);
+		background-color: hsl(var(--theme-color-soft));
+		color: hsl(var(--theme-color-on-soft));
 	}
 
 	.timeline-item__indicator .timeline-item__point {

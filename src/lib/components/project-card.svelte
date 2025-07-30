@@ -79,7 +79,7 @@
 	}
 
 	.project-card__content .project-card__title {
-		color: hsla(var(--th-color-title), 1);
+		color: hsla(var(--theme-color-on-surface), 1);
 		margin-block-start: 1rem;
 		margin-block-end: 1rem;
 		font-size: 1.25rem;
@@ -104,5 +104,7 @@
 		gap: 0.3rem;
 
 		font-size: 1rem;
+
+		color: hsla(var(--theme-color-on-surface), 1);
 	}
 </style>

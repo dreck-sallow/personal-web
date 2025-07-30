@@ -50,7 +50,7 @@
 		display: inline-block;
 		padding: 0.2rem 1.5rem;
 		border-radius: 1000px;
-		color: hsla(var(--theme-color-surface), 1);
+		color: hsla(var(--theme-color-on-primary), 1);
 		background-color: hsla(var(--theme-color-primary), 1);
 		font-style: italic;
 	}

@@ -11,12 +11,10 @@
   --theme-color-on-surface: 40, 4%, 14%;
 
   --theme-color-primary: 93, 44%, 36%;
+  --theme-color-on-primary: 103, 66%, 97%;
 
-  /*--th-color-bg: 110, 21%, 95%;
-  --th-color-on-bg: 0, 0%, 100%;
-  --th-color-title: 80, 21%, 8%;
-  --th-color-text: 90, 10%, 25%;
-  --th-color-accent-text: 93, 44%, 36%; */
+  --theme-color-soft: 96, 25%, 80%;
+  --theme-color-on-soft: 40, 4%, 14%;
 
   --th-spacing-xs: 0.5rem;
   --th-spacing-sm: 0.75rem;
@@ -48,20 +46,19 @@ html {
 }
 
 [data-theme="dark"] {
-  /*--th-color-bg: 216, 18%, 16%;
-  --th-color-on-bg: 37, 38%, 80%;
-
-  --th-color-title: 38, 50%, 98%;
-  --th-color-text: 6, 11%, 53%;
-  --th-color-accent-text: 36, 11%, 53%; */
-
-  --theme-color-bg: 216, 18%, 16%;
+  --theme-color-bg: 120, 3%, 12%;
   --theme-color-on-bg: 125, 100%, 99%;
-  --theme-color-on-bg-soft: 37, 38%, 80%;
+  --theme-color-on-bg-soft: 76, 25%, 80%;
 
-  --theme-color-surface: 217, 10%, 25%;
-  --theme-color-on-surface: 37, 38%, 80%;
+  --theme-color-surface: 70, 5%, 23%;
+  --theme-color-on-surface: 125, 100%, 99%;
 
-  --theme-color-primary: 93, 44%, 36%;
+  --theme-color-primary: 105, 7%, 43%;
+  /* --theme-color-primary: 36, 43%, 72%; not delete */
+  --theme-color-primary: 60, 3%, 46%;
 
+  --theme-color-on-primary: 125, 100%, 99%;
+
+  --theme-color-soft: 60, 3%, 46%;
+  --theme-color-on-soft: 120, 3%, 12%;
 }
