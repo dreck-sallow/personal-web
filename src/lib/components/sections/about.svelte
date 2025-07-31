@@ -7,7 +7,7 @@
 </script>
 
 <section id="about" class={['section-about', OBSERVED_SELECTOR]} data-location="#about">
-	<header class="section-about__header">
+	<header class="section-about__header" data-aos="fade-right">
 		<h2 class="section-about__title app-heading-text-bold">
 			👋 {t['about.greeting']} <br />
 			<span class="section-about__title-highlight">{t['about.presentation']}</span>
@@ -22,6 +22,7 @@
 		class="section-about__avatar"
 		src="https://avatars.githubusercontent.com/u/86900322?v=4"
 		alt="Dikson profile avatar"
+		data-aos="fade-left"
 	/>
 </section>
 

@@ -1,6 +1,8 @@
 <script>
 	import '../../styles/main.css';
 	import { onMount } from 'svelte';
+	import AOS from 'aos';
+	import 'aos/dist/aos.css';
 	import { get_page_links } from '$lib';
 	import { setPageContext } from '$lib/pages/principal';
 	import { startSectionsObserver } from '$lib/pages/principal/section-observer';
@@ -23,6 +25,7 @@
 
 	onMount(() => {
 		startSectionsObserver();
+		AOS.init();
 	});
 </script>
 

@@ -16,6 +16,8 @@
   --theme-color-soft: 96, 25%, 80%;
   --theme-color-on-soft: 40, 4%, 14%;
 
+  --theme-shadow-surface: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+
   --th-spacing-xs: 0.5rem;
   --th-spacing-sm: 0.75rem;
   --th-spacing-normal: 1rem;
@@ -61,4 +63,6 @@ html {
 
   --theme-color-soft: 60, 3%, 46%;
   --theme-color-on-soft: 120, 3%, 12%;
+
+  --theme-shadow-surface: 0 1px 3px 0 hsl(115, 5%, 30%), 0 1px 2px -1px hsl(115, 5%, 30%);
 }

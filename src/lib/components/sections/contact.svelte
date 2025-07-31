@@ -7,7 +7,7 @@
 </script>
 
 <section id="contact" class="contact-section">
-	<div class="contact-section__wrapper flex-col">
+	<div class="contact-section__wrapper flex-col" data-aos="zoom-in-up" data-aos-once="true">
 		<h3 class="contact-section__title app-heading-text-bold">
 			{t['contact.title']}
 		</h3>

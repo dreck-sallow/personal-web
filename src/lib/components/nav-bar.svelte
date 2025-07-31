@@ -23,9 +23,9 @@
 </script>
 
 <nav class="navbar flex-row">
-	<span class="navbar__logo app-text-regular">{'< Dreck />'}</span>
+	<span class="navbar__logo app-text-regular" data-aos="zoom-in-down">{'< Dreck />'}</span>
 
-	<ul class="navbar__links">
+	<ul class="navbar__links" data-aos="zoom-in">
 		{#each INTERNAL_LINKS as link}
 			<li class="navbar__link-wrapper" class:selected={isCurrent($navigationStore, link.href)}>
 				<a onclick={() => onSelect(link)} class="navbar__link" href={link.href}>{link.label}</a>
@@ -33,7 +33,7 @@
 		{/each}
 	</ul>
 
-	<div class="navbar__btn-actions flex-row">
+	<div class="navbar__btn-actions flex-row" data-aos="zoom-in">
 		<LanguagePicker />
 		<ThemeButton />
 		<NavigationMenu />
@@ -72,9 +72,7 @@
 		display: flex;
 		flex-direction: row;
 		gap: 1rem;
-		box-shadow:
-			0 1px 3px 0 rgb(0 0 0 / 0.1),
-			0 1px 2px -1px rgb(0 0 0 / 0.1);
+		box-shadow: var(--theme-shadow-surface);
 	}
 
 	.navbar__links .navbar__link-wrapper {

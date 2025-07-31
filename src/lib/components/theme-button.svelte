@@ -67,9 +67,7 @@
 		inline-size: var(--size);
 		block-size: var(--size);
 		cursor: pointer;
-		box-shadow:
-			0 1px 3px 0 rgb(0 0 0 / 0.1),
-			0 1px 2px -1px rgb(0 0 0 / 0.1);
+		box-shadow: var(--theme-shadow-surface);
 	}
 
 	.theme-button {

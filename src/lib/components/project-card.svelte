@@ -11,7 +11,7 @@
 	export let websiteLink: string | undefined = undefined;
 </script>
 
-<div class="project-card">
+<div class="project-card" data-aos="zoom-in" data-aos-once="true">
 	{#if isGif}
 		<img class="project-card__image" src={src as string} alt={imgAlt} />
 	{:else}

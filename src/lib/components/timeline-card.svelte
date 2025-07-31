@@ -7,9 +7,17 @@
 <svelte:element
 	this={tag}
 	class={['timeline-item', `timeline-item--${direction}`, `timeline-item--${position}`]}
+	data-aos={`fade-up-${direction == 'left' ? 'right' : 'left'}`}
+	data-aos-delay={position == 'start' ? '200' : '300'}
+	data-aos-once="true"
 >
 	<div class="timeline-item__indicator">
-		<div class="timeline-item__label">
+		<div
+			class="timeline-item__label"
+			data-aos="zoom-in"
+			data-aos-delay={position === 'start' ? '400' : '500'}
+			data-aos-once="true"
+		>
 			<slot name="label" />
 		</div>
 

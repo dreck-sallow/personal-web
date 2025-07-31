@@ -71,7 +71,7 @@
 </section>
 
 {#snippet SkillGroup(skillGroup: SkillGroup)}
-	<li class="skill-group">
+	<li class="skill-group" data-aos="flip-left" data-aos-once="true">
 		<div class="skill-group__header">
 			<h4 class="skill-group__title app-heading-text-bold">
 				{skillGroup.title}
