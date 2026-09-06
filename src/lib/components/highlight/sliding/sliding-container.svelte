@@ -50,10 +50,10 @@
   {#if slidingState.current}
     <div
       bind:this={maskEl}
-      transition:fade={{ delay: 100 }}
+      transition:fade={{ delay: 250, duration: 200 }}
       class={[
         maskClass,
-        "absolute left-0 top-0 pointer-events-none",
+        "absolute left-0 top-0 pointer-events-none transition-transfom duration-300",
       ]}
     ></div>
   {/if}
