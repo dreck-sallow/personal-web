@@ -2,6 +2,7 @@
   import type { Snippet } from "svelte";
   import type { HTMLAttributes, SvelteHTMLElements } from "svelte/elements";
   import { setSlidingState, SlidingState } from "./sliding.svelte";
+  import { fade } from "svelte/transition";
 
   interface Props extends HTMLAttributes<HTMLElement> {
     children: Snippet<[]>;
@@ -12,16 +13,20 @@
 
   const { children, tag, value, maskClass, ...rest }: Props = $props();
 
-  const state = setSlidingState(new SlidingState(value));
-  let maskEl: HTMLDivElement;
-  let containerEl: HTMLElement;
+  const slidingState = setSlidingState(new SlidingState());
+  let maskEl = $state<HTMLDivElement>();
+  let containerEl = $state<HTMLElement>();
 
   $effect(() => {
-    void state.selected;
-    void state.candidate;
-    const current = state.current;
+    slidingState.setSelected(value ?? null);
+  });
 
-    if (current) {
+  $effect(() => {
+    void slidingState.selected;
+    void slidingState.candidate;
+    const current = slidingState.current;
+
+    if (current && containerEl && maskEl) {
       const el = containerEl.querySelector(`[data-option-key="${current}"]`);
       if (!el) return;
       const optionRect = el.getBoundingClientRect();
@@ -29,7 +34,7 @@
       maskEl.style.width = optionRect.width + "px";
       maskEl.style.height = optionRect.height + "px";
       maskEl.style.translate = `${optionRect.left - containerRect.left}px ${optionRect.top - containerRect.top}px`;
-    } else {
+    } else if (maskEl) {
       maskEl.style.display = "none";
     }
   });
@@ -42,12 +47,13 @@
   tabindex="0"
   bind:this={containerEl}
 >
-  {#if state.current}
+  {#if slidingState.current}
     <div
       bind:this={maskEl}
+      transition:fade={{ delay: 100 }}
       class={[
         maskClass,
-        "absolute left-0 top-0 transition-transform duration-200 ease-out",
+        "absolute left-0 top-0 pointer-events-none",
       ]}
     ></div>
   {/if}

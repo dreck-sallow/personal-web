@@ -21,7 +21,7 @@ export class SlidingState<T = string> {
     return this.candidate || this.selected;
   }
 
-  setSelected(value: T) {
+  setSelected(value: T | null) {
     this.#selected = value;
     this.#candidate = null;
   }
