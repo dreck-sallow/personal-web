@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+@theme {
+  /* --color-primary: #2E5C3E; */
+  /* --color-background: #0F1612; */
+  /* --color-foreground: #EEF0E6; */
+  /* --color-txt-principal: #18231D; */
+  /* --color-txt-secondary: #5B645F; */
+
+  /* Dark mode */
+  --color-primary: #6FC190;
+  --color-background: #0F1612;
+  --color-foreground: #171E18;
+  --color-txt-principal: #E6ECE6;
+  --color-txt-secondary: #A883AD;
+
+  /* Fonts */
+  --font-newsreader: "Newsreader", serif;
+}
