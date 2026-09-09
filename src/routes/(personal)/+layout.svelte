@@ -14,7 +14,7 @@
   />
 </svelte:head>
 
-<main class="bg-background h-screen w-screen">
+<main class="min-h-screen bg-background p-3 text-txt md:p-5 pb-22">
   {@render children()}
 
   <NavPrincipal />

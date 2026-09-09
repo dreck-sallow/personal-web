@@ -11,7 +11,9 @@
   --color-primary: #6FC190;
   --color-background: #0F1612;
   --color-foreground: #171E18;
-  --color-txt-principal: #E6ECE6;
+  --color-txt: #EFF4F1;
+  --color-txt-soft: #E6E8E7;
+  /* --color-txt-principal: #E6ECE6; */
   --color-txt-secondary: #A883AD;
 
   /* Fonts */

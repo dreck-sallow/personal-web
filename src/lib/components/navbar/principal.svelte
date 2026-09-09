@@ -24,7 +24,7 @@
 </script>
 
 <nav
-  class="fixed bottom-10 mx-auto rounded-full overflow-hidden left-1/2 -translate-x-1/2 shadow-md shadow-primary outline-2 outline-primary"
+  class="fixed bottom-10 mx-auto rounded-full overflow-hidden left-1/2 -translate-x-1/2 shadow-md shadow-primary outline-2 outline-primary bg-background/40 backdrop-blur-xs"
 >
   <SlidingContainer
     tag="ul"
