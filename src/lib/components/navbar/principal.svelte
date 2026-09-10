@@ -29,7 +29,7 @@
   <SlidingContainer
     tag="ul"
     value={activeLinkKey}
-    class="relative w-full h-full px-8 py-4 flex flex-row"
+    class="relative w-full h-full px-4.5 py-4 flex flex-row"
     maskClass="rounded-full bg-primary"
   >
     {#each links as { link, label, icon: Icon, key }}
@@ -43,13 +43,13 @@
         selectedClass="!text-background"
       >
         <a
-          class="relative z-10 w-full h-full px-8 py-4 block font-normal flex items-center justify-center gap-4 font-semibold"
+          class="relative z-10 w-full h-full p-4 md:px-7 md:py-4 block font-normal flex items-center justify-center gap-4 font-semibold"
           tabindex="-1"
           href={link}
         >
           <Icon />
 
-          <span> {label}</span>
+          <span class="hidden md:block"> {label}</span>
         </a>
       </SlidingOption>
     {/each}

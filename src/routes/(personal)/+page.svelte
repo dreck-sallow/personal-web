@@ -64,7 +64,7 @@
   <title>About me | Dre</title>
 </svelte:head>
 
-<div class="mx-auto flex min-h-[calc(100vh-1.5rem)] w-full max-w-7xl flex-col px-5 py-6 md:min-h-[calc(100vh-2.5rem)] md:px-12 md:py-8">
+<div class="mx-auto flex min-h-[calc(100vh-1.5rem)] w-full max-w-7xl flex-col px-5 py-6 md:min-h-[calc(100vh-2.5rem)] md:px-12 md:py-8 pb-12!">
   <section class="grid flex-1 items-center gap-10 border-b border-txt/15 py-14 md:grid-cols-[1fr_360px] md:py-18">
     <div>
       <p class="font-mono text-sm font-bold text-primary">01.</p>
@@ -155,8 +155,7 @@
       <h2 class="mt-2 font-mono text-xl font-bold">Let's connect</h2>
 
       <p class="mt-7 font-mono text-sm leading-7 text-txt-soft/70">
-        Have a project, idea, or just want to say hi?<br />
-        I'd love to hear from you.
+        Have a project, idea, or just want to say hi?
       </p>
 
       <div class="mt-7 flex flex-wrap gap-x-8 gap-y-4">
