@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { BriefcaseBusiness, CalendarDays, MapPin } from "@lucide/svelte";
+  import { BriefcaseBusiness, CalendarDays } from "@lucide/svelte";
   import data from "../../../../data.json";
 
   type ExperienceEntry = {
     role: string;
     date: string;
     desc_html: string;
-    location: string;
     stack: string[];
   };
 
@@ -15,22 +14,18 @@
   const entries: ExperienceEntry[] = [
     {
       ...experience.syself,
-      location: "Remote",
       stack: ["JavaScript", "Svelte", "Tailwind CSS", "Docker"],
     },
     {
       ...experience.arisale,
-      location: "Remote",
       stack: ["Vue", "Nuxt.js", "Sass", "NestJS", "APIs"],
     },
     {
       ...experience.liquid,
-      location: "Remote",
       stack: ["Vue", "Nuxt", "Pinia", "Tailwind CSS", "GCP"],
     },
     {
       ...experience.kimche,
-      location: "Remote",
       stack: ["React", "Styled Components", "Cube.js", "Charts", "Data UI"],
     },
   ];
@@ -46,7 +41,7 @@
 </svelte:head>
 
 <div
-  class="mx-auto grid min-h-[calc(100vh-1.5rem)] w-full max-w-7xl gap-10 px-5 py-6 md:min-h-[calc(100vh-2.5rem)] md:grid-cols-[1fr_2fr] md:py-8 pb-22! gap-20"
+  class="mx-auto grid min-h-[calc(100vh-1.5rem)] w-full max-w-7xl gap-10 px-5 py-6 md:min-h-[calc(100vh-2.5rem)] md:grid-cols-[1fr_2fr] md:py-8 pb-32! gap-20"
 >
   <aside
     class="flex flex-col border-b border-txt/15 pb-10 md:min-h-[calc(100vh-8rem)] md:border-b-0 md:pb-0"
@@ -117,10 +112,6 @@
               <span class="inline-flex items-center gap-2">
                 <CalendarDays class="size-4" />
                 {job.date}
-              </span>
-              <span class="inline-flex items-center gap-2">
-                <MapPin class="size-4" />
-                {job.location}
               </span>
             </div>
 
