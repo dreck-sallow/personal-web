@@ -54,9 +54,9 @@
   ];
 
   const CONTACT = [
-    { label: "Email", href: "mailto:hello@example.com", icon: Mail },
-    { label: "LinkedIn", href: "https://www.linkedin.com/", icon: Send },
-    { label: "GitHub", href: "https://github.com/", icon: Code2 },
+    { label: "Email", href: "mailto:arandadikson@gmail.com", icon: Mail },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/dikson-aranda/", icon: Send },
+    { label: "GitHub", href: "https://github.com/dreck-sallow", icon: Code2 },
   ];
 </script>
 
