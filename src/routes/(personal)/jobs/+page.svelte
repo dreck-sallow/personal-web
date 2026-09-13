@@ -47,11 +47,11 @@
 </svelte:head>
 
 <div
-  class="mx-auto grid min-h-[calc(100vh-1.5rem)] w-full max-w-7xl gap-10 px-5 py-6 pb-32! md:min-h-[calc(100vh-2.5rem)] md:py-8 lg:grid-cols-[minmax(460px,0.9fr)_minmax(0,1.35fr)] lg:gap-24"
+  class="grid gap-10 lg:grid-cols-[minmax(460px,0.9fr)_minmax(0,1.35fr)] lg:gap-24"
 >
   <aside class="border-b border-txt/15 pb-10 lg:border-b-0 lg:pb-0">
     <div class="lg:sticky lg:top-8">
-      <!-- <p class="font-mono text-sm font-bold text-primary">02.</p> -->
+      <p class="font-mono text-sm font-bold text-primary">02.</p>
       <h1
         class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl lg:text-[5.5rem]"
       >

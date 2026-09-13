@@ -14,8 +14,10 @@
   />
 </svelte:head>
 
-<main class="min-h-screen bg-background p-3 text-txt md:p-5 pb-22">
-  {@render children()}
+<main class="min-h-screen bg-background p-3 pb-22 text-txt md:p-5 md:pb-22">
+  <div class="mx-auto min-h-[calc(100vh-1.5rem)] w-full max-w-7xl px-5 py-6 pb-32 md:min-h-[calc(100vh-2.5rem)] md:px-12 md:py-8">
+    {@render children()}
+  </div>
 
   <NavPrincipal />
 </main>

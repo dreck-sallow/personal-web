@@ -65,8 +65,8 @@
   <title>About me | Dre</title>
 </svelte:head>
 
-<div class="mx-auto flex min-h-[calc(100vh-1.5rem)] w-full max-w-7xl flex-col px-5 py-6 md:min-h-[calc(100vh-2.5rem)] md:px-12 md:py-8 pb-12!">
-  <section class="grid flex-1 items-center gap-10 border-b border-txt/15 py-14 md:grid-cols-[1fr_360px] md:py-18">
+<div class="flex flex-col pb-12">
+  <section class="grid flex-1 items-center gap-10 border-b border-txt/15 pb-14 md:grid-cols-[1fr_360px] md:pb-18">
     <div>
       <p class="font-mono text-sm font-bold text-primary">01.</p>
       <h1 class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl">

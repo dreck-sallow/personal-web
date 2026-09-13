@@ -90,11 +90,10 @@
   <title>{projects.title} | Dre</title>
 </svelte:head>
 
-<div
-  class="mx-auto flex min-h-[calc(100vh-1.5rem)] w-full max-w-7xl flex-col px-5 pb-32! py-6 md:min-h-[calc(100vh-2.5rem)] md:px-12 md:py-8"
->
+<div class="flex flex-col">
   <header class="max-w-2xl">
-    <h1 class="font-newsreader text-6xl leading-none font-semibold md:text-8xl">
+    <p class="font-mono text-sm font-bold text-primary">03.</p>
+    <h1 class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl">
       {projects.title}
     </h1>
     <div class="mt-5 h-0.5 w-12 bg-primary"></div>
