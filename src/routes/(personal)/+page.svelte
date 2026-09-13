@@ -96,8 +96,7 @@
 
   <section class="grid gap-12 border-b border-txt/15 py-10 md:grid-cols-2 md:py-12">
     <article id="background" class="border-b border-txt/15 pb-10 md:border-b-0 md:pb-0">
-      <p class="font-mono text-sm font-bold text-primary">02.</p>
-      <h2 class="mt-2 font-mono text-xl font-bold">Background</h2>
+      <h2 class="font-mono text-xl font-bold">Background</h2>
 
       <div class="mt-7 space-y-6">
         {#each BACKGROUND as item}
@@ -116,8 +115,7 @@
     </article>
 
     <article id="i-build-and-explore">
-      <p class="font-mono text-sm font-bold text-primary">03.</p>
-      <h2 class="mt-2 font-mono text-xl font-bold">I build and explore</h2>
+      <h2 class="font-mono text-xl font-bold">I build and explore</h2>
 
       <p class="mt-7 max-w-xl font-mono text-sm leading-7 text-txt-soft/70">
         I like turning ideas into useful tools, working with low-level systems, and
@@ -139,8 +137,7 @@
 
   <section class="grid gap-10 border-b border-txt/15 py-10 md:grid-cols-2 md:py-12">
     <article id="tech-i-enjoy" class="border-b border-txt/15 pb-10 md:border-b-0 md:pb-0">
-      <p class="font-mono text-sm font-bold text-primary">04.</p>
-      <h2 class="mt-2 font-mono text-xl font-bold">Tech I enjoy</h2>
+      <h2 class="font-mono text-xl font-bold">Tech I enjoy</h2>
 
       <div class="mt-7 flex flex-wrap gap-3">
         {#each TECH as tech}
@@ -152,8 +149,7 @@
     </article>
 
     <article id="lets-connect" class="md:border-l md:border-txt/15 md:pl-12">
-      <p class="font-mono text-sm font-bold text-primary">05.</p>
-      <h2 class="mt-2 font-mono text-xl font-bold">Let's connect</h2>
+      <h2 class="font-mono text-xl font-bold">Let's connect</h2>
 
       <p class="mt-7 font-mono text-sm leading-7 text-txt-soft/70">
         Have a project, idea, or just want to say hi?
