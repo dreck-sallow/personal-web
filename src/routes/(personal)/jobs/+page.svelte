@@ -1,5 +1,11 @@
 <script lang="ts">
-  import { BriefcaseBusiness, CalendarDays } from "@lucide/svelte";
+  import {
+    BriefcaseBusiness,
+    CalendarDays,
+    Download,
+    Mail,
+  } from "@lucide/svelte";
+  import Badge from "$lib/components/badge/badge.svelte";
   import data from "../../../../data.json";
 
   type ExperienceEntry = {
@@ -41,59 +47,70 @@
 </svelte:head>
 
 <div
-  class="mx-auto grid min-h-[calc(100vh-1.5rem)] w-full max-w-7xl gap-10 px-5 py-6 md:min-h-[calc(100vh-2.5rem)] md:grid-cols-[1fr_2fr] md:py-8 pb-32! gap-20"
+  class="mx-auto grid min-h-[calc(100vh-1.5rem)] w-full max-w-7xl gap-10 px-5 py-6 pb-32! md:min-h-[calc(100vh-2.5rem)] md:py-8 lg:grid-cols-[minmax(460px,0.9fr)_minmax(0,1.35fr)] lg:gap-24"
 >
-  <aside
-    class="flex flex-col border-b border-txt/15 pb-10 md:min-h-[calc(100vh-8rem)] md:border-b-0 md:pb-0"
-  >
-    <div class="md:sticky md:top-12">
+  <aside class="border-b border-txt/15 pb-10 lg:border-b-0 lg:pb-0">
+    <div class="lg:sticky lg:top-8">
       <!-- <p class="font-mono text-sm font-bold text-primary">02.</p> -->
       <h1
-        class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl"
+        class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl lg:text-[5.5rem]"
       >
         {experience.title}
       </h1>
       <div class="mt-5 h-0.5 w-12 bg-primary"></div>
 
       <p
-        class="mt-6 max-w-64 font-mono text-base leading-7 text-txt md:text-lg"
+        class="mt-6 max-w-sm font-mono text-base leading-7 text-txt md:text-lg"
       >
         {experience.summary}
       </p>
-    </div>
 
-    <div class="mt-auto hidden md:flex">
-      <div class="border-l border-primary/25 pl-6">
+      <div class="mt-10 border-l border-primary/25 pl-6">
         <div class="flex items-start gap-3 font-mono text-sm text-txt-soft/75">
           <BriefcaseBusiness class="mt-0.5 size-5 shrink-0 stroke-primary" />
           <p>
             Want to know more?<br />
-            <span class="text-txt">Full resume available on request.</span>
+            <span class="text-txt">Download the short CV or get in touch.</span>
           </p>
+        </div>
+
+        <div class="mt-6 flex flex-wrap gap-4">
+          <a
+            href="/cv/dikson-aranda-cv.pdf"
+            download
+            class="inline-flex items-center gap-2 rounded-full bg-primary px-4 py-2.5 font-mono text-sm font-bold text-background transition-opacity hover:opacity-85"
+          >
+            <Download class="size-4" />
+            Download CV
+          </a>
+
+          <a
+            href="mailto:arandadikson@gmail.com"
+            class="inline-flex items-center gap-2 rounded-full border border-primary/35 px-4 py-2.5 font-mono text-sm font-bold text-txt transition-colors hover:border-primary hover:text-primary"
+          >
+            <Mail class="size-4 stroke-primary" />
+            Email me
+          </a>
         </div>
       </div>
     </div>
   </aside>
 
-  <section class="relative md:pl-12">
+  <section class="relative pl-9 lg:pl-12">
     <div
-      class="absolute left-3 top-0 hidden h-full w-px bg-primary/25 md:block"
+      class="absolute left-1 top-0 h-full w-px bg-primary/25 lg:left-3"
       aria-hidden="true"
     ></div>
 
-    <div class="space-y-12 md:space-y-16">
+    <div class="space-y-12 lg:space-y-16">
       {#each entries as job}
         {@const role = splitRole(job.role)}
 
         <article
-          class="job-container relative grid gap-4 md:grid-cols-[1fr_auto] after:absolute after:-left-12 after:size-4 after:bg-primary after:rounded-full after:translate-x-[25%]"
+          class="job-container relative grid gap-4 after:absolute after:-left-8 after:top-1.5 after:size-3 after:-translate-x-[2px] after:rounded-full after:bg-primary lg:grid-cols-[1fr_auto] lg:after:-left-12 lg:after:top-0 lg:after:size-4 lg:after:translate-x-[25%]"
         >
           <div>
             <div class="flex items-start gap-3">
-              <span
-                class="mt-1.5 size-3 shrink-0 rounded-full bg-primary md:hidden"
-                aria-hidden="true"
-              ></span>
               <div>
                 <h2
                   class="font-newsreader text-3xl leading-tight font-semibold text-txt md:text-4xl"
@@ -123,11 +140,9 @@
 
             <div class="mt-6 flex flex-wrap gap-3">
               {#each job.stack as tech}
-                <span
-                  class="rounded-md bg-txt/10 px-4 py-2 font-mono text-xs font-bold text-primary/90"
-                >
+                <Badge>
                   {tech}
-                </span>
+                </Badge>
               {/each}
             </div>
           </div>

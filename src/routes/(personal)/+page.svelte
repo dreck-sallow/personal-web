@@ -12,6 +12,7 @@
     UsersRound,
   } from "@lucide/svelte";
   import avatar from "$lib/assets/images/avatar.png";
+  import Badge from "$lib/components/badge/badge.svelte";
 
   const BACKGROUND = [
     {
@@ -94,7 +95,7 @@
   </section>
 
   <section class="grid gap-12 border-b border-txt/15 py-10 md:grid-cols-2 md:py-12">
-    <article id="background">
+    <article id="background" class="border-b border-txt/15 pb-10 md:border-b-0 md:pb-0">
       <p class="font-mono text-sm font-bold text-primary">02.</p>
       <h2 class="mt-2 font-mono text-xl font-bold">Background</h2>
 
@@ -105,9 +106,9 @@
             <div>
               <h3 class="font-mono text-sm font-bold md:text-base">{item.title}</h3>
               <p class="mt-1 font-mono text-sm leading-6 text-txt-soft/65">{item.desc}</p>
-              <p class="mt-2 w-fit rounded-full bg-txt/10 px-3 py-1 font-mono text-xs text-txt-soft/75">
+              <Badge class="mt-2">
                 {item.tag}
-              </p>
+              </Badge>
             </div>
           </div>
         {/each}
@@ -137,15 +138,15 @@
   </section>
 
   <section class="grid gap-10 border-b border-txt/15 py-10 md:grid-cols-2 md:py-12">
-    <article id="tech-i-enjoy">
+    <article id="tech-i-enjoy" class="border-b border-txt/15 pb-10 md:border-b-0 md:pb-0">
       <p class="font-mono text-sm font-bold text-primary">04.</p>
       <h2 class="mt-2 font-mono text-xl font-bold">Tech I enjoy</h2>
 
       <div class="mt-7 flex flex-wrap gap-3">
         {#each TECH as tech}
-          <span class="rounded-full bg-txt/10 px-4 py-2 font-mono text-xs text-txt-soft/80">
+          <Badge>
             {tech}
-          </span>
+          </Badge>
         {/each}
       </div>
     </article>

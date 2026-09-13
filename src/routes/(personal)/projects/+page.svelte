@@ -1,12 +1,10 @@
 <script lang="ts">
   import {
-    CheckSquare,
     Code2,
     ExternalLink,
     Globe2,
-    Headphones,
-    Monitor,
   } from "@lucide/svelte";
+  import Badge from "$lib/components/badge/badge.svelte";
   import data from "../../../../data.json";
 
   type ProjectKey = "quipp" | "flix" | "melody" | "flow";
@@ -16,7 +14,6 @@
     name: string;
     description: string;
     tags: string[];
-    icon: typeof Globe2;
     github?: string;
     website?: string;
     featured?: boolean;
@@ -34,7 +31,6 @@
       ...projects.quipp,
       description: stripEmoji(projects.quipp.description),
       tags: ["TypeScript", "Svelte", "WebSocket", "Tailwind"],
-      icon: Globe2,
       github: "https://github.com/",
       website: "https://quipp.app/",
       featured: true,
@@ -45,7 +41,6 @@
       ...projects.flix,
       description: stripEmoji(projects.flix.description),
       tags: ["Rust", "Tauri", "SQLite"],
-      icon: Monitor,
       github: "https://github.com/",
       website: "https://github.com/",
       preview: "flix",
@@ -55,7 +50,6 @@
       ...projects.melody,
       description: stripEmoji(projects.melody.description),
       tags: ["Rust", "Crossterm", "Ratatui"],
-      icon: Headphones,
       github: "https://github.com/",
       preview: "melody",
     },
@@ -64,7 +58,6 @@
       ...projects.flow,
       description: stripEmoji(projects.flow.description),
       tags: ["Rust", "Clap", "Serde"],
-      icon: CheckSquare,
       github: "https://github.com/",
       preview: "flow",
     },
@@ -142,50 +135,47 @@
         </div>
       </div>
 
-      <div class="grid gap-5 md:grid-cols-[28px_1fr]">
-        <featuredProject.icon class="mt-1 size-6 stroke-primary" />
-        <div>
-          <h2 class="font-newsreader text-3xl font-semibold leading-tight text-txt md:text-4xl">
-            {featuredProject.name}
-          </h2>
-          <p class="mt-4 max-w-xl font-mono text-sm leading-7 text-txt-soft/75">
-            {featuredProject.description}
-          </p>
+      <div>
+        <h2 class="font-newsreader text-3xl font-semibold leading-tight text-txt md:text-4xl">
+          {featuredProject.name}
+        </h2>
+        <p class="mt-4 max-w-xl font-mono text-sm leading-7 text-txt-soft/75">
+          {featuredProject.description}
+        </p>
 
-          <div class="mt-6 flex flex-wrap gap-3">
-            {#each featuredProject.tags as tag}
-              <span class="rounded-md bg-txt/10 px-3 py-2 font-mono text-xs font-bold text-txt-soft/85">
-                {tag}
-              </span>
-            {/each}
-          </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          {#each featuredProject.tags as tag}
+            <Badge>
+              {tag}
+            </Badge>
+          {/each}
+        </div>
 
-          <div class="mt-7 flex flex-wrap gap-x-8 gap-y-4">
-            {#if featuredProject.github}
-              <a
-                href={featuredProject.github}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
-              >
-                <Code2 class="size-5 stroke-primary" />
-                GitHub
-                <ExternalLink class="size-4" />
-              </a>
-            {/if}
-            {#if featuredProject.website}
-              <a
-                href={featuredProject.website}
-                target="_blank"
-                rel="noreferrer"
-                class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
-              >
-                <Globe2 class="size-5 stroke-primary" />
-                Website
-                <ExternalLink class="size-4" />
-              </a>
-            {/if}
-          </div>
+        <div class="mt-7 flex flex-wrap gap-x-8 gap-y-4">
+          {#if featuredProject.github}
+            <a
+              href={featuredProject.github}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
+            >
+              <Code2 class="size-5 stroke-primary" />
+              GitHub
+              <ExternalLink class="size-4" />
+            </a>
+          {/if}
+          {#if featuredProject.website}
+            <a
+              href={featuredProject.website}
+              target="_blank"
+              rel="noreferrer"
+              class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
+            >
+              <Globe2 class="size-5 stroke-primary" />
+              Website
+              <ExternalLink class="size-4" />
+            </a>
+          {/if}
         </div>
       </div>
     </article>
@@ -198,7 +188,7 @@
 
     <div class="mt-4 divide-y divide-txt/15">
       {#each otherProjects as project}
-        <article class="grid gap-5 py-5 md:grid-cols-[300px_28px_minmax(0,1fr)_minmax(220px,0.72fr)] md:items-center md:gap-7">
+        <article class="grid gap-5 py-5 md:grid-cols-[300px_minmax(0,1fr)_minmax(220px,0.72fr)] md:items-center md:gap-x-10 md:gap-y-7">
           <div class={previewClass(project.preview)} aria-hidden="true">
             {#if project.preview === "flix"}
               <div
@@ -238,28 +228,21 @@
             {/if}
           </div>
 
-          <project.icon class="hidden size-6 stroke-primary md:block" />
-
           <div>
-            <div class="flex items-start gap-3 md:block">
-              <project.icon class="mt-1 size-6 shrink-0 stroke-primary md:hidden" />
-              <div>
-                <h2 class="font-newsreader text-3xl font-semibold leading-tight text-txt">
-                  {project.name}
-                </h2>
-                <p class="mt-3 max-w-xl font-mono text-sm leading-7 text-txt-soft/75">
-                  {project.description}
-                </p>
-              </div>
-            </div>
+            <h2 class="font-newsreader text-3xl font-semibold leading-tight text-txt">
+              {project.name}
+            </h2>
+            <p class="mt-3 max-w-xl font-mono text-sm leading-7 text-txt-soft/75">
+              {project.description}
+            </p>
           </div>
 
           <div class="md:justify-self-end">
             <div class="flex flex-wrap gap-3 md:justify-end">
               {#each project.tags as tag}
-                <span class="rounded-md bg-txt/10 px-3 py-2 font-mono text-xs font-bold text-txt-soft/85">
+                <Badge>
                   {tag}
-                </span>
+                </Badge>
               {/each}
             </div>
 
