@@ -25,7 +25,7 @@
 
   const classes = $derived(
     [
-      "inline-flex w-fit items-center gap-1.5 rounded-full bg-txt/10 px-3 py-1 font-mono text-xs text-txt-soft/75",
+      "inline-flex w-fit items-center gap-1.5 rounded-full bg-txt/10 px-3 py-1.5 font-mono text-xs leading-none text-txt-soft/75",
       href ? "transition-colors hover:text-primary" : "",
       className,
     ]
