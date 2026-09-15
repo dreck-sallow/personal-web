@@ -3,6 +3,7 @@
     BookOpen,
     Box,
     Code2,
+    ExternalLink,
     GraduationCap,
     Infinity,
     Leaf,
@@ -17,13 +18,15 @@
   const BACKGROUND = [
     {
       icon: GraduationCap,
-      title: "Software Development - SoyHenry",
+      title: "Fullstack Development - SoyHenry",
+      href: "https://certificates.soyhenry.com/cert?id=251d5f3a-678e-4dc1-85d4-b23df68894e6",
       desc: "Full Stack Web Development bootcamp.",
       tag: "Certificate",
     },
     {
       icon: BookOpen,
       title: "English - B1",
+      href: "https://www.poliglota.org/certificates/3f75ddfd6825247f.pdf",
       desc: "English language course.",
       tag: "B1 Certificate",
     },
@@ -31,7 +34,7 @@
       icon: Infinity,
       title: "Self-taught learning",
       desc: "Systems, backend, Linux, Rust and developer tooling.",
-      tag: "Ongoing",
+      tag: "Always :)",
     },
   ];
 
@@ -57,7 +60,7 @@
   const CONTACT = [
     { label: "Email", href: "mailto:arandadikson@gmail.com", icon: Mail },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/dikson-aranda/", icon: Send },
-    { label: "GitHub", href: "https://github.com/dreck-sallow", icon: Code2 },
+    { label: "GitHub", href: "https://github.com/DreckSallow", icon: Code2 },
   ];
 </script>
 
@@ -103,7 +106,21 @@
           <div class="grid grid-cols-[42px_1fr] gap-4">
             <item.icon class="mt-1 size-7 stroke-primary" />
             <div>
-              <h3 class="font-mono text-sm font-bold md:text-base">{item.title}</h3>
+              <h3 class="font-mono text-sm font-bold md:text-base">
+                {#if item.href}
+                  <a
+                    href={item.href}
+                    class="inline-flex items-center gap-2 text-txt transition-colors hover:text-primary"
+                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                    rel={item.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    {item.title}
+                    <ExternalLink class="size-4 stroke-primary" />
+                  </a>
+                {:else}
+                  {item.title}
+                {/if}
+              </h3>
               <p class="mt-1 font-mono text-sm leading-6 text-txt-soft/65">{item.desc}</p>
               <Badge class="mt-2">
                 {item.tag}
@@ -159,12 +176,13 @@
         {#each CONTACT as item}
           <a
             href={item.href}
-            class="inline-flex items-center gap-3 font-mono text-sm font-bold text-txt transition-colors hover:text-primary"
+            class="inline-flex items-center gap-3 border-b border-primary pb-1 font-mono text-sm font-bold text-txt transition-colors hover:text-primary"
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel={item.href.startsWith("http") ? "noreferrer" : undefined}
           >
             <item.icon class="size-5 stroke-primary" />
             {item.label}
+            <ExternalLink class="size-4 stroke-primary" />
           </a>
         {/each}
       </div>
