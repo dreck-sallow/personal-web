@@ -39,10 +39,10 @@
   ];
 
   const VALUES = [
-    { icon: Box, title: "Build", desc: "things" },
-    { icon: TerminalSquare, title: "Explore", desc: "tech" },
-    { icon: Leaf, title: "Keep it", desc: "simple" },
-    { icon: UsersRound, title: "Share &", desc: "learn" },
+    { icon: Box, title: "Build", desc: "Useful tools" },
+    { icon: TerminalSquare, title: "Explore", desc: "Systems" },
+    { icon: Leaf, title: "Simplify", desc: "Complexity" },
+    { icon: UsersRound, title: "Share", desc: "What I learn" },
   ];
 
   const TECH = [
@@ -65,7 +65,7 @@
 </script>
 
 <svelte:head>
-  <title>About me | Dre</title>
+  <title>About me | Dreck</title>
 </svelte:head>
 
 <div class="flex flex-col pb-12">
@@ -73,18 +73,18 @@
     <div>
       <p class="font-mono text-sm font-bold text-primary">01.</p>
       <h1 class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl">
-        About me
+        Dikson Aranda
       </h1>
       <div class="mt-5 h-0.5 w-12 bg-primary"></div>
 
       <p class="mt-6 max-w-xl font-mono text-xl leading-relaxed text-txt md:text-2xl">
-        I build useful software, learn constantly, and enjoy solving
-        <span class="text-primary">real problems.</span>
+        I like building practical software, exploring how things work, and solving
+        <span class="text-primary">interesting problems.</span>
       </p>
 
       <p class="mt-6 font-mono text-sm leading-7 text-txt-soft/65">
-        Clean code. Thoughtful tools.<br />
-        A better developer experience.
+        Readable code. Different angles.<br />
+        Useful abstractions. Tools that feel good to use.
       </p>
     </div>
 
@@ -132,12 +132,12 @@
     </article>
 
     <article id="i-build-and-explore">
-      <h2 class="font-mono text-xl font-bold">I build and explore</h2>
+      <h2 class="font-mono text-xl font-bold">How I think about software</h2>
 
       <p class="mt-7 max-w-xl font-mono text-sm leading-7 text-txt-soft/70">
-        I like turning ideas into useful tools, working with low-level systems, and
-        improving developer experiences. I value simplicity, readable code, and
-        solutions that actually solve real problems.
+        I like software that is built in thoughtful layers: small pieces, clear
+        responsibilities, and abstractions that make the next step easier. Good
+        code should tell a story and feel elegant when you read it.
       </p>
 
       <div class="mt-9 grid grid-cols-2 gap-6 sm:grid-cols-4">
@@ -169,7 +169,7 @@
       <h2 class="font-mono text-xl font-bold">Let's connect</h2>
 
       <p class="mt-7 font-mono text-sm leading-7 text-txt-soft/70">
-        Have a project, idea, or just want to say hi?
+        Open to projects, conversations, and good technical rabbit holes.
       </p>
 
       <div class="mt-7 flex flex-wrap gap-x-8 gap-y-4">
@@ -189,5 +189,5 @@
     </article>
   </section>
 
-  <p class="py-8 font-mono text-xs text-txt-soft/60">Keep building.</p>
+  <p class="py-8 font-mono text-xs text-txt-soft/60">Keep exploring & building.</p>
 </div>
