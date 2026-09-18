@@ -47,7 +47,7 @@
 </svelte:head>
 
 <div
-  class="grid gap-10 lg:grid-cols-[minmax(460px,0.9fr)_minmax(0,1.35fr)] lg:gap-24"
+  class="grid gap-10 lg:grid-cols-[minmax(460px,0.9fr)_minmax(0,1.35fr)] lg:gap-24 pb-10"
 >
   <aside class="border-b border-txt/15 pb-10 lg:border-b-0 lg:pb-0">
     <div class="lg:sticky lg:top-8">
@@ -69,8 +69,8 @@
         <div class="flex items-start gap-3 font-mono text-sm text-txt-soft/75">
           <BriefcaseBusiness class="mt-0.5 size-5 shrink-0 stroke-primary" />
           <p>
-            Want to know more?<br />
-            <span class="text-txt">Download the short CV or get in touch.</span>
+            Curious about the details?<br />
+            <span class="text-txt">You can download my short CV or send me an email.</span>
           </p>
         </div>
 
