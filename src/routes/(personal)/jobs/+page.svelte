@@ -50,7 +50,7 @@
   class="grid gap-10 lg:grid-cols-[minmax(460px,0.9fr)_minmax(0,1.35fr)] lg:gap-24 pb-10"
 >
   <aside class="border-b border-txt/15 pb-10 lg:border-b-0 lg:pb-0">
-    <div class="lg:sticky lg:top-8">
+    <div class="lg:sticky lg:top-[3.25rem]">
       <p class="font-mono text-sm font-bold text-primary">02.</p>
       <h1
         class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl lg:text-[5.5rem]"
