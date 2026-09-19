@@ -39,7 +39,7 @@
         A few places where I’ve had the chance to learn, contribute, and grow as a developer.
       </p>
 
-      <div class="mt-10 border-l border-primary/25 pl-6">
+      <div class="mt-12 border-l border-primary/25 pl-6">
         <div class="flex items-start gap-3 font-mono text-sm text-txt-soft/75">
           <BriefcaseBusiness class="mt-0.5 size-5 shrink-0 stroke-primary" />
           <p>

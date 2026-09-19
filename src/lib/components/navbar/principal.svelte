@@ -3,14 +3,14 @@
   import SlidingContainer from "../highlight/sliding/sliding-container.svelte";
   import SlidingOption from "../highlight/sliding/sliding-option.svelte";
 
-  import MilestoneIcon from "@lucide/svelte/icons/milestone";
-  import ShapesIcon from "@lucide/svelte/icons/shapes";
   import AboutIcon from "@lucide/svelte/icons/user-round";
+
+  import { BriefcaseBusiness, CodeXml } from "@lucide/svelte";
 
   const links = [
     { label: "About", link: "/", icon: AboutIcon, key: "about" },
-    { label: "Experience", link: "/jobs", icon: MilestoneIcon, key: "jobs" },
-    { label: "Projects", link: "/projects", icon: ShapesIcon, key: "projects" },
+    { label: "Experience", link: "/jobs", icon: BriefcaseBusiness, key: "jobs" },
+    { label: "Projects", link: "/projects", icon: CodeXml, key: "projects" },
   ];
 
   const matchesRoute = (pathname: string, route: string) => {
@@ -43,11 +43,11 @@
         selectedClass="!text-background"
       >
         <a
-          class="relative z-10 w-full h-full p-4 md:px-7 md:py-4 block font-normal flex items-center justify-center gap-4 font-semibold"
+          class="relative z-10 w-full h-full p-4 md:px-12 md:py-4 block font-normal flex items-center justify-center gap-4 font-semibold"
           tabindex="-1"
           href={link}
         >
-          <Icon />
+          <Icon class="stroke-2.5"/>
 
           <span class="hidden md:block"> {label}</span>
         </a>
