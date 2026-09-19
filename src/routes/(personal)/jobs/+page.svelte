@@ -6,35 +6,9 @@
     Mail,
   } from "@lucide/svelte";
   import Badge from "$lib/components/badge/badge.svelte";
-  import data from "../../../../data.json";
+  import { personal } from "$lib/../data/personal";
 
-  type ExperienceEntry = {
-    role: string;
-    date: string;
-    desc_html: string;
-    stack: string[];
-  };
-
-  const experience = data.experience;
-
-  const entries: ExperienceEntry[] = [
-    {
-      ...experience.syself,
-      stack: ["JavaScript", "Svelte", "Tailwind CSS", "Docker"],
-    },
-    {
-      ...experience.arisale,
-      stack: ["Vue", "Nuxt.js", "Sass", "NestJS", "APIs"],
-    },
-    {
-      ...experience.liquid,
-      stack: ["Vue", "Nuxt", "Pinia", "Tailwind CSS", "GCP"],
-    },
-    {
-      ...experience.kimche,
-      stack: ["React", "Styled Components", "Cube.js", "Charts", "Data UI"],
-    },
-  ];
+  const entries = personal.experience;
 
   const splitRole = (role: string) => {
     const [title, company] = role.split("|").map((part) => part.trim());
@@ -43,7 +17,7 @@
 </script>
 
 <svelte:head>
-  <title>{experience.title} | Dreck</title>
+  <title>Experience | Dreck</title>
 </svelte:head>
 
 <div
@@ -55,14 +29,14 @@
       <h1
         class="mt-3 font-newsreader text-6xl leading-none font-semibold md:text-8xl lg:text-[5.5rem]"
       >
-        {experience.title}
+        Experience
       </h1>
       <div class="mt-5 h-0.5 w-12 bg-primary"></div>
 
       <p
         class="mt-6 max-w-sm font-mono text-base leading-7 text-txt md:text-lg"
       >
-        {experience.summary}
+        A few places where I’ve had the chance to learn, contribute, and grow as a developer.
       </p>
 
       <div class="mt-10 border-l border-primary/25 pl-6">
@@ -135,7 +109,7 @@
             <p
               class="mt-5 max-w-3xl font-mono text-sm leading-7 text-txt-soft/75 md:text-base"
             >
-              {job.desc_html}
+              {job.description}
             </p>
 
             <div class="mt-6 flex flex-wrap gap-3">

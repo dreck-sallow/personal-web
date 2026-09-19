@@ -14,54 +14,22 @@
   } from "@lucide/svelte";
   import avatar from "$lib/assets/images/avatar.png";
   import Badge from "$lib/components/badge/badge.svelte";
+  import { personal } from "$lib/../data/personal";
 
-  const BACKGROUND = [
-    {
-      icon: GraduationCap,
-      title: "Fullstack Development - SoyHenry",
-      href: "https://certificates.soyhenry.com/cert?id=251d5f3a-678e-4dc1-85d4-b23df68894e6",
-      desc: "Full Stack Web Development bootcamp.",
-      tag: "Certificate",
-    },
-    {
-      icon: BookOpen,
-      title: "English - B1",
-      href: "https://www.poliglota.org/certificates/3f75ddfd6825247f.pdf",
-      desc: "English language course.",
-      tag: "B1 Certificate",
-    },
-    {
-      icon: Infinity,
-      title: "Self-taught learning",
-      desc: "Systems, backend, Linux, Rust and developer tooling.",
-      tag: "Always :)",
-    },
-  ];
+  const { background, tech, contacts } = personal.about;
 
-  const VALUES = [
-    { icon: Box, title: "Build", desc: "Useful tools" },
-    { icon: TerminalSquare, title: "Explore", desc: "Systems" },
-    { icon: Leaf, title: "Simplify", desc: "Complexity" },
-    { icon: UsersRound, title: "Share", desc: "What I learn" },
-  ];
-
-  const TECH = [
-    "Rust",
-    "TypeScript",
-    "Linux",
-    "Git",
-    "Databases",
-    "CLI Tools",
-    "WebSockets",
-    "Terminal",
-    "Svelte",
-  ];
-
-  const CONTACT = [
-    { label: "Email", href: "mailto:arandadikson@gmail.com", icon: Mail },
-    { label: "LinkedIn", href: "https://www.linkedin.com/in/dikson-aranda/", icon: Send },
-    { label: "GitHub", href: "https://github.com/DreckSallow", icon: Code2 },
-  ];
+  const icons: Record<string, typeof BookOpen> = {
+    "book-open": BookOpen,
+    box: Box,
+    code: Code2,
+    graduation: GraduationCap,
+    infinity: Infinity,
+    leaf: Leaf,
+    mail: Mail,
+    send: Send,
+    "terminal-square": TerminalSquare,
+    "users-round": UsersRound,
+  };
 </script>
 
 <svelte:head>
@@ -102,9 +70,10 @@
       <h2 class="font-mono text-xl font-bold">Background</h2>
 
       <div class="mt-7 space-y-6">
-        {#each BACKGROUND as item}
+        {#each [background.soyHenry, background.english, background.selfTaught] as item}
+          {@const Icon = icons[item.icon]}
           <div class="grid grid-cols-[42px_1fr] gap-4">
-            <item.icon class="mt-1 size-7 stroke-primary" />
+            <Icon class="mt-1 size-7 stroke-primary" />
             <div>
               <h3 class="font-mono text-sm font-bold md:text-base">
                 {#if item.href}
@@ -141,13 +110,26 @@
       </p>
 
       <div class="mt-9 grid grid-cols-2 gap-6 sm:grid-cols-4">
-        {#each VALUES as item}
-          <div>
-            <item.icon class="mb-4 size-8 stroke-primary" />
-            <p class="font-mono text-sm font-bold">{item.title}</p>
-            <p class="font-mono text-sm font-bold">{item.desc}</p>
-          </div>
-        {/each}
+        <div>
+          <Box class="mb-4 size-8 stroke-primary" />
+          <p class="font-mono text-sm font-bold">Build</p>
+          <p class="font-mono text-sm font-bold">Useful tools</p>
+        </div>
+        <div>
+          <TerminalSquare class="mb-4 size-8 stroke-primary" />
+          <p class="font-mono text-sm font-bold">Explore</p>
+          <p class="font-mono text-sm font-bold">Systems</p>
+        </div>
+        <div>
+          <Leaf class="mb-4 size-8 stroke-primary" />
+          <p class="font-mono text-sm font-bold">Simplify</p>
+          <p class="font-mono text-sm font-bold">Complexity</p>
+        </div>
+        <div>
+          <UsersRound class="mb-4 size-8 stroke-primary" />
+          <p class="font-mono text-sm font-bold">Share</p>
+          <p class="font-mono text-sm font-bold">What I learn</p>
+        </div>
       </div>
     </article>
   </section>
@@ -157,7 +139,7 @@
       <h2 class="font-mono text-xl font-bold">Tech I enjoy</h2>
 
       <div class="mt-7 flex flex-wrap gap-3">
-        {#each TECH as tech}
+        {#each tech as tech}
           <Badge>
             {tech}
           </Badge>
@@ -173,14 +155,15 @@
       </p>
 
       <div class="mt-7 flex flex-wrap gap-x-8 gap-y-4">
-        {#each CONTACT as item}
+        {#each [contacts.email, contacts.linkedin, contacts.github] as item}
+          {@const Icon = icons[item.icon]}
           <a
             href={item.href}
             class="inline-flex items-center gap-3 border-b border-primary pb-1 font-mono text-sm font-bold text-txt transition-colors hover:text-primary"
             target={item.href.startsWith("http") ? "_blank" : undefined}
             rel={item.href.startsWith("http") ? "noreferrer" : undefined}
           >
-            <item.icon class="size-5 stroke-primary" />
+            <Icon class="size-5 stroke-primary" />
             {item.label}
             <ExternalLink class="size-4 stroke-primary" />
           </a>
