@@ -1,8 +1,8 @@
 <script lang="ts">
   import {
-    Code2,
+    CodeXml,
     ExternalLink,
-    Globe2,
+    Earth,
   } from "@lucide/svelte";
   import Badge from "$lib/components/badge/badge.svelte";
   import { personal } from "$lib/../data/personal";
@@ -16,12 +16,9 @@
     media: { type: "image" | "video"; src: string } | null;
   };
 
-  const stripEmoji = (description: string) =>
-    description.replace(/^[^\w\s]+\s*/u, "");
-
   const entries: Project[] = personal.projects.map((project) => ({
     ...project,
-    description: stripEmoji(project.description),
+    description: project.description,
   }));
 
   const [featuredProject] = entries;
@@ -32,7 +29,7 @@
 </script>
 
 <svelte:head>
-  <title>My Projects | Dre</title>
+  <title>My Projects | Dreck</title>
 </svelte:head>
 
 <div class="flex flex-col">
@@ -97,7 +94,7 @@
               rel="noreferrer"
               class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
             >
-              <Code2 class="size-5 stroke-primary" />
+              <CodeXml class="size-5 stroke-primary" />
               GitHub
               <ExternalLink class="size-4" />
             </a>
@@ -109,7 +106,7 @@
               rel="noreferrer"
               class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
             >
-              <Globe2 class="size-5 stroke-primary" />
+              <Earth class="size-5 stroke-primary" />
               Website
               <ExternalLink class="size-4" />
             </a>
@@ -173,7 +170,7 @@
                   rel="noreferrer"
                   class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
                 >
-                  <Code2 class="size-5 stroke-primary" />
+                  <CodeXml class="size-5 stroke-primary" />
                   GitHub
                   <ExternalLink class="size-4" />
                 </a>
@@ -185,7 +182,7 @@
                   rel="noreferrer"
                   class="inline-flex items-center gap-2 font-mono text-sm font-bold text-txt-soft/85 transition-colors hover:text-primary"
                 >
-                  <Globe2 class="size-5 stroke-primary" />
+                  <Earth class="size-5 stroke-primary" />
                   Website
                   <ExternalLink class="size-4" />
                 </a>

@@ -59,7 +59,7 @@
     <div class="flex justify-center md:justify-end">
       <img
         src={avatar}
-        alt="Dre avatar"
+        alt="Dreck avatar"
         class="size-44 rounded-full border border-txt/15 bg-foreground object-cover md:size-64"
       />
     </div>

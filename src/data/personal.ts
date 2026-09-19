@@ -91,9 +91,9 @@ export const personal = {
     },
     {
       name: "Quipp",
-      description: "🌐 A community-driven platform for interactive debates, ideal for live streams and Q&A sessions.",
+      description: "A community-driven platform for interactive debates, ideal for live streams and Q&A sessions.",
       tags: ["TypeScript", "Svelte", "WebSocket", "Tailwind"],
-      github: "https://github.com/",
+      github: "https://github.com/DreckSallow/qa-web",
       website: "https://quipp.app/",
       media: {
         type: "image",
@@ -102,7 +102,7 @@ export const personal = {
     },
     {
       name: "Flix",
-      description: "🖥️ An open-source desktop app that integrates Anki decks with note-taking to improve study sessions.",
+      description: "An open-source desktop app that integrates Anki decks with note-taking to improve study sessions.",
       tags: ["Rust", "Tauri", "SQLite"],
       github: "https://github.com/DreckSallow/flix",
       website: "https://flixdev.netlify.app/",
@@ -113,7 +113,7 @@ export const personal = {
     },
     {
       name: "Melody",
-      description: "🎧 A terminal-based music player (TUI) with keyboard navigation, designed for efficiency and minimalism.",
+      description: "A terminal-based music player (TUI) with keyboard navigation, designed for efficiency and minimalism.",
       tags: ["Rust", "Crossterm", "Ratatui"],
       github: "https://github.com/DreckSallow/melody",
       media: {
@@ -123,7 +123,7 @@ export const personal = {
     },
     {
       name: "Flow",
-      description: "✅ A CLI task manager for optimizing workflow and project organization.",
+      description: "A CLI task manager for optimizing workflow and project organization.",
       tags: ["Rust", "Clap", "Serde"],
       github: "https://github.com/DreckSallow/flow",
       media: {
